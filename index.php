@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,18 +32,11 @@
 
     <div class="boxed_wrapper">
 
-
         <!-- mouse-pointer -->
         <div class="mouse-pointer" id="mouse-pointer">
             <div class="icon"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>
         </div>
         <!-- mouse-pointer end -->
-
-
-        <!-- preloader removed -->
-      
-        <!-- preloader end -->
-
 
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -68,7 +60,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- main header -->
         <?php include'header.php';?>
@@ -169,37 +160,26 @@
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
-                            <div class="inner-box p_relative d_block pl_100 pr_50 pt_11 pb_9">
-                                <div class="icon-box p_absolute l_0 t_0 w_80 h_80 lh_80 b_radius_50 text-center fs_45 z_1">
-                                    <div class="icon p_relative d_iblock g_color"><i class="icon-6"></i></div>
-                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-6.png" alt=""></div>
-                                </div>
-                                <h4 class="d_block fs_20 lh_30 mb_0">Quick Innovative Solutions</h4>
+                            <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
+                                    <img src="assets/images/badge1.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
-                            <div class="inner-box p_relative d_block pl_100 pr_70 pt_11 pb_9">
-                                <div class="icon-box p_absolute l_0 t_0 w_80 h_80 lh_80 b_radius_50 text-center fs_45 z_1">
-                                    <div class="icon p_relative d_iblock g_color"><i class="icon-7"></i></div>
-                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-7.png" alt=""></div>
-                                </div>
-                                <h4 class="d_block fs_20 lh_30 mb_0">Super Flexible Pricing</h4>
+                            <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
+                                    <img src="assets/images/badge1.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
-                            <div class="inner-box p_relative d_block pl_100 pr_50 pt_11 pb_9">
-                                <div class="icon-box p_absolute l_0 t_0 w_80 h_80 lh_80 b_radius_50 text-center fs_45 z_1">
-                                    <div class="icon p_relative d_iblock g_color"><i class="icon-8"></i></div>
-                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-8.png" alt=""></div>
-                                </div>
-                                <h4 class="d_block fs_20 lh_30 mb_0">Fast & Flexible Support</h4>
+                            <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
+                                    <img src="assets/images/badge1.png" alt="">
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
