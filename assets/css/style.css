@@ -467,21 +467,23 @@
 }
 
 .slider-12 .banner-carousel .owl-nav button.owl-next:hover:before{
-  background: #e35712;
+  background: #9ACF17;
 }
 
 .slider-12 .banner-carousel .owl-nav button.owl-next:hover:after{
-  border-right: 2px solid #e35712;
-  border-top: 2px solid #e35712;
+  border-right: 2px solid #9ACF17;
+  border-top: 2px solid#9ACF17;
 }
 
 .slider-12 .banner-carousel .owl-nav button.owl-prev:hover:before{
-  background: #e35712;
+  background:#9ACF17;
 }
 
 .slider-12 .banner-carousel .owl-nav button.owl-prev:hover:after{
-  border-left: 2px solid #e35712;
-  border-bottom: 2px solid #e35712;
+  border-left: 2px solid#9ACF17;
+  border-bottom: 2px solid#9ACF17
+  
+  ;
 }
 
 
@@ -10986,7 +10988,7 @@ div[class^="bubble-"] {
 }
 
 .news-16 .news-block-one .inner-box .lower-content .theme-btn:hover{
-  border-color: #e35712;
+  border-color: #9ACF17;
 }
 
 .news-16 .inner-content .single-item{
@@ -15879,7 +15881,7 @@ body.out .mouse-pointer {
   width: 80px;
   height: 80px;
   background: rgba(227,87,18,0);
-  border: 2px solid #e35712;
+  border: 2px solid #9ACF17;
 }
 
 .mouse-pointer .icon{
@@ -17187,7 +17189,7 @@ body.out .mouse-pointer {
   font-size: 15px;
   padding: 12px 25px;
   border-radius: 5px;
-  background: #e35712;
+  background: #9ACF17;
 }
 
 .contactinfo-one.contact-page-4 .info-block-one:hover .inner-box .icon-box{
