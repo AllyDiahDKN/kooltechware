@@ -101,7 +101,7 @@
                                 <div class="social-inner">
                                     <h4>Follow Us On</h4>
                                     <ul class="social-links clearfix">
-                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>                                    
                                         <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
                                     </ul>
@@ -116,7 +116,7 @@
 
 
         <!-- main header -->
-        <?php include'header2.php';?>
+        <?php include'header.php';?>
         <!-- main-header end -->
 
         <!-- Mobile Menu  -->
@@ -138,9 +138,9 @@
                 <div class="social-links">
                     <ul class="clearfix">
                       
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>                 
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-linkedin"></span></a></li>
+                        <li><a href=""><span class="fab fa-facebook-square"></span></a></li>                 
+                        <li><a href=""><span class="fab fa-instagram"></span></a></li>
+                        <li><a href=""><span class="fab fa-linkedin"></span></a></li>
                    
                     </ul>
                 </div>
@@ -206,7 +206,7 @@
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-135.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 fw_sbold mb_7">Contact Us</h4>
-                                <p class="font_family_poppins"><a href="tel:255 785 252 525">255 785 252 525</a><br /><a href="tel:11165458856">+(111)65-458-856</a></p>
+                                <p class="font_family_poppins"><a href="tel:255 785 252 525">+255 785 252 525</a><br /><a href="tel:11165458856">+(111)65-458-856</a></p>
                             </div>
                         </div>
                     </div>
@@ -229,13 +229,13 @@
                             <div 
                                 class="google-map p_relative d_block" 
                                 id="contact-google-map" 
-                                data-map-lat="40.712776" 
-                                data-map-lng="-74.005974" 
+                                data-map-lat="-6.816416" 
+                                data-map-lng="39.2796271" 
                                 data-icon-path="assets/images/icons/map-marker-2.png"  
                                 data-map-title=" Red Cross Building, Bibi Titi/Morogoro Rd. Dar es salaam" 
-                                data-map-zoom="12" 
+                                data-map-zoom="16" 
                                 data-markers='{
-                                    "marker-1": [40.712776, -74.005974, "<h4>Branch Office</h4><p>77/99 Morogoro Rd. Dar es salaam</p>","assets/images/icons/map-marker.png"]
+                                    "marker-1": [-6.816416, 39.2796271, "<h4>Branch Office</h4><p>77/99 Morogoro Rd. Dar es salaam</p>","assets/images/icons/map-marker.png"]
                                 }'>
 
                             </div>
@@ -248,7 +248,7 @@
                                 <p class="font_family_poppins">We support businesses through periods of expansion succession, and all other important transitions.</p>
                             </div>
                             <div class="form-inner p_relative ml_5 mr_5">
-                                <form method="post" action="https://html.tonatheme.com/2023/atrix/sendemail.php" id="contact-form"> 
+                                <form method="post" action="" id="contact-form"> 
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <input type="text" name="username" placeholder="Your Name" required="">
