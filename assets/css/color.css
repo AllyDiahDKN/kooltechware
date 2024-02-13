@@ -87,7 +87,7 @@
 }
 
 .processing-block-one .inner-box .icon-box:before{
-	background: -webkit-linear-gradient(45deg, #bd1ec7,#9ACE17 100%);
+	background: #9ACE17;
 }
 
 .processing-block-one .inner-box .icon-box .count-box:before{

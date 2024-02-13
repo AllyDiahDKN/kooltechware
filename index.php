@@ -1,3 +1,6 @@
+<?php
+require_once 'db.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +25,7 @@
 <link href="assets/css/global.css" rel="stylesheet">
 <link href="assets/css/elpath.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/woocommerce.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
@@ -451,7 +455,6 @@
         </section>
         <!-- chooseus-one end -->
 
-
         <!-- process-one -->
         <section class="process-one p_relative sec-pad text-center bg-color-1">
             <div class="pattern-layer">
@@ -475,7 +478,6 @@
                                     <div class="icon p_relative d_iblock tran_5 g_color fs_50"><i class="icon-17"></i></div>
                                     <div class="hov-icon p_absolute l_0 t_0 r_0 w_170 h_170 lh_170 r_0 fs_50 tran_5"><i class="icon-16"></i></div>
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
-                                    <span class="count-box p_absolute d_iblock t_5 w_40 h_40 lh_40 b_radius_50 fs_18 fw_sbold z_1">1</span>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Make Schedule</h4>
                                 <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
@@ -490,7 +492,6 @@
                                     <div class="icon p_relative d_iblock tran_5 g_color fs_50"><i class="icon-18"></i></div>
                                     <div class="hov-icon p_absolute l_0 t_0 r_0 w_170 h_170 lh_170 r_0 fs_50 tran_5"><i class="icon-16"></i></div>
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
-                                    <span class="count-box p_absolute d_iblock t_5 w_40 h_40 lh_40 b_radius_50 fs_18 fw_sbold z_1">2</span>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Start Discussion</h4>
                                 <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
@@ -504,7 +505,6 @@
                                     <div class="icon p_relative d_iblock tran_5 g_color fs_50"><i class="icon-19"></i></div>
                                     <div class="hov-icon p_absolute l_0 t_0 r_0 w_170 h_170 lh_170 r_0 fs_50 tran_5"><i class="icon-16"></i></div>
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
-                                    <span class="count-box p_absolute d_iblock t_5 w_40 h_40 lh_40 b_radius_50 fs_18 fw_sbold z_1">3</span>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Enjoy Plan</h4>
                                 <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
@@ -620,7 +620,6 @@
             </div>
         </section>
         <!-- clients-one end -->
-
 
         <!-- testimonial-one -->
         <section class="testimonial-one p_relative">
@@ -814,7 +813,6 @@
         </section>
         <!-- testimonial-one -->
 
-
         <!-- funfact-one -->
         <section class="funfact-one pt_90 pb_80 text-center p_relative">
             <div class="shape parallax-scene parallax-scene-5">
@@ -867,12 +865,6 @@
             </div>
         </section>
         <!-- funfact-one end -->
-
-
-        <!-- pricing-one -->
-        
-        <!-- pricing-one end -->
-
 
         <!-- cta-one -->
         <section class="cta-one p_relative pt_130 pb_140 centred">
@@ -1030,6 +1022,7 @@
     <script src="assets/js/scrollbar.js"></script>
     <script src="assets/js/parallax.min.js"></script>
     <script src="assets/js/circle-progress.js"></script>
+        <script src="assets/js/nav-tool.js"></script>
     <script src="assets/js/jquery.countTo.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/parallax-scroll.js"></script>

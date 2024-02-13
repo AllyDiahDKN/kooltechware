@@ -34,6 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: contact.php");
             exit;
         } else {
+            $_SESSION['success_message'] = 'Failed to send message. Please try again later.';
+             // Redirect to contact.php after successful submission
+            header("Location: contact.php");
+            exit;
+
             echo json_encode(['success' => false, 'message' => 'Failed to send message. Please try again later.']);
         }
     } else {

@@ -11067,6 +11067,11 @@ div[class^="bubble-"] {
   color: #e35712;
 }
 
+@media (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+    }
+}
 
 
 /************* about-page **************/
@@ -11076,7 +11081,7 @@ div[class^="bubble-"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 250px 0px 135px 0px;
+  padding: 46px 0px 46px 0px;
 }
 
 .page-title:before{
@@ -11265,7 +11270,7 @@ div[class^="bubble-"] {
 /** page-title-two **/
 
 .page-title.style-two{
-  padding: 90px 0px 90px 0px;
+  padding: 40px 0px 90px 0px;
 }
 
 .page-title.style-two:before{
@@ -12083,7 +12088,7 @@ div[class^="bubble-"] {
 }
 
 .page-title.about-page-5{
-  padding-bottom: 175px;
+  padding-bottom: 70px;
 }
 
 
@@ -15716,7 +15721,7 @@ div[class^="bubble-"] {
   -o-transition-timing-function: cubic-bezier(.19, .94, .336, 1);
   transition-timing-function: cubic-bezier(.19, .94, .336, 1);
   border-radius: 50%;
-  background: #f4244f;
+  background: #9ACF17;
   overflow: hidden;
 }
 

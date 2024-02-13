@@ -1,7 +1,10 @@
+    <?php
+    // Start session
+    session_start();
+    require_once 'db.php';
+    ?>
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,17 +35,11 @@
 <body>
 
     <div class="boxed_wrapper">
-
-
         <!-- mouse-pointer -->
         <div class="mouse-pointer display_none" id="mouse-pointer">
             <div class="icon"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>
         </div>
         <!-- mouse-pointer end -->
-
-
-       
-
 
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -66,7 +63,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- sidebar cart item -->
         <div class="xs-sidebar-group info-group info-sidebar">
@@ -248,20 +244,17 @@
                                 <p class="font_family_poppins">We support businesses through periods of expansion succession, and all other important transitions.</p>
                             </div>
                             <?php
-                            // Start session
-                            session_start();
-
                             // Check if session message exists
                             if (isset($_SESSION['success_message'])) {
-                                echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+                                echo '<div class="success-message"><font color="red">' . $_SESSION['success_message'] . '</font></div>';
 
-                                // Unset session message to remove it after displaying
-                                unset($_SESSION['success_message']);
+                            // End session
+                            session_destroy();
                             }
                             ?>
                             <!-- Your HTML content goes here -->
                             <div class="form-inner p_relative ml_5 mr_5">
-                                                        <form method="post" action="contact.php" id="contact-form"> 
+                                                        <form method="post" action="sendMail.php" id="contact-form"> 
                                                             <div class="row clearfix">
                                                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                                                     <input type="text" name="username" placeholder="Your Name" id="username" required="">
@@ -284,10 +277,7 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                            <?php
-                            // End session
-                            session_destroy();
-                            ?>                            
+                                                    
                         </div>
                     </div>
                 </div>
@@ -295,9 +285,8 @@
         </section>
         <!-- contact-three end -->
 
-
         <!-- footer-three -->
-        <?php include'footer2.php';?>
+        <?php include'footer.php';?>
         <!-- footer-three end -->
 
 
@@ -345,6 +334,4 @@
     <script src="assets/js/script.js"></script>
 
 </body><!-- End of .page_wrapper -->
-
-
 </html>
