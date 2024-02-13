@@ -5,38 +5,21 @@
                 <div class="pattern-3 hero-shape-three"></div>
                 <div class="pattern-4" style="background-image: url(assets/images/shape/shape-30.png);"></div>
             </div>
-            <div class="footer-top">
-                <div class="auto-container">
-                    <div class="top-inner clearfix">
-                        <figure class="footer-logo pull-left">
-                            <a href="index.html"><img src="assets/images/kooltech/footer-logo1.png" height="150 " width="200" alt="footer logo"></a>
-                        </figure>
-                     
-                    </div>
-                </div>
-            </div>
+            
             <div class="footer-widget-section">
                 <div class="auto-container">
                     <div class="row clearfix">
                         <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget about-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="widget-title">
-                                    <h4>About</h4>
+                                    <h4>Kool Tech Ware</h4>
                                 </div>
                                 <div class="text">
                                     <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
                                             solutions, we're committed to helping businesses thrive with cutting-edge ICT
                                             services.
                                     </p>
-                                </div>
-                                <div class="subscribe-inner">
-                                    <form action="contact.php" method="post" class="subscribe-form">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Your email address" readonly="">
-                                            <button type="submit"><i class="icon-4"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
+                                </div>                              
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">

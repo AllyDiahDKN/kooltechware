@@ -6,10 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Atrix - HTML 5 Template Preview</title>
+<title>KoolTechWare| Home</title>
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                 <div class="overlay-layer"></div>
                 <div class="auto-container">
                     <div class="search-form">
-                        <form method="post" action="https://html.tonatheme.com/2023/atrix/index.html">
+                        <form method="post" action="">
                             <div class="form-group">
                                 <fieldset>
                                     <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
@@ -870,127 +870,7 @@
 
 
         <!-- pricing-one -->
-        <section class="pricing-one p_relative">
-            <div class="auto-container">
-                <div class="inner-container p_relative sec-pad">
-                    <div class="section-line">
-                        <div class="line line-1 p_absolute"></div>
-                        <div class="line line-2 p_absolute"></div>
-                        <div class="line line-3 p_absolute"></div>
-                    </div>
-                    <div class="sec-title p_relative d_block mb_35 text-center z_1">
-                        <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Pricing Table</span>
-                        <h2 class="p_relative d_block fs_40 fw_bold mb_30">Not Any Hidden Charge, Choose <br />Your Pricing Plan</h2>
-                    </div>
-                    <div class="tabs-box">
-                        <div class="tab-btn-box p_relative d_block mb_60 centred">
-                            <ul class="tab-btns tab-buttons clearfix p_relative d_iblock">
-                                <li class="tab-btn active-btn" data-tab="#tab-1">Monthly</li>
-                                <li class="tab-btn" data-tab="#tab-2">Yearly</li>
-                            </ul>
-                        </div>
-                        <div class="tabs-content">
-                            <div class="tab active-tab" id="tab-1">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 pricing-block">
-                                        <div class="pricing-block-one">
-                                            <div class="pricing-table p_relative d_block pt_45 pr_50 pb_50 pl_50 b_radius_10">
-                                                <div class="table-header p_relative d_block mb_30">
-                                                    <h6 class="d_block fs_16 lh_20 fw_medium g_color mb_11">Basic Plan</h6>
-                                                    <h2 class="d_block fs_40 lh_50 fw_bold mb_0">$39.75 <span class="fs_17">/ mo</span></h2>
-                                                    <p class="fs_18">Fruit is their fill meat, hath abundantly place meat don't stars.</p>
-                                                </div>
-                                                <div class="table-content p_relative d_block p_relative pt_25 pr_30 pl_30 pb_25 b_radius_10 mb_40">
-                                                    <ul class="feature-list clearfix">
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">1 User</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">Competitive analysis</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25">Monthly management</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="table-footer">
-                                                    <a href="index.html" class="theme-btn theme-btn-two"><span data-text="Select Plan">Select Plan</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 pricing-block">
-                                        <div class="pricing-block-one active-block">
-                                            <div class="pricing-table p_relative d_block pt_45 pr_50 pb_50 pl_50 b_radius_10">
-                                                <div class="shape-1 hero-shape-three p_absolute"></div>
-                                                <div class="shape-2 p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-24.png);"></div>
-                                                <div class="table-header p_relative d_block mb_30">
-                                                    <h6 class="d_block fs_16 lh_20 fw_medium g_color mb_11">Special Plan</h6>
-                                                    <h2 class="d_block fs_40 lh_50 fw_bold mb_0">$49.75 <span class="fs_17">/ mo</span></h2>
-                                                    <p class="fs_18">Fruit is their fill meat, hath abundantly place meat don't stars.</p>
-                                                </div>
-                                                <div class="table-content p_relative d_block p_relative pt_25 pr_30 pl_30 pb_25 b_radius_10 mb_40">
-                                                    <ul class="feature-list clearfix">
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">1 User</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">Competitive analysis</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25">Monthly management</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="table-footer">
-                                                    <a href="index.html" class="theme-btn theme-btn-one">Select Plan<i class="icon-4"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab" id="tab-2">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 pricing-block">
-                                        <div class="pricing-block-one active-block">
-                                            <div class="pricing-table p_relative d_block pt_45 pr_50 pb_50 pl_50 b_radius_10">
-                                                <div class="shape-1 hero-shape-three p_absolute"></div>
-                                                <div class="shape-2 p_absolute t_0 r_0" style="background-image: url(assets/images/shape/shape-24.png);"></div>
-                                                <div class="table-header p_relative d_block mb_30">
-                                                    <h6 class="d_block fs_16 lh_20 fw_medium g_color mb_11">Special Plan</h6>
-                                                    <h2 class="d_block fs_40 lh_50 fw_bold mb_0">$69.75 <span class="fs_17">/ ye</span></h2>
-                                                    <p class="fs_18">Fruit is their fill meat, hath abundantly place meat don't stars.</p>
-                                                </div>
-                                                <div class="table-content p_relative d_block p_relative pt_25 pr_30 pl_30 pb_25 b_radius_10 mb_40">
-                                                    <ul class="feature-list clearfix">
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">1 User</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">Competitive analysis</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25">Monthly management</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="table-footer">
-                                                    <a href="index.html" class="theme-btn theme-btn-one">Select Plan<i class="icon-4"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 pricing-block">
-                                        <div class="pricing-block-one">
-                                            <div class="pricing-table p_relative d_block pt_45 pr_50 pb_50 pl_50 b_radius_10">
-                                                <div class="table-header p_relative d_block mb_30">
-                                                    <h6 class="d_block fs_16 lh_20 fw_medium g_color mb_11">Premium Plan</h6>
-                                                    <h2 class="d_block fs_40 lh_50 fw_bold mb_0">$99.75 <span class="fs_17">/ ye</span></h2>
-                                                    <p class="fs_18">Fruit is their fill meat, hath abundantly place meat don't stars.</p>
-                                                </div>
-                                                <div class="table-content p_relative d_block p_relative pt_25 pr_30 pl_30 pb_25 b_radius_10 mb_40">
-                                                    <ul class="feature-list clearfix">
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">1 User</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25 mb_16">Competitive analysis</li>
-                                                        <li class="p_relative d_block fs_16 lh_25 pl_25">Monthly management</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="table-footer">
-                                                    <a href="index.html" class="theme-btn theme-btn-two"><span data-text="Select Plan">Select Plan</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- pricing-one end -->
 
 
