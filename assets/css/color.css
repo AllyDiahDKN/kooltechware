@@ -55,7 +55,7 @@
 }
 
 .g_color{
-	background: -webkit-linear-gradient(45deg, #c335da,#9ACE17 100%);
+	background: #9ACE17;
 }
 
 .image_block_one .image-box .video-inner .video-btn a{
@@ -63,7 +63,7 @@
 }
 
 .list-style-one li:before{
-	background: -webkit-linear-gradient(45deg, #bd1ec7, 9ACE17 100%);
+	background: #38318A;
 }
 
 .service-block-one .inner-box h4 a:hover{
