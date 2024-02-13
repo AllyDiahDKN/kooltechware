@@ -37,7 +37,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="assets/images/kooltech/logo1.png" alt=""></a></figure>
+                            <figure ><a href="index.php"><img src="assets/images/kooltech/logo1.png" height="200 " width="250" alt=""></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <!--Mobile Navigation Toggler-->
@@ -82,7 +82,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="assets/images/kooltech/logo1.png" alt=""></a></figure>
+                            <figure class="logo"><a href="index.html"><img src="assets/images/kooltech/logo1.png" height="200 " width="250" alt=""></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">

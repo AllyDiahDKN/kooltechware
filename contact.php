@@ -10,7 +10,7 @@
 <title>Kooltechware| contact</title>
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon-11.ico" type="image/x-icon">
+<link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -247,30 +247,47 @@
                                 <h3 class="d_block fs_30 lh_40 fw_bold mb_15">Send a Message</h3>
                                 <p class="font_family_poppins">We support businesses through periods of expansion succession, and all other important transitions.</p>
                             </div>
+                            <?php
+                            // Start session
+                            session_start();
+
+                            // Check if session message exists
+                            if (isset($_SESSION['success_message'])) {
+                                echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+
+                                // Unset session message to remove it after displaying
+                                unset($_SESSION['success_message']);
+                            }
+                            ?>
+                            <!-- Your HTML content goes here -->
                             <div class="form-inner p_relative ml_5 mr_5">
-                                <form method="post" action="" id="contact-form"> 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <input type="text" name="username" placeholder="Your Name" required="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <input type="email" name="email" placeholder="Email Address" required="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                            <input type="text" name="phone" required="" placeholder="Phone Number">
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                            <input type="text" name="subject" required="" placeholder="Subject">
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <textarea name="message" placeholder="Leave A Comment"></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                            <button class="theme-btn theme-btn-eight" type="submit" name="submit-form">Send Message <i class="icon-4"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                                        <form method="post" action="contact.php" id="contact-form"> 
+                                                            <div class="row clearfix">
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="text" name="username" placeholder="Your Name" id="username" required="">
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="email" name="email" placeholder="Email Address" id="email" required="">
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                                                    <input type="text" name="phone" required="" id="phone" placeholder="Phone Number">
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                                                    <input type="text" name="subject" required="" id="subject"placeholder="Subject">
+                                                                </div>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                                    <textarea name="message" id="message" placeholder="Leave A Comment"></textarea>
+                                                                </div>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                                                    <button class="theme-btn theme-btn-eight" type="submit" name="submit-form">Send Message <i class="icon-4"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                            <?php
+                            // End session
+                            session_destroy();
+                            ?>                            
                         </div>
                     </div>
                 </div>
