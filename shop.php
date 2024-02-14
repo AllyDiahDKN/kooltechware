@@ -8,10 +8,10 @@ require_once 'db.php';
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Atrix - HTML 5 Template Preview</title>
+<title></title>
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon-11.ico" type="image/x-icon">
+<link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -43,60 +43,8 @@ require_once 'db.php';
         </div>
         <!-- mouse-pointer end -->
 
-
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close">x</div>
-                <div id="handle-preloader" class="handle-preloader home-11">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
-                            </span>
-                            <span data-text-preloader="r" class="letters-loading">
-                                r
-                            </span>
-                            <span data-text-preloader="i" class="letters-loading">
-                                i
-                            </span>
-                            <span data-text-preloader="x" class="letters-loading">
-                                x
-                            </span>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
-
-
         <!--Search Popup-->
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="index.html"><img src="assets/images/logo-8.png" alt=""></a></figure>
-                    <div class="close-search pull-right"><span class="icon-179"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://html.tonatheme.com/2023/atrix/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
 
 
         <!-- sidebar cart item -->
@@ -114,24 +62,25 @@ require_once 'db.php';
                                     <a href="index.html"><img src="assets/images/logo-8.png" alt="" /></a>
                                 </div>
                                 <div class="text-box">
-                                    <h4>About Atrix</h4>
-                                    <p>Lorem ipsum dolor amet consectetur adipisicing  sed do eiusmod tempor incididunt labore magna aliqua enim minim veniam nostrud exercitation aboris nis aliquip exeo.</p>
+                                    <h4>KOOL TECHWARE</h4>
+                                    <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
+                                            solutions, we're committed to helping businesses thrive with cutting-edge ICT
+                                            services</p>
                                 </div>
                                 <div class="info-inner">
-                                    <h4>Find Us Our Location</h4>
+                                    <h4>Find Us</h4>
                                     <ul class="info clearfix">
-                                        <li><i class="icon-180"></i>629 12th St, Modesto, CA 95354 United States</li>
-                                        <li><i class="icon-181"></i><a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
-                                        <li><i class="icon-182"></i><a href="tel:123045615523">+1 (230)-456-155-23</a></li>
+                                    <li>P.O. Box 38043 Red Cross Building,Bibi Titi/Morogoro Rd. Dar es salaam </li>                                   
+                                        <li><a href="tel:+255785252525">+255 785 252 525</a></li>
+                                        <li><a href="kb@kooltechware.co.tz">kb@kooltechware.co.tz</a></li>
                                     </ul>
                                 </div>
                                 <div class="social-inner">
                                     <h4>Follow Us On</h4>
                                     <ul class="social-links clearfix">
-                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -158,11 +107,10 @@ require_once 'db.php';
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
+                    <li>P.O. Box 38043 Red Cross Building,Bibi Titi/Morogoro Rd. Dar es salaam </li>                                   
+                                        <li><a href="tel:+255785252525">+255 785 252 525</a></li>
+                                        <li><a href="kb@kooltechware.co.tz">kb@kooltechware.co.tz</a></li>
+                                    </ul>
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
@@ -205,7 +153,7 @@ require_once 'db.php';
                     <div class="col-lg-3 col-md-12 cols-sm-12 sidebar-side">
                         <div class="shop-sidebar">
                             <div class="search-widget sidebar-widget p_relative d_block pb_40 mb_25">
-                                <form action="https://html.tonatheme.com/2023/atrix/shop.html" method="post" class="search-form">
+                                <form action="" method="post" class="search-form">
                                     <div class="form-group p_relative m_0">
                                         <input type="search" name="search-field" placeholder="Search" required>
                                         <button type="submit"><i class="icon-1"></i></button>
