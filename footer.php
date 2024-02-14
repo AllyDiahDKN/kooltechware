@@ -12,7 +12,9 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget about-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="widget-title">
-                                    <h4>Kool Techware</h4>
+
+                                    <h4>KOOL TECHWARE</h4>
+
                                 </div>
                                 <div class="text">
                                     <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
