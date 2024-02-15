@@ -8,7 +8,7 @@ require_once 'db.php';
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Atrix - HTML 5 Template Preview</title>
+    <?php include 'meta_tags.php'; ?>
 
 <!-- Fav Icon -->
 <link rel="icon" href="assets/images/favicon-11.ico" type="image/x-icon">
@@ -43,7 +43,6 @@ require_once 'db.php';
         </div>
         <!-- mouse-pointer end -->
 
-
         <!-- preloader -->
         <div class="loader-wrap">
             <div class="preloader">
@@ -73,7 +72,6 @@ require_once 'db.php';
             </div>
         </div>
         <!-- preloader end -->
-
 
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -142,11 +140,9 @@ require_once 'db.php';
         </div>
         <!-- END sidebar widget item -->
 
-
         <!-- main header -->
         <?php include 'header.php';?>
         <!-- main-header end -->
-
 
         <!-- Mobile Menu  -->
         <div class="mobile-menu">
@@ -218,6 +214,7 @@ require_once 'db.php';
                                 </div>
                                 <div class="widget-content">
                                     <ul class="category-list clearfix">
+
                                         <?php
 // SQL query to fetch category names along with the count of products in each category
 $query = "SELECT categories.CategoryName, categories.CategoryID, COUNT(products.CategoryID) AS ProductCount 
@@ -228,6 +225,8 @@ $query = "SELECT categories.CategoryName, categories.CategoryID, COUNT(products.
 $result = mysqli_query($conn, $query);
 
 if ($result) {
+    echo '<li class="p_relative d_block mb_11">';
+        echo '<a href="shop.php" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">All Products</a></li>';
     while ($row = mysqli_fetch_assoc($result)) {
         $categoryName = $row['CategoryName'];
         $categoryID = $row['CategoryID'];

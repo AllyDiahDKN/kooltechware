@@ -161,6 +161,8 @@ if ($categoryResult) {
         // Display list item for each category with its ID and name
         echo '<li><a href="shop.php?category_id=' . $category['CategoryID'] . '">' . $category['CategoryName'] . '</a></li>';
     }
+                echo '<li><a href="shop.php">All Products</a></li>';
+
 } else {
     echo '<li>Error fetching categories</li>'; // Handle database error
 }
