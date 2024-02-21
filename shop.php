@@ -13,6 +13,7 @@ require_once 'db.php';
     <?php include 'meta_tags.php'; ?>
 
 <!-- Fav Icon -->
+<link rel="icon" href="assets/images/favicon1.png" type="image/x-icon">
 <link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
@@ -76,7 +77,6 @@ require_once 'db.php';
         </div>
         <!-- preloader end -->
 
-
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
@@ -87,7 +87,7 @@ require_once 'db.php';
                 <div class="overlay-layer"></div>
                 <div class="auto-container">
                     <div class="search-form">
-                        <form method="post" action="">
+                        <form method="post" action="https://html.tonatheme.com/2023/atrix/index.html">
                             <div class="form-group">
                                 <fieldset>
                                     <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
@@ -120,11 +120,11 @@ require_once 'db.php';
                                             services.</p>
                                 </div>
                                 <div class="info-inner">
-                                    <h4>Find Us</h4>
-                                    <ul class="info-list clearfix">
-                                        <li>P.O. Box 38043 Red Cross Building,Bibi Titi/Morogoro Rd. Dar es salaam </li>                                   
-                                        <li><a href="tel:+255785252525">+255 785 252 525</a></li>
-                                        <li><a href="kb@kooltechware.co.tz">kb@kooltechware.co.tz</a></li>
+                                    <h4>Find Us Our Location</h4>
+                                    <ul class="info clearfix">
+                                        <li><i class="icon-180"></i>629 12th St, Modesto, CA 95354 United States</li>
+                                        <li><i class="icon-181"></i><a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
+                                        <li><i class="icon-182"></i><a href="tel:123045615523">+1 (230)-456-155-23</a></li>
                                     </ul>
                                 </div>
                                 <div class="social-inner">
@@ -157,11 +157,11 @@ require_once 'db.php';
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
-                    <ul class="info-list clearfix">
-                                        <li>P.O. Box 38043 Red Cross Building,Bibi Titi/Morogoro Rd. Dar es salaam </li>                                   
-                                        <li><a href="tel:+255785252525">+255 785 252 525</a></li>
-                                        <li><a href="kb@kooltechware.co.tz">kb@kooltechware.co.tz</a></li>
-                                    </ul>
+                    <ul>
+                        <li>Chicago 12, Melborne City, USA</li>
+                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
@@ -186,7 +186,7 @@ require_once 'db.php';
                 <div class="content-box">
                     <h1 class="d_block fs_60 lh_70 fw_bold mb_10">Shop Page</h1>
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
-                        <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.html">Home</a></li>
+                        <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.php">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20">Shop</li>
                         <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Page 1</li>
                     </ul>
