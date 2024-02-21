@@ -171,17 +171,13 @@ if ($categoryResult) {
                                         </li>
                  
                                         <li><a href="contact.php">Contact</a></li>                                         
-                                            
+                                        <li> <a href="shop.php" ><i class="icon-140"></i></a></li>
                                       
                                     </ul>
                                 </div>
                             </nav>
                         </div>
-                        <div class="nav-right">
-                            <div class="nav-btn nav-toggler navSidebar-button clearfix">
-                                <i class="icon-140"></i>
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
             </div>
@@ -197,12 +193,7 @@ if ($categoryResult) {
                             <nav class="main-menu clearfix">
                                 <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
-                        </div>
-                         <div class="nav-right">
-                            <div class="nav-btn nav-toggler navSidebar-button clearfix">
-                                <i class="icon-140"></i>
-                            </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>

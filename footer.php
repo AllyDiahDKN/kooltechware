@@ -12,7 +12,9 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget about-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="widget-title">
-                                    <h4>Kool Tech Ware</h4>
+
+                                    <h4>KOOL TECHWARE</h4>
+
                                 </div>
                                 <div class="text">
                                     <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
@@ -30,8 +32,8 @@
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
                                         <li><a href="index.php">About</a></li>
-                                        <li><a href="index.html">Services</a></li>
-                                        <li><a href="index.html">Job</a></li>                                                                          
+                                        <li><a href="">Services</a></li>
+                                        <li><a href="">Job</a></li>                                                                          
                                     </ul>
                                 </div>
                             </div>
@@ -70,7 +72,7 @@
                 <div class="auto-container">
                     <div class="bottom-inner clearfix">
                         <div class="copyright pull-left">
-                            <p><a href="index.html">KOOLTECHWARE</a> &copy; 2024 All Right Reserved</p>
+                            <p><a href="index.html">KOOL TECHWARE</a> &copy; 2024 All Right Reserved</p>
                         </div>
                         <ul class="footer-nav clearfix pull-right"> 
                             <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>

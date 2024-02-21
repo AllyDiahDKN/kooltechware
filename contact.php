@@ -153,7 +153,7 @@
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inter mr_20"><a href="index.php">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inter mr_20">Pages</li>
-                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inter">Contact Us 1</li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inter">Contact Us</li>
                     </ul>
                 </div>
             </div>
@@ -167,7 +167,7 @@
             <div class="auto-container">
                 <div class="sec-title p_relative d_block mb_50">
                     <h5 class="d_block fs_17 lh_20 fw_sbold uppercase mb_15">Get In Touch</h5>
-                    <h2 class="d_block fs_40 fw_bold">Have a Project in Mind? <br/>Let’s Contact</h2>
+                    <h2 class="d_block fs_40 fw_bold">Let’s Connect</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 info-column">
@@ -190,7 +190,7 @@
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-134.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 fw_sbold mb_7">Company Email</h4>
-                                <p class="font_family_poppins"><a href="mailto:kb@kooltechware.co.tz">kb@kooltechware.co.tz</a><br /><a href="mailto:example@gmail.com">example@gmail.com</a></p>
+                                <p class="font_family_poppins"><a href="mailto:kb@kooltechware.co.tz">kb@kooltechware.co.tz</a><br /></a></p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-135.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 fw_sbold mb_7">Contact Us</h4>
-                                <p class="font_family_poppins"><a href="tel:255 785 252 525">+255 785 252 525</a><br /><a href="tel:11165458856">+(111)65-458-856</a></p>
+                                <p class="font_family_poppins"><a href="tel:255 785 252 525">+255 785 252 525</a><br /></p>
                             </div>
                         </div>
                     </div>
