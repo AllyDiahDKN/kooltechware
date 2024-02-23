@@ -67,7 +67,7 @@ require_once '../db.php'; // Adjust the path as needed
                 <label class="form-label">Select Category</label>
                 <select name="category_id" class="form-select">
 <?php
-$sql = "SELECT category_id, category_name FROM category";
+$sql = "SELECT categoryID, categoryName FROM categories";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

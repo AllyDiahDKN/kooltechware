@@ -101,8 +101,8 @@ require_once 'db.php';
                     <div class="image-layer p_absolute" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
                     <div class="auto-container">
                         <div class="content-box p_relative d_block z_5">
-                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Make Your Business with</span><br /> <span class="slider-text-anim">Unique Ideas.</span></h2>
-                            <p class="d_block fs_18 mb_45">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <br />deserunt mollit anim id est laborum.</p>
+                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Craft an unparalleled Business journey with  Innovative </span><br /><span class="slider-text-anim">  Technology</span></h2>
+
                             <div class="btn-box clearfix">
                                 <a href="shop.php" class="theme-btn theme-btn-two"><span data-text="Get Started">Get Started</span></a>
                             </div>
@@ -118,13 +118,13 @@ require_once 'db.php';
                     </div>
                     <div class="image-layer p_absolute" style="background-image:url(assets/images/banner/banner-2.jpg)"></div>
                     <div class="auto-container">
-                        <div class="content-box p_relative d_block z_5">
-                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Make Your Business with</span><br /> <span class="slider-text-anim">Unique Ideas.</span></h2>
-                            <p class="d_block fs_18 mb_45">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <br />deserunt mollit anim id est laborum.</p>
+                    <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Craft an unparalleled Business journey with  Innovative </span><br><span class="slider-text-anim">  Technology</span></h2>
+
                             <div class="btn-box clearfix">
-                                <a href="index.html" class="theme-btn theme-btn-two"><span data-text="Get Started">Get Started</span></a>
+                                <a href="shop.php" class="theme-btn theme-btn-two"><span data-text="Get Started">Get Started</span></a>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 <div class="slide-item p_relative pt_140 pb_170">
@@ -136,17 +136,18 @@ require_once 'db.php';
                     </div>
                     <div class="image-layer p_absolute" style="background-image:url(assets/images/banner/banner-3.jpg)"></div>
                     <div class="auto-container">
-                        <div class="content-box p_relative d_block z_5">
-                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Make Your Business with</span><br /> <span class="slider-text-anim">Unique Ideas.</span></h2>
-                            <p class="d_block fs_18 mb_45">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <br />deserunt mollit anim id est laborum.</p>
+                    <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Craft an unparalleled business journey withinnovative </span><br /><span class="slider-text-anim"> technology</span></h2>
+
                             <div class="btn-box clearfix">
-                                <a href="index.html" class="theme-btn theme-btn-two"><span data-text="Get Started">Get Started</span></a>
+                                <a href="contact.php" class="theme-btn theme-btn-two"><span data-text="Get Started">Get Started</span></a>
                             </div>
-                        </div>
+                        </div> 
+                    </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>S
         <!-- banner-section end -->
 
 
@@ -164,14 +165,14 @@ require_once 'db.php';
                      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
                             <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
-                                    <img src="assets/images/badge1.png" alt="">
+                                    <img src="assets/images/badge2.png" alt="22">
                             </div>
                         </div>
                     </div>
                      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
                             <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
-                                    <img src="assets/images/badge1.png" alt="">
+                                    <img src="assets/images/badge3.png" alt="33">
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Toggle the availability status in the database
         //$sql = "UPDATE products SET availability = IF(availability = 1, 0, 1) WHERE product_id = ?";
-        $sql ="UPDATE Products SET available = IF(available = 1, 0, 1) WHERE ProductID = ?";
+        $sql ="UPDATE Products SET show_product = IF(show_product = 1, 0, 1) WHERE ProductID = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $productId);
 

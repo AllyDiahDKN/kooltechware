@@ -44,7 +44,7 @@ require_once '../db.php';
 							<div class="card card-mini dash-card card-1">
 								<div class="card-body">
 									  <?php
-$sql = "SELECT COUNT(*) as total_users FROM user WHERE activation = 'active'";
+$sql = "SELECT COUNT(*) as total_users FROM users ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
