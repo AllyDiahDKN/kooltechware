@@ -147,7 +147,7 @@ require_once 'db.php';
                     </div>
                 </div>
             </div>
-        </section>S
+        </section>
         <!-- banner-section end -->
 
 
@@ -158,7 +158,7 @@ require_once 'db.php';
                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp" data-wow-duration="1500ms">
                             <div class="inner-box p_relative d_block pl_20 pr_100 pt_11 pb_9">
-                                    <img src="assets/images/badge1.png" alt="">
+                                    <img src="assets/images/badge11.png" alt="">                          
                             </div>
                         </div>
                     </div>
@@ -204,10 +204,10 @@ require_once 'db.php';
                                         <div data-depth="0.40" class="shape-1 p_absolute w_95 h_95" style="background-image: url(assets/images/shape/shape-6.png);"></div>
                                         <div data-depth="0.50" class="shape-2 p_absolute w_95 h_95" style="background-image: url(assets/images/shape/shape-6.png);"></div>
                                     </div>
-                                    <figure data-animation-text class="overlay-anim-black-bg image image-1 p_relative d_block b_radius_10" data-animation="overlay-animation"><img src="assets/images/resource/about-1.jpg" alt=""></figure>
-                                    <div class="video-inner p_absolute r_140 b_0 pt_60 pb_60 text-center b_radius_10 w_200 z_2" style="background-image: url(assets/images/resource/about-2.jpg);">
+                                    <figure data-animation-text class="overlay-anim-black-bg image image-1 p_relative d_block b_radius_10" data-animation="overlay-animation"><img src="assets/images/kooltech/complimentary/high-angle-employees-working-together-min.jpg" alt="image not displayed"></figure>
+                                    <div class="video-inner p_absolute r_140 b_0 pt_60 pb_60 text-center b_radius_10 w_200 z_2" style="background-image: url(assets/images/kooltech/complimentary/setup.jpeg);">
                                         <div class="video-btn">
-                                            <a href="" class="lightbox-image video-btn p_relative d_iblock w_80 h_80 lh_85 text-center b_radius_50" data-caption=""><i class="icon-10"></i></a>
+                                            <a href="https://youtu.be/ssWUvNmHjo4?si=eRw7J6KE_j_ExeWg" class="lightbox-image video-btn p_relative d_iblock w_80 h_80 lh_85 text-center b_radius_50" data-caption=""><i class="icon-10"></i></a>
                                         </div>
                                     </div>
                                    
@@ -219,26 +219,21 @@ require_once 'db.php';
                                 <div class="content-box p_relative d_block ml_30">
                                     <div class="sec-title p_relative d_block mb_20">
                                         <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">About Us</span>
-                                        <h2 class="p_relative d_block fs_40 fw_bold mb_0">Innovative Tech Services  </h2>
+                                        <h2 style="text-align: center;" class="p_relative d_block fs_40 fw_bold mb_0" >Elevate your business with the right solution   </h2>
 
                                     </div>
                                     <div class="text p_relative d_block mb_25 wow fadeInUp" data-wow-duration="1500ms">
-                                        <p>As authorized dealers for leading IT brands and recognized Lenovo partners in East
-                                            Africa, we offer an extensive range of products and services that are tailored to
-                                            meet the unique needs of our customers. Whether you're looking for hardware,
-                                            software, networking, or other ICT solutions, we have the expertise and experience
-                                            to deliver
-                                        </p>
+                                        <p>We specialize in network design and implementation, IT solutions, software, technical services and security systems.
+                                        Our customer-centric approach, experience and position as the premier tech company, enable us to offer specialized solutions to suit every business.</p>
                                     </div>
                                     <ul class="list-style-one clearfix p_relative d_block mb_30 wow fadeInUp" data-wow-duration="1500ms">
-                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">IT products & Accessories </li>
-                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Networking</li>
-                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Software</li>
-                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Technical</li>
-                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35">Surveillance</li>
+                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Client focused </li>
+                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Bespoke solutions </li>
+                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Innovative and forward-thinking</li>
+                                        <li class="p_relative d_block fs_16 lh_25 fw_sbold pull-left pl_35 mb_13">Effective time and cost management strategies</li>                                     
                                     </ul>
                                     <div class="btn-box wow fadeInUp" data-wow-duration="1500ms">
-                                        <a href="contact.php" class="theme-btn theme-btn-three"><span data-text="Get A Quote">Get A Quote</span></a>
+                                        <p style="text-align: center;"><a href="contact.php" class="theme-btn theme-btn-three">Request a Quotation</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -261,8 +256,7 @@ require_once 'db.php';
             <div class="auto-container">
                 <div class="sec-title p_relative d_block mb_50 text-center">
                     <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">SERVICES</span>
-                    <h2 class="p_relative d_block fs_40 fw_bold mb_30">Great Business Solutions <br />System</h2>
-                    <p class="d_block fs_18">Amet consectur adipiscing elit sed eiusmod ex tempor incididunt <br />labore dolore magna aliquaenim ad minim veniam.</p>
+                    <h2 class="p_relative d_block fs_40 fw_bold mb_30">We specialize<br />In</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 service-block">
@@ -273,8 +267,8 @@ require_once 'db.php';
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-2.png" alt=""></div>
                                     <div class="icon-shape hero-shape-four p_absolute w_90 h_70"></div>
                                 </div>
-                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Networking Consulting</a></h4>
-                                <p class="p_relative d_block mb_20">Something something  ipsum dolor sit elit consectetur sed eiusmod tempor labore.</p>                              
+                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Network Designs & Implementation </a></h4>
+                                <p class="p_relative d_block mb_20">Our adept technical team is competent in identifying and recommending comprehensive end-to-end solutions for any type of network systems.  </p>                              
                             </div>
                         </div>
                     </div>
@@ -283,11 +277,11 @@ require_once 'db.php';
                             <div class="inner-box p_relative d_block pl_40 pt_50 pr_30 pb_35 b_radius_10 tran_5">
                                 <div class="icon-box p_relative d_iblock mb_30">
                                     <div class="icon p_relative d_iblock fs_50 g_color tran_5"><i class="icon-12"></i></div>
-                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-3.png" alt=""></div>
+                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-5.png" alt=""></div>
                                     <div class="icon-shape hero-shape-four p_absolute w_90 h_70"></div>
                                 </div>
-                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Surveillance Advice</a></h4>
-                                <p class="p_relative d_block mb_20">something something  dolor sit elit consectetur sed eiusmod tempor labore.</p>                               
+                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Software solutions</a></h4>
+                                <p class="p_relative d_block mb_20">Our range of software solutions allow us to recommend the right product for you. We offer software applications and after sales support to facilitate seamless transition for your business.</p>                               
                             </div>
                         </div>
                     </div>
@@ -299,8 +293,8 @@ require_once 'db.php';
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-4.png" alt=""></div>
                                     <div class="icon-shape hero-shape-four p_absolute w_90 h_70"></div>
                                 </div>
-                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Technical Management</a></h4>
-                                <p class="p_relative d_block mb_20">something something dolor sit elit consectetur sed eiusmod tempor labore.</p>                                
+                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Technical Support</a></h4>
+                                <p class="p_relative d_block mb_20">Our technical team is well equipped, qualified and experienced to manage hardware and software breakdowns. In case of any event, we are accessible and always ready to support you.</p>                                
                             </div>
                         </div>
                     </div>
@@ -309,11 +303,11 @@ require_once 'db.php';
                             <div class="inner-box p_relative d_block pl_40 pt_50 pr_30 pb_35 b_radius_10 tran_5">
                                 <div class="icon-box p_relative d_iblock mb_30">
                                     <div class="icon p_relative d_iblock fs_50 g_color tran_5"><i class="icon-14"></i></div>
-                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-5.png" alt=""></div>
+                                    <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-3.png" alt=""></div>
                                     <div class="icon-shape hero-shape-four p_absolute w_90 h_70"></div>
                                 </div>
-                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Software  Services</a></h4>
-                                <p class="p_relative d_block mb_20">Lorem ipsum dolor sit elit consectetur sed eiusmod tempor labore.</p>                                
+                                <h4 class="p_relative d_block fs_20 lh_30 fw_sbold mb_20"><a href="service-details.html">Security systems/Surveillance </a></h4>
+                                <p class="p_relative d_block mb_20">We have the expertise to install and service CCTV cameras, biometric and customized security systems. We offer the right system based on your needs and requirements</p>                                
                             </div>
                         </div>
                     </div>
@@ -325,7 +319,7 @@ require_once 'db.php';
 
         <!-- video-one -->
         <section class="video-one p_relative pt_140 pb_150">
-            <div class="bg-layer p_absolute l_0 parallax_none parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/video-bg.jpg);"></div>
+            <div class="bg-layer p_absolute l_0 parallax_none parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/kooltech/complimentary/lenovo.jpg);"></div>
             <div class="pattern-layer">
                 <div class="pattern-1 p_absolute hero-shape-two l_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-13.png);"></div>
                 <div class="pattern-2 p_absolute l_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-14.png);"></div>
@@ -335,13 +329,13 @@ require_once 'db.php';
             <div class="auto-container">
                 <div class="inner-container p_relative d_block">
                     <div class="video-btn p_absolute r_0 z_1">
-                        <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image video-btn p_relative d_iblock w_100 h_100 lh_100 text-center b_radius_50 fs_25" data-caption=""><i class="icon-10"></i></a>
+                        <a href="https://www.youtube.com/watch?v=UeVgwwwKPZg&ab_channel=Lenovo" class="lightbox-image video-btn p_relative d_iblock w_100 h_100 lh_100 text-center b_radius_50 fs_25" data-caption=""><i class="icon-10"></i></a>
                     </div>
                     <div class="content-box p_relative d_block z_1">
-                        <h2 class="p_relative d_block fs_40 lh_50 fw_bold mb_10">Services That Lead The Way To Better Business.</h2>
-                        <p class="fs_17 mb_20">Fruit is their fill meat, hath abundantly place meat don't stars so and which signs third second after seasons under.</p>
+                        <h2 class="p_relative d_block fs_40 lh_50 fw_bold mb_10">Solutions that pave the way into the future with the right products and technology</h2>
+                        <!--<p class="fs_17 mb_20">Explore more</p>-->
                         <div class="btn-box">
-                            <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="theme-btn theme-btn-two lightbox-image"><span data-text="Play Video">Play Video</span></a>
+                            <a href="https://www.youtube.com/watch?v=UeVgwwwKPZg&ab_channel=Lenovo" class="theme-btn theme-btn-two lightbox-image"><span data-text="Play Video">Play Video</span></a>
                         </div>
                     </div>
                 </div>
@@ -364,36 +358,41 @@ require_once 'db.php';
                             <div class="content_block_two">
                                 <div class="content-box p_relative d_block mr_130 z_1">
                                     <div class="sec-title p_relative d_block mb_20">
-                                        <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">CHOOSE Atrix</span>
-                                        <h2 class="p_relative d_block fs_40 fw_bold mb_0">Few Reasons Why You Should Choose Us</h2>
-                                    </div>
-                                    <div class="text p_relative d_block mb_25 wow fadeInUp" data-wow-duration="1500ms">
-                                        <p class="fs_18">Fruit is their fill meat, hath abundantly place meat don't stars.</p>
-                                    </div>
+                                        <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">CHOOSE KOOL TECHWARE</span>
+                                        <h2 class="p_relative d_block fs_40 fw_bold mb_0">Why work with us</h2>
+                                    </div>                                  
                                     <div class="inner-box p_relative d_block wow fadeInUp" data-wow-duration="1500ms">
                                         <div class="single-item p_relative d_block pl_80 mb_16">
                                             <div class="icon-box p_absolute l_0 t_3 w_50 h_50 lh_50 text-center b_radius_50 b_shadow_7">
                                                 <div class="icon p_relative d_iblock g_color"><i class="icon-15"></i></div>
                                                 <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-1.png" alt=""></div>
                                             </div>
-                                            <h4 class="d_block fs_20 lh_30 mb_4">Innovative Business</h4>
-                                            <p class="mb_0">Lorem ipsum dolor sit elit consectetur sed tempor.</p>
+                                            <h4 class="d_block fs_20 lh_30 mb_4">Right Expertise </h4>
+                                            <p class="mb_0">Our team possesses expertise in cutting-edge technologies and frameworks, ensuring we deliver innovative solutions tailored to client needs.</p>
                                         </div>
                                         <div class="single-item p_relative d_block pl_80 mb_16">
                                             <div class="icon-box p_absolute l_0 t_3 w_50 h_50 lh_50 text-center b_radius_50 b_shadow_7">
                                                 <div class="icon p_relative d_iblock g_color"><i class="icon-15"></i></div>
                                                 <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-1.png" alt=""></div>
                                             </div>
-                                            <h4 class="d_block fs_20 lh_30 mb_4">Expert Marketing</h4>
-                                            <p class="mb_0">Lorem ipsum dolor sit elit consectetur sed tempor.</p>
+                                            <h4 class="d_block fs_20 lh_30 mb_4">Product understanding </h4>
+                                            <p class="mb_0">we bring valuable insights and domain knowledge to every project, driving success and client satisfaction.</p>
                                         </div>
                                         <div class="single-item p_relative d_block pl_80">
                                             <div class="icon-box p_absolute l_0 t_3 w_50 h_50 lh_50 text-center b_radius_50 b_shadow_7">
                                                 <div class="icon p_relative d_iblock g_color"><i class="icon-15"></i></div>
                                                 <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-1.png" alt=""></div>
                                             </div>
-                                            <h4 class="d_block fs_20 lh_30 mb_4">Audiance Analysis</h4>
-                                            <p class="mb_0">Lorem ipsum dolor sit elit consectetur sed tempor.</p>
+                                            <h4 class="d_block fs_20 lh_30 mb_4">Resourceful </h4>
+                                            <p class="mb_0">Our team has a deep understanding of our products, their features, and capabilities, allowing us to provide comprehensive solutions to our clients' needs.</p>
+                                        </div>
+                                        <div class="single-item p_relative d_block pl_80">
+                                            <div class="icon-box p_absolute l_0 t_3 w_50 h_50 lh_50 text-center b_radius_50 b_shadow_7">
+                                                <div class="icon p_relative d_iblock g_color"><i class="icon-15"></i></div>
+                                                <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-1.png" alt=""></div>
+                                            </div>
+                                            <h4 class="d_block fs_20 lh_30 mb_4">Industry experience </h4>
+                                            <p class="mb_0">With years of hands-on experience across various industries, we have successfully executed projects in diverse sectors, demonstrating our ability to adapt and excel in any industry landscape.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -429,8 +428,7 @@ require_once 'db.php';
             <div class="auto-container">
                 <div class="sec-title p_relative d_block mb_60">
                     <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Process</span>
-                    <h2 class="p_relative d_block fs_40 fw_bold mb_30">Always Work Done by The <br />Following Process</h2>
-                    <p>Amet consectur adipiscing elit sed eiusmod ex tempor incididunt <br />labore dolore aliquaenim minim veniam.</p>
+                    <h2 class="p_relative d_block fs_40 fw_bold mb_30">Request a Quotation</h2>                   
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 processing-block">
@@ -443,7 +441,6 @@ require_once 'db.php';
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Make Schedule</h4>
-                                <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
                             </div>
                         </div>
                     </div>
@@ -457,7 +454,7 @@ require_once 'db.php';
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Start Discussion</h4>
-                                <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -470,7 +467,7 @@ require_once 'db.php';
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-9.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 mb_15">Enjoy Plan</h4>
-                                <p>Lorem ipsum dolor sit amet adipelit sed eiusmtempor dolore.</p>
+                               
                             </div>
                         </div>
                     </div>
@@ -483,67 +480,14 @@ require_once 'db.php';
         <!-- skills-one -->
         <section class="skills-one p_relative">
             <div class="auto-container">
-                <div class="inner-container p_relative sec-pad">
-                    <div class="section-line">
-                        <div class="line line-1 p_absolute"></div>
-                        <div class="line line-2 p_absolute"></div>
-                        <div class="line line-3 p_absolute"></div>
-                    </div>
-                    <div class="row align-items-center clearfix">
-                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                            <div class="image_block_three">
-                                <div data-animation-box class="image-box p_relative d_block mr_30 pr_190 pt_90">
-                                    <div class="shape parallax-scene parallax-scene-4">
-                                        <div data-depth="0.50" class="shape-1 p_absolute w_65 h_65" style="background-image: url(assets/images/shape/shape-20.png);"></div>
-                                        <div data-depth="0.30" class="shape-2 p_absolute w_95 h_95" style="background-image: url(assets/images/shape/shape-18.png);"></div>
-                                    </div>
-                                    <figure data-animation-text class="overlay-anim-black-bg image image-2 p_absolute t_0 r_0 b_radius_10" data-animation="overlay-animation"><img src="assets/images/resource/skills-2.jpg" alt=""></figure>
-                                    <figure data-animation-text class="overlay-anim-black-bg image image-1 p_relative d_block b_radius_10" data-animation="overlay-animation"><img src="assets/images/resource/skills-1.jpg" alt=""></figure>
-                                    <div class="text p_absolute r_30 b_30 pt_25 pr_70 pl_30 pb_25 z_1">
-                                        <h4 class="p_relative d_block fs_20 lh_30 mb_0">Custom Business Solutions Since 1995.</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="content_block_three">
-                                <div class="content-box p_relative d_block ml_30">
-                                    <div class="sec-title p_relative d_block mb_20">
-                                        <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Expertise</span>
-                                        <h2 class="p_relative d_block fs_40 fw_bold mb_30">Make Your Dream Come True & Great Number</h2>
+                                <div class="content-box p_relative d_block ml_30">                                  
+                                    <div class="sec-title p_relative d_block mb_60 text-center z_1">
+                                     <p ><span style="align-items: center;" class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Brands</span></p>                                        
                                     </div>
-                                    <div class="text p_relative d_block mb_30 wow fadeInUp" data-wow-duration="1500ms">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor.</p>
-                                    </div>
-                                    <div class="progress-inner p_relative d_block wow fadeInUp" data-wow-duration="1500ms">
-                                        <div class="progress-box p_relative d_block mb_35">
-                                            <h6 class="d_block fs_16 lh_20 mb_7">Analysis</h6>
-                                            <div class="bar">
-                                                <div class="bar-inner count-bar" data-percent="95%"></div>
-                                                <div class="count-text p_absolute r_0 b_10 fs_16">95%</div>
-                                            </div>
-                                        </div>
-                                        <div class="progress-box p_relative d_block mb_35">
-                                            <h6 class="d_block fs_16 lh_20 mb_7">SEO Audit</h6>
-                                            <div class="bar">
-                                                <div class="bar-inner count-bar" data-percent="70%"></div>
-                                                <div class="count-text p_absolute r_0 b_10 fs_16">70%</div>
-                                            </div>
-                                        </div>
-                                        <div class="progress-box p_relative d_block">
-                                            <h6 class="d_block fs_16 lh_20 mb_7">Optimization</h6>
-                                            <div class="bar">
-                                                <div class="bar-inner count-bar" data-percent="90%"></div>
-                                                <div class="count-text p_absolute r_0 b_10 fs_16">90%</div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
         <!-- skills-one end -->
 
@@ -559,24 +503,28 @@ require_once 'db.php';
                     </div>
                     <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
                         <div class="clients-logo-box">
-                            <figure class="image"><a href="index.html"><img src="assets/images/clients/clients-logo-1.png" alt=""></a></figure>
-                            <figure class="overlay-image"><a href="index.html"><img src="assets/images/clients/clients-logo-1.png" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L1.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L1.png" alt=""></a></figure>
                         </div>
                         <div class="clients-logo-box">
-                            <figure class="image"><a href="index.html"><img src="assets/images/clients/clients-logo-2.png" alt=""></a></figure>
-                            <figure class="overlay-image"><a href="index.html"><img src="assets/images/clients/clients-logo-2.png" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L2.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L2.png" alt=""></a></figure>
                         </div>
                         <div class="clients-logo-box">
-                            <figure class="image"><a href="index.html"><img src="assets/images/clients/clients-logo-3.png" alt=""></a></figure>
-                            <figure class="overlay-image"><a href="index.html"><img src="assets/images/clients/clients-logo-3.png" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L3.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L3.png" alt=""></a></figure>
                         </div>
                         <div class="clients-logo-box">
-                            <figure class="image"><a href="index.html"><img src="assets/images/clients/clients-logo-4.png" alt=""></a></figure>
-                            <figure class="overlay-image"><a href="index.html"><img src="assets/images/clients/clients-logo-4.png" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L44.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L44.png" alt=""></a></figure>
                         </div>
                         <div class="clients-logo-box">
-                            <figure class="image"><a href="index.html"><img src="assets/images/clients/clients-logo-5.png" alt=""></a></figure>
-                            <figure class="overlay-image"><a href="index.html"><img src="assets/images/clients/clients-logo-5.png" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L5.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L5.png" alt=""></a></figure>
+                        </div>
+                        <div class="clients-logo-box">
+                            <figure class="image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L6.png" alt=""></a></figure>
+                            <figure class="overlay-image"><a href="index.php"><img src="assets/images/kooltech/complimentary/logos/L6.png" alt=""></a></figure>
                         </div>
                     </div>
                 </div>
@@ -595,8 +543,7 @@ require_once 'db.php';
                     </div>
                     <div class="sec-title p_relative d_block mb_60 text-center z_1">
                         <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Testimonials</span>
-                        <h2 class="p_relative d_block fs_40 fw_bold mb_30">Trusted by More Than 3k Clients <br />Around The World</h2>
-                        <p>Amet consectur adipiscing elit sed eiusmod ex tempor incididunt <br />labore dolore aliquaenim minim veniam.</p>
+                        <h2 class="p_relative d_block fs_40 fw_bold mb_30">Hear what our clients have to say!</h2>                     
                     </div>
                     <div class="three-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one">
                         <div class="testimonial-block-one">
@@ -786,8 +733,8 @@ require_once 'db.php';
             </div>
             <div class="auto-container">
                 <div class="inner-box p_relative z_1">
-                    <h2 class="d_block fs_40 fw_bold mb_20">Need Help Finding The best Tech product ?</h2>
-                    <p class="fs_17 mb_35">We help you to archieve Your goals in Technology by providing the best digital services  <br />experiences, and quality Products .</p>
+                    <h2 class="d_block fs_40 fw_bold mb_20">Need help finding the right product? </h2>
+                    <p class="fs_17 mb_35">Allow us to assist you in discovering the perfect product to meet your needs.</p>
                     <a href="contact.php" class="theme-btn theme-btn-two wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms"><span data-text="Get Started">Get Started</span></a>
                 </div>
             </div>
@@ -824,18 +771,18 @@ require_once 'db.php';
                             <div class="news-block-one wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box p_relative d_block b_radius_10 b_shadow_6">
                                     <div class="image-box p_relative d_block">
-                                        <figure class="image p_relative d_block"><a href="blog-details.html"><img src="assets/images/news/news-1.jpg" alt=""></a></figure>
+                                        <figure class="image p_relative d_block"><a href="https://news.lenovo.com/storyhub/company-news/"><img src="assets/images/kooltech/complimentary/logos/lenovo1.jpg" alt=""></a></figure>
                                        
                                     </div>
                                     <div class="lower-content p_relative d_block pt_30 pr_30 pb_40 pl_40">
                                         <ul class="post-info clearfix p_relative d_block mb_5">
-                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="blog-details.html">Ashley Bronks</a></li>
+                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="https://news.lenovo.com/storyhub/company-news/">Lenovo</a></li>
                                             <li class="p_relative d_iblock float_left fs_16">10 mins Read</li>
                                         </ul>
-                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="blog-details.html">Unsatiable Entreaties May Collecting Power.</a></h4>
-                                        <p class="d_block mb_20">Lorem ipsum dolor sit amet consectur adipisicing sed.</p>
+                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="https://news.lenovo.com/storyhub/company-news/">Lenovo Unveils Trailblazing Products and Solutions Designed to Power AI for All at MWC 2024.</a></h4>
+                                        <p class="d_block mb_20">Latest portfolio of innovative PCs, software, proof of concept, and infrastructure solutions and services enable smarter technology for all.</p>
                                         <div class="btn-box">
-                                            <a href="blog-details.html" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
+                                            <a href="https://news.lenovo.com/storyhub/company-news/" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -845,18 +792,18 @@ require_once 'db.php';
                             <div class="news-block-one wow slideInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div class="inner-box p_relative d_block b_radius_10 b_shadow_6">
                                     <div class="image-box p_relative d_block">
-                                        <figure class="image p_relative d_block"><a href="blog-details.html"><img src="assets/images/news/news-2.jpg" alt=""></a></figure>
+                                        <figure class="image p_relative d_block"><a href="https://news.lenovo.com/storyhub/company-news/"><img src="assets/images/kooltech/complimentary/logos/lenovo2.jpg" alt=""></a></figure>
                                         
                                     </div>
                                     <div class="lower-content p_relative d_block pt_30 pr_30 pb_40 pl_40">
                                         <ul class="post-info clearfix p_relative d_block mb_5">
-                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="blog-details.html">Ashley Bronks</a></li>
+                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="https://news.lenovo.com/storyhub/company-news/">Lenovo</a></li>
                                             <li class="p_relative d_iblock float_left fs_16">10 mins Read</li>
                                         </ul>
-                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="blog-details.html">Need Help Finding The Best Solution.</a></h4>
-                                        <p class="d_block mb_20">Lorem ipsum dolor sit amet consectur adipisicing sed.</p>
+                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="https://news.lenovo.com/storyhub/company-news/">Kasper Roersted Joins Lenovo Board of Directors.</a></h4>
+                                        <p class="d_block mb_20">Lenovo announced the appointment of Mr. Kasper Roersted as an independent non-executive director of the company, where he will serve as a member of both the.</p>
                                         <div class="btn-box">
-                                            <a href="blog-details.html" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
+                                            <a href="https://news.lenovo.com/storyhub/company-news/" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -866,18 +813,18 @@ require_once 'db.php';
                             <div class="news-block-one wow slideInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                                 <div class="inner-box p_relative d_block b_radius_10 b_shadow_6">
                                     <div class="image-box p_relative d_block">
-                                        <figure class="image p_relative d_block"><a href="blog-details.html"><img src="assets/images/news/news-3.jpg" alt=""></a></figure>
+                                        <figure class="image p_relative d_block"><a href="https://news.lenovo.com/storyhub/company-news/"><img src="assets/images/kooltech/complimentary/logos/lenovo3.png" alt=""></a></figure>
                                         
                                     </div>
                                     <div class="lower-content p_relative d_block pt_30 pr_30 pb_40 pl_40">
                                         <ul class="post-info clearfix p_relative d_block mb_5">
-                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="blog-details.html">Ashley Bronks</a></li>
+                                            <li class="p_relative d_iblock float_left mr_30 fs_16"><a href="https://news.lenovo.com/storyhub/company-news/">Lenovo</a></li>
                                             <li class="p_relative d_iblock float_left fs_16">10 mins Read</li>
                                         </ul>
-                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="blog-details.html">Make Your Dream Come True & Great Number</a></h4>
-                                        <p class="d_block mb_20">Lorem ipsum dolor sit amet consectur adipisicing sed.</p>
+                                        <h4 class="d_block fs_20 lh_30 mb_15"><a href="blog-details.html">Lenovo resumes year-on-year revenue growth </a></h4>
+                                        <p class="d_block mb_20">Lenovo announced third quarter results, achieveing year-on-year growth and seizing AI opportunities..</p>
                                         <div class="btn-box">
-                                            <a href="blog-details.html" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
+                                            <a href="https://news.lenovo.com/storyhub/company-news/" class="theme-btn theme-btn-two"><span data-text="Learn More">Learn More</span></a>
                                         </div>
                                     </div>
                                 </div>

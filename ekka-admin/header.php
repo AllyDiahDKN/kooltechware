@@ -3,7 +3,7 @@
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.php" title="Ekka">
+					<a href="index.php" title="Kool Techware">
 						<img class="ec-brand-icon" src="assets/img/logo/ec-site-logo.png" alt="" />
 						<span class="ec-brand-name text-truncate">Kool Techware</span>
 					</a>

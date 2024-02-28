@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Query to check if the user exists in the admin table and is active
-    $query = "SELECT * FROM admin WHERE email = ? AND activation = 'active'";
+    $query = "SELECT * FROM admin WHERE email = ?";
     $stmt = $conn->prepare($query);
 
     if ($stmt) {
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-		<title>Ekka - Admin Dashboard HTML Template.</title>
+		<title>Admin Dashboard.</title>
 		
 		<!-- GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Sign in button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
             <!-- Sign up link -->
-            <p class="sign-upp">Don't have an account yet ? <a class="text-blue" href="sign-up.html">Sign Up</a></p>
+            <p class="sign-upp">Don't have an account yet ? <a class="text-blue" href="sign-up.php">Sign Up</a></p>
         </div>
     </div>
 </form>
