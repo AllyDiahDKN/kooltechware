@@ -8,12 +8,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit();
 }
 
-// Include your database connection file
+// This is the connection file 
 require_once '../db.php';
+
+$error = ''; // Initialize error variable
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $username = $_POST['email'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     // Query to check if the user exists in the admin table and is active
@@ -21,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($query);
 
     if ($stmt) {
-        $stmt->bind_param("s", $username);
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -34,23 +36,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $hashedPassword)) {
                 // Authentication successful, set session variables
                 $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['permission_type'] = $row['permission_type'];
+                $_SESSION['username'] = $row['email']; // Store email as username
 
-                // Redirect based on permission type
-                if ($row['permission_type'] === 'admin') {
-                    header("Location: index.php");
-                } else {
-                    header("Location: index.php");
-                }
+                // Redirect to the dashboard or home page
+                header("Location: index.php");
                 exit();
             } else {
                 // Invalid password
-                $error = "Invalid username or password.";
+                $error = "Invalid email or password.";
             }
         } else {
             // User not found
-            $error = "Invalid username or password.";
+            $error = "Invalid email or password.";
         }
     } else {
         // Error preparing statement
@@ -106,10 +103,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="alert alert-danger" role="alert"><?php echo $error; ?></div>
     <?php endif; ?>
         <div class="form-group col-md-12 mb-4">
-            <input type="email" class="form-control" name="email" placeholder="Username" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email " required>
         </div>
         <div class="form-group col-md-12">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
         </div>
         <div class="col-md-12">
             <!-- Remember me checkbox -->
@@ -147,5 +144,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<script src="assets/js/ekka.js"></script>
 	</body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 09:55:21 GMT -->
 </html>
