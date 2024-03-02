@@ -8,10 +8,13 @@ require_once 'db.php';
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+
+<title>Kool techware | Shop</title>
     <?php include 'meta_tags.php'; ?>
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon-11.ico" type="image/x-icon">
+<link rel="icon" href="assets/images/favicon1.png" type="image/x-icon">
+<link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -35,43 +38,14 @@ require_once 'db.php';
 <body>
 
     <div class="boxed_wrapper">
-
-
         <!-- mouse-pointer -->
         <div class="mouse-pointer display_none" id="mouse-pointer">
             <div class="icon"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>
         </div>
         <!-- mouse-pointer end -->
 
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close">x</div>
-                <div id="handle-preloader" class="handle-preloader home-11">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
-                            </span>
-                            <span data-text-preloader="r" class="letters-loading">
-                                r
-                            </span>
-                            <span data-text-preloader="i" class="letters-loading">
-                                i
-                            </span>
-                            <span data-text-preloader="x" class="letters-loading">
-                                x
-                            </span>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
+
+
 
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -108,12 +82,12 @@ require_once 'db.php';
                     <div class="sidebar-textwidget">
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo-8.png" alt="" /></a>
-                                </div>
+                                
                                 <div class="text-box">
-                                    <h4>About Atrix</h4>
-                                    <p>Lorem ipsum dolor amet consectetur adipisicing  sed do eiusmod tempor incididunt labore magna aliqua enim minim veniam nostrud exercitation aboris nis aliquip exeo.</p>
+                                    <h4>Kool Techware</h4>
+                                    <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
+                                            solutions, we're committed to helping businesses thrive with cutting-edge ICT
+                                            services.</p>
                                 </div>
                                 <div class="info-inner">
                                     <h4>Find Us Our Location</h4>
@@ -126,9 +100,8 @@ require_once 'db.php';
                                 <div class="social-inner">
                                     <h4>Follow Us On</h4>
                                     <ul class="social-links clearfix">
-                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>                                       
+                                        <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
                                         <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
@@ -150,7 +123,7 @@ require_once 'db.php';
             <div class="close-btn"><i class="fas fa-times"></i></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="assets/images/kooltech/logo1.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -162,11 +135,10 @@ require_once 'db.php';
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                      
+                        <li><a href=""><span class="fab fa-facebook-square"></span></a></li>                      
+                        <li><a href=""><span class="fab fa-instagram"></span></a></li>
+                        <li><a href=""><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -184,7 +156,7 @@ require_once 'db.php';
                 <div class="content-box">
                     <h1 class="d_block fs_60 lh_70 fw_bold mb_10">Shop Page</h1>
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
-                        <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.html">Home</a></li>
+                        <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.php">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20">Shop</li>
                         <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Page 1</li>
                     </ul>
@@ -201,7 +173,7 @@ require_once 'db.php';
                     <div class="col-lg-3 col-md-12 cols-sm-12 sidebar-side">
                         <div class="shop-sidebar">
                             <div class="search-widget sidebar-widget p_relative d_block pb_40 mb_25">
-                                <form action="https://html.tonatheme.com/2023/atrix/shop.html" method="post" class="search-form">
+                                <form action="" method="post" class="search-form">
                                     <div class="form-group p_relative m_0">
                                         <input type="search" name="search-field" placeholder="Search" required>
                                         <button type="submit"><i class="icon-1"></i></button>
