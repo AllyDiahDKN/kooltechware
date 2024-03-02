@@ -9,7 +9,7 @@ require_once '../db.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard eCommerce HTML Template.">
 
-	<title>Ekka - Admin Dashboard eCommerce HTML Template.</title>
+	<title>Admin Dashboard</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -44,7 +44,7 @@ require_once '../db.php';
 							<div class="card card-mini dash-card card-1">
 								<div class="card-body">
 									  <?php
-$sql = "SELECT COUNT(*) as total_users FROM user WHERE activation = 'active'";
+$sql = "SELECT COUNT(*) as total_users FROM users ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
@@ -760,7 +760,7 @@ if ($result->num_rows > 0) {
 				<div class="copyright bg-white">
 					<p>
 						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
+						href="" target="_blank"> Admin Dashboard</a>. All Rights Reserved.
 					  </p>
 				</div>
 			</footer>
@@ -794,7 +794,4 @@ if ($result->num_rows > 0) {
 	<!-- Ekka Custom -->
 	<script src="assets/js/ekka.js"></script>
 </body>
-
-
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 09:55:01 GMT -->
 </html>

@@ -3,7 +3,7 @@
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.php" title="Ekka">
+					<a href="index.php" title="Kool Techware">
 						<img class="ec-brand-icon" src="assets/img/logo/ec-site-logo.png" alt="" />
 						<span class="ec-brand-name text-truncate">Kool Techware</span>
 					</a>
@@ -31,18 +31,7 @@
 								<ul class="sub-menu" id="users" data-parent="#sidebar-menu">
 									<li>
 										<a class="sidenav-item-link" href="admin-list.php">
-											<span class="nav-text">Admin list</span>
-										</a>
-									</li>
-
-									<li class="active">
-										<a class="sidenav-item-link" href="user-list.php">
-											<span class="nav-text">Sellers List</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="customer-list.php">
-											<span class="nav-text">Customer List</span>
+											<span class="nav-text">Admin</span>
 										</a>
 									</li>
 								</ul>
@@ -59,8 +48,8 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="main-category.php">
-											<span class="nav-text">Main Category</span>
+										<a class="sidenav-item-link" href="category.php">
+											<span class="nav-text">Category</span>
 										</a>
 									</li>
 								</ul>
@@ -82,17 +71,7 @@
 									</li>
 									<li class="">
 										<a class="sidenav-item-link" href="product-list.php">
-											<span class="nav-text">List Product</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="product-grid.html">
-											<span class="nav-text">Grid Product</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="product-detail.html">
-											<span class="nav-text">Product Detail</span>
+											<span class="nav-text">All Product</span>
 										</a>
 									</li>
 								</ul>
@@ -103,55 +82,19 @@
 						<li class="has-sub">
 							<a class="sidenav-item-link" href="javascript:void(0)">
 								<i class="mdi mdi-cart"></i>
-								<span class="nav-text">Orders</span> <b class="caret"></b>
+								<span class="nav-text">Requests</span> <b class="caret"></b>
 							</a>
 							<div class="collapse">
 								<ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
-									<li class="">
-										<a class="sidenav-item-link" href="new-order.html">
-											<span class="nav-text">New Order</span>
-										</a>
-									</li>
+									
 									<li class="">
 										<a class="sidenav-item-link" href="order-history.php">
-											<span class="nav-text">Order History</span>
+											<span class="nav-text">All Requests</span>
 										</a>
 									</li>
 									<li class="">
 										<a class="sidenav-item-link" href="order-detail.html">
-											<span class="nav-text">Order Detail</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="invoice.html">
-											<span class="nav-text">Invoice</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-<!-- Vendors -->
-						<li class="has-sub">
-							<a class="sidenav-item-link" href="javascript:void(0)">
-								<i class="mdi mdi-account-group-outline"></i>
-								<span class="nav-text">Commission</span> <b class="caret"></b>
-							</a>
-							<div class="collapse">
-								<ul class="sub-menu" id="vendors" data-parent="#sidebar-menu">
-									<li class="">
-										<a class="sidenav-item-link" href="vendor-card.html">
-											<span class="nav-text">Vendor Grid</span>
-										</a>
-									</li>
-
-									<li class="">
-										<a class="sidenav-item-link" href="commission.php">
-											<span class="nav-text">All Paid Commissison</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="vendor-profile.html">
-											<span class="nav-text">Vendors Profile</span>
+											<span class="nav-text">Quotes Sent</span>
 										</a>
 									</li>
 								</ul>
@@ -160,75 +103,11 @@
 
 						<!-- Brands -->
 						<li>
-							<a class="sidenav-item-link" href="brand-list.html">
+							<a class="sidenav-item-link" href="brand.php">
 								<i class="mdi mdi-tag-faces"></i>
 								<span class="nav-text">Brands</span>
 							</a>
 							<hr>
-						</li>
-
-						<!-- Authentication -->
-						<li class="has-sub">
-							<a class="sidenav-item-link" href="javascript:void(0)">
-								<i class="mdi mdi-login"></i>
-								<span class="nav-text">Authentication</span> <b class="caret"></b>
-							</a>
-							<div class="collapse">
-								<ul class="sub-menu" id="authentication" data-parent="#sidebar-menu">
-									<li class="">
-										<a href="sign-in.html">
-											<span class="nav-text">Sign In</span>
-										</a>
-									</li>
-									<li class="">
-										<a href="sign-up.html">
-											<span class="nav-text">Sign Up</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<!-- Icons -->
-						<li class="has-sub">
-							<a class="sidenav-item-link" href="javascript:void(0)">
-								<i class="mdi mdi-diamond-stone"></i>
-								<span class="nav-text">Icons</span> <b class="caret"></b>
-							</a>
-							<div class="collapse">
-								<ul class="sub-menu" id="icons" data-parent="#sidebar-menu">
-									<li class="">
-										<a class="sidenav-item-link" href="material-icon.html">
-											<span class="nav-text">Material Icon</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="font-awsome-icons.html">
-											<span class="nav-text">Font Awsome Icon</span>
-										</a>
-									</li>
-									<li class="">
-										<a class="sidenav-item-link" href="flag-icon.html">
-											<span class="nav-text">Flag Icon</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<!-- Other Pages -->
-						<li class="has-sub">
-							<a class="sidenav-item-link" href="javascript:void(0)">
-								<i class="mdi mdi-image-filter-none"></i>
-								<span class="nav-text">Other Pages</span> <b class="caret"></b>
-							</a>
-							<div class="collapse">
-								<ul class="sub-menu" id="otherpages" data-parent="#sidebar-menu">
-									<li class="has-sub">
-										<a href="404.html">404 Page</a>
-									</li>
-								</ul>
-							</div>
 						</li>
 					</ul>
 				</div>

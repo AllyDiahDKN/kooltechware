@@ -147,6 +147,7 @@ if (mysqli_num_rows($result) > 0) {
 	<script src="assets/plugins/simplebar/simplebar.min.js"></script>
 	<script src="assets/plugins/jquery-zoom/jquery.zoom.min.js"></script>
 	<script src="assets/plugins/slick/slick.min.js"></script>
+	
 	<script type="text/javascript">
 $(document).ready(function() {
     $('.btn-outline-warning').click(function() {
@@ -156,6 +157,29 @@ $(document).ready(function() {
         // Send an AJAX request to update the product availability
         $.ajax({
             url: 'update_product_availability.php',
+            type: 'POST',
+            data: { product_id: productId },
+            success: function(response) {
+                // Reload the page or update the UI as needed
+                location.reload();
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', error);
+            }
+        });
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.btn-outline-danger').click(function() {
+        // Get the product ID from the data attribute
+        var productId = $(this).data('product-id');
+        
+        // Send an AJAX request to update the product availability
+        $.ajax({
+            url: 'update_product_show.php',
             type: 'POST',
             data: { product_id: productId },
             success: function(response) {

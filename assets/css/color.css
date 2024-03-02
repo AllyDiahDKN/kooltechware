@@ -3258,52 +3258,52 @@
 }
 
 .product-details-content .image-box .preview-link a:hover{
-  background: #e35712;
+  background: #38328A;
 }
 
 .product-details-content .product-details .rating li a:hover{
-  color: #e35712;
+  color: #38328A;
 }
 
 .product-details-content .product-details .addto-cart-box .clearfix li a:hover{
-  background: #e35712;
-  border-color: #e35712;
+  background: #38328A;
+  border-color:#38328A;
 }
 
 .product-details-content .product-details .other-option .list li a:hover{
-	color: #e35712;
+	color: #38328A;
 }
 
 .shop-details .product-discription .comment-form input:focus,
 .shop-details .product-discription .comment-form textarea:focus{
-	border-color: #e35712 !important;
+	border-color: #38328A !important;
 }
 
 .shop-details .product-discription .check-box input:checked + label:before{
-  background: #e35712;
-  border-color: #e35712;
+  background: #38328A;
+  border-color: #38328A;
 }
 
 .product-details-content .bxslider .thumb-box li a.active{
-	border-color: #e35712;
+	border-color: #38328A;
 }
 
 .cart-section .cart-table tbody tr .prod-column .column-box .remove-btn:hover{
-  background: #e35712;
+  background: #38328A;
 }
 
 .cart-section .othre-content .coupon-box input:focus{
-	border-color: #e35712 !important;
+	border-color:#38328A !important;
 }
 
 .cart-section .othre-content .coupon-box input:focus + button,
 .cart-section .othre-content .coupon-box button:hover{
-	background: #e35712;
+	background: #38328A;
 }
 
 .cart-section .othre-content .update-btn button:hover{
   background: #e35712;
-  border-color: #e35712;
+  border-color:#38328A;
 }
 
 .checkout-section .coupon-box a{
@@ -3311,11 +3311,11 @@
 }
 
 .checkout-section .billing-form .form-group input:focus{
-	border-color: #e35712 !important;
+	border-color: #38328A !important;
 }
 
 .checkout-section .billing-form .check-box input:checked + label:before{
-	background: #e35712;
+	background: #38328A;
   border-color: #e35712;
 }
 
