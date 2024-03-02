@@ -475,7 +475,24 @@ require_once 'db.php';
             </div>
         </section>
         <!-- process-one end -->
-
+        <!-- cta-one -->
+        <section class="cta-one p_relative pt_130 pb_140 centred">
+            <div class="bg-layer p_absolute l_0 parallax_none parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/cta-bg.jpg);"></div>
+            <div class="shape">
+                <div class="shape-1 hero-shape-three p_absolute z_1"></div>
+                <div class="shape-2 p_absolute l_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-26.png);"></div>
+                <div class="shape-3 hero-shape-three p_absolute z_1"></div>
+                <div class="shape-4 p_absolute t_0 r_0 z_1" style="background-image: url(assets/images/shape/shape-16.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="inner-box p_relative z_1">
+                    <h2 class="d_block fs_40 fw_bold mb_20">Need help finding the right product? </h2>
+                    <p class="fs_17 mb_35">Allow us to assist you in discovering the perfect product to meet your needs.</p>
+                    <a href="contact.php" class="theme-btn theme-btn-two wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms"><span data-text="Get Started">Get Started</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- cta-one end -->
 
         <!-- skills-one -->
         <section class="skills-one p_relative">
@@ -483,7 +500,7 @@ require_once 'db.php';
                             <div class="content_block_three">
                                 <div class="content-box p_relative d_block ml_30">                                  
                                     <div class="sec-title p_relative d_block mb_60 text-center z_1">
-                                     <p ><span style="align-items: center;" class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Brands</span></p>                                        
+                                     <p ><span style="align-items: center;"  class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Brands</span></p>                                        
                                     </div>
                                         </div>
                                     </div>
@@ -530,219 +547,8 @@ require_once 'db.php';
                 </div>
             </div>
         </section>
-        <!-- clients-one end -->
-
-        <!-- testimonial-one -->
-        <section class="testimonial-one p_relative">
-            <div class="auto-container">
-                <div class="inner-container p_relative pt_150 pb_140">
-                    <div class="section-line">
-                        <div class="line line-1 p_absolute"></div>
-                        <div class="line line-2 p_absolute"></div>
-                        <div class="line line-3 p_absolute"></div>
-                    </div>
-                    <div class="sec-title p_relative d_block mb_60 text-center z_1">
-                        <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Testimonials</span>
-                        <h2 class="p_relative d_block fs_40 fw_bold mb_30">Hear what our clients have to say!</h2>                     
-                    </div>
-                    <div class="three-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-1.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Kevin Spacey</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit dicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix unde omnis iste natus error sit voluptatem accusantium doloreque laudantum.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-2.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Nicolas Lawson</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor quis incididunt enim.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-3.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Keanu Reeves</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-1.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Kevin Spacey</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit dicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix unde omnis iste natus error sit voluptatem accusantium doloreque laudantum.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-2.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Nicolas Lawson</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor quis incididunt enim.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-3.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Keanu Reeves</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-1.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Kevin Spacey</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit dicing elit sed do usmod tempor ux incididunt enim ad minim veniam quis nostrud exer citation laboris nis aliquip comodo perspiatix unde omnis iste natus error sit voluptatem accusantium doloreque laudantum.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-2.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Nicolas Lawson</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-block-one">
-                            <div class="inner-box p_relative d_block">
-                                <div class="text p_relative d_block b_radius_10 pt_35 pr_40 pb_40 pl_40 mb_30">
-                                    <ul class="rating clearfix p_relative d_block mb_15">
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16 mr_5"><i class="icon-20"></i></li>
-                                        <li class="p_relative d_iblock pull-left fs_16"><i class="icon-20"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor amet consectur elit adicing elit sed do usmod tempor quis incididunt enim.</p>
-                                </div>
-                                <div class="author p_relative d_block pl_90 pt_7 pb_11 ml_20">
-                                    <figure class="thumb-box p_absolute l_0 t_0 w_70 h_70 b_radius_50"><img src="assets/images/resource/testimonial-3.png" alt=""></figure>
-                                    <h4 class="d_block fs_20 lh_30 mb_2">Keanu Reeves</h4>
-                                    <span class="designation p_relative d_block fs_16 lh_20">Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- testimonial-one -->
-        <!-- cta-one -->
-        <section class="cta-one p_relative pt_130 pb_140 centred">
-            <div class="bg-layer p_absolute l_0 parallax_none parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/cta-bg.jpg);"></div>
-            <div class="shape">
-                <div class="shape-1 hero-shape-three p_absolute z_1"></div>
-                <div class="shape-2 p_absolute l_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-26.png);"></div>
-                <div class="shape-3 hero-shape-three p_absolute z_1"></div>
-                <div class="shape-4 p_absolute t_0 r_0 z_1" style="background-image: url(assets/images/shape/shape-16.png);"></div>
-            </div>
-            <div class="auto-container">
-                <div class="inner-box p_relative z_1">
-                    <h2 class="d_block fs_40 fw_bold mb_20">Need help finding the right product? </h2>
-                    <p class="fs_17 mb_35">Allow us to assist you in discovering the perfect product to meet your needs.</p>
-                    <a href="contact.php" class="theme-btn theme-btn-two wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms"><span data-text="Get Started">Get Started</span></a>
-                </div>
-            </div>
-        </section>
-        <!-- cta-one end -->
-
-
-        <!-- news-one -->
+        <!-- clients-one end --> 
+                <!-- news-one -->
         <section class="news-one p_relative">
             <div class="auto-container">
                 <div class="inner-container p_relative sec-pad">
@@ -755,7 +561,7 @@ require_once 'db.php';
                         <div class="row align-items-center clearfix">
                             <div class="col-lg-6 col-md-12 col-sm-12 title-column">
                                 <div class="sec-title p_relative d_block mb_20">
-                                    <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19">Article</span>
+                                    <span class="sub-title p_relative d_iblock fs_15 fw_medium g_color mb_19" style="align-items: center;">Article</span>
                                     <h2 class="p_relative d_block fs_40 fw_bold mb_0">Latest Articles</h2>
                                 </div>
                             </div>

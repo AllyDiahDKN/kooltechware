@@ -190,7 +190,7 @@
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-134.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 fw_sbold mb_7">Company Email</h4>
-                                <p class="font_family_poppins"><a href="mailto:kb@kooltechware.co.tz">kb@kooltechware.co.tz</a><br /><a href="mailto:example@gmail.com">example@gmail.com</a></p>
+                                <p class="font_family_poppins"><a href="mailto:kb@kooltechware.co.tz">kb@kooltechware.co.tz</a><br /></p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                                     <div class="icon-img hidden-icon"><img src="assets/images/icons/hid-icon-135.png" alt=""></div>
                                 </div>
                                 <h4 class="d_block fs_20 lh_30 fw_sbold mb_7">Contact Us</h4>
-                                <p class="font_family_poppins"><a href="tel:255 785 252 525">+255 785 252 525</a><br /><a href="tel:11165458856">+(111)65-458-856</a></p>
+                                <p class="font_family_poppins"><a href="tel:255 785 252 525">+255 785 252 525</a><br /></p>
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, $_POST['email']) : '';
     $password = isset($_POST['password']) ? mysqli_real_escape_string($conn, $_POST['password']) : '';
 
-    $table_name = "admin"; // Table name should be defined
+    $table_name = "admin"; 
+    // Hash the password before storing it in the database
+    $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : '';
 
     $sql = "INSERT INTO $table_name (fname, lname, email, password) VALUES (?, ?, ?, ?)";
 
@@ -75,23 +77,23 @@ mysqli_close($conn);
             <form action="" method="post" >
               <div class="row">
                 <div class="form-group col-md-12 mb-4">
-                  <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name"> <!-- Added name attribute -->
+                  <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name"> 
                 </div>
                 <div class="form-group col-md-12 mb-4">
-                  <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name"> <!-- Added name attribute -->
+                  <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name"> 
                 </div>
 
                 <div class="form-group col-md-12 mb-4">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Username-Email"> <!-- Added name attribute -->
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Username-Email"> 
                 </div>
 
                 <div class="form-group col-md-12 ">
-                  <input type="password" class="form-control" name="password" id="password" placeholder="Password"> <!-- Added name attribute -->
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Password"> 
                 </div>
 
-                <div class="form-group col-md-12 ">
-                  <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password"> <!-- Added name attribute -->
-                </div>
+               <!-- <div class="form-group col-md-12 ">
+                  <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password"> 
+                </div>-->
                 <div class="col-md-12">          
                   <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
                   <p class="sign-upp">Already have an account?
