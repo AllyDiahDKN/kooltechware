@@ -9,31 +9,23 @@
                     <div class="sidebar-textwidget">
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo-8.png" alt="" /></a>
-                                </div>
-                                <div class="text-box">
-                                    <h4>About Atrix</h4>
-                                    <p>Lorem ipsum dolor amet consectetur adipisicing  sed do eiusmod tempor incididunt labore magna aliqua enim minim veniam nostrud exercitation aboris nis aliquip exeo.</p>
-                                </div>
+                              
                                 <div class="info-inner">
-                                    <h4>Find Us Our Location</h4>
+                                    <h4>Products Selected for Quote</h4>
                                     <ul class="info clearfix">
-                                        <li><i class="icon-180"></i>629 12th St, Modesto, CA 95354 United States</li>
-                                        <li><i class="icon-181"></i><a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
-                                        <li><i class="icon-182"></i><a href="tel:123045615523">+1 (230)-456-155-23</a></li>
-                                    </ul>
-                                </div>
-                                <div class="social-inner">
-                                    <h4>Follow Us On</h4>
-                                    <ul class="social-links clearfix">
-                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><img src="assets/images/logo-8.png"> <a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
+                                        <hr>
+                                      <li><img src="assets/images/logo-8.png"> <a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
+                                        <hr>
+
                                     </ul>
                                 </div>
                             </div>
+                             <div class="addto-cart-box p_relative d_block mb_35"> 
+                                    <ul class="clearfix">
+                                        <li class="p_relative d_block float_left mr_10"><button type="button" class="theme-btn theme-btn-eight">Request for Quote</button></li>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -171,11 +163,16 @@ if ($categoryResult) {
                                         </li>
                  
                                         <li><a href="contact.php">Contact</a></li>                                         
-                                        <li> <a href="shop.php" ><i class="icon-140"></i></a></li>
-                                      
+<!--                                         <li> <a href="shop.php" ><i class="icon-140"></i></a></li>
+ -->                                      
                                     </ul>
                                 </div>
                             </nav>
+                        </div>
+                        <div class="nav-right">
+                            <div class="nav-btn nav-toggler navSidebar-button clearfix">
+                                <i class="icon-140"></i>
+                            </div>
                         </div>
                      
                     </div>
