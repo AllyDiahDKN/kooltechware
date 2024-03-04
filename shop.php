@@ -300,7 +300,7 @@ if ($productResult) {
         echo '</ul>';
         echo '</div>';
         echo '<div class="lower-content p_relative d_block pt_3 pr_20 pb_20 pl_20">';
-        echo '<h6 class="d_block fs_15 lh_20 mb_4"><a href="shop-details.html" class="d_iblock color_black">' . $product['ProductName'] . '</a></h6>';
+        echo '<h6 class="d_block fs_15 lh_20 mb_4"><a href="shop-details.php?id='.$product['ProductID'].'" class="d_iblock color_black">' . $product['ProductName'] . '</a></h6>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
