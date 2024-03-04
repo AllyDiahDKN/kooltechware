@@ -1,5 +1,20 @@
 <?php 
 require_once 'db.php';
+
+// Step 1: Check if a cookie exists
+if(isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+} else {
+    // Step 2: Generate a unique ID
+    $user_id = uniqid('user_'); // You can use any method to generate a unique ID
+    
+    // Step 3: Save the ID in a cookie
+    setcookie('user_id', $user_id, time() + (86400 * 7), "/"); // Cookie valid for 7 days
+    
+    // Prepare and execute SQL statement to insert the user ID into the database
+    $sql = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,49 +79,6 @@ require_once 'db.php';
                 </div>
             </div>
         </div>
-
-
-        <!-- sidebar cart item -->
-        <div class="xs-sidebar-group info-group info-sidebar">
-            <div class="xs-overlay xs-bg-black"></div>
-            <div class="xs-sidebar-widget">
-                <div class="sidebar-widget-container">
-                    <div class="widget-heading">
-                        <a href="#" class="close-side-widget"><i class="icon-179"></i></a>
-                    </div>
-                    <div class="sidebar-textwidget">
-                        <div class="sidebar-info-contents">
-                            <div class="content-inner">
-                                
-                                <div class="text-box">
-                                    <h4>Kool Techware</h4>
-                                    <p>We're passionate about providing exceptional value to our clients. From high quality products and competitive prices to personalized support and innovative
-                                            solutions, we're committed to helping businesses thrive with cutting-edge ICT
-                                            services.</p>
-                                </div>
-                                <div class="info-inner">
-                                    <h4>Find Us Our Location</h4>
-                                    <ul class="info clearfix">
-                                        <li><i class="icon-180"></i>629 12th St, Modesto, CA 95354 United States</li>
-                                        <li><i class="icon-181"></i><a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
-                                        <li><i class="icon-182"></i><a href="tel:123045615523">+1 (230)-456-155-23</a></li>
-                                    </ul>
-                                </div>
-                                <div class="social-inner">
-                                    <h4>Follow Us On</h4>
-                                    <ul class="social-links clearfix">
-                                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>                                       
-                                        <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END sidebar widget item -->
 
         <!-- main header -->
         <?php include 'header.php';?>
@@ -294,9 +266,8 @@ if ($productResult) {
 
         echo '<figure class="image p_relative d_block"><img src="assets/images/shop/' . $product['ImageURL'] . '" alt=""></figure>';
         echo '<ul class="option-list clearfix">';
-        echo '<li><a href="assets/images/shop/' . $product['ImageURL'] . '" class="lightbox-image"><i class="icon-156"></i></a></li>';
-        echo '<li><a href="shop-details.php"><i class="icon-78"></i></a></li>';
-        echo '<li><a href="shop-details.php"><i class="icon-140"></i></a></li>';
+        echo '<li><a href="shop-details.php?id='.$product['ProductID'].'" class="lightbox-image"><i class="icon-183"></i></a></li>';
+echo '<li><a href="add-to-cart.php?ProductID='.$product['ProductID'].'"><i class="icon-150"></i></a></li>';
         echo '</ul>';
         echo '</div>';
         echo '<div class="lower-content p_relative d_block pt_3 pr_20 pb_20 pl_20">';

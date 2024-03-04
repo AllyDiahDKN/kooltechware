@@ -13,10 +13,49 @@
                                 <div class="info-inner">
                                     <h4>Products Selected for Quote</h4>
                                     <ul class="info clearfix">
-                                        <li><img src="assets/images/logo-8.png"> <a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
-                                        <hr>
-                                      <li><img src="assets/images/logo-8.png"> <a href="mailto:atrixmain@gmail.com">atrixmain@gmail.com</a></li>
-                                        <hr>
+  <?php
+// Get the user_id from the cookie or session
+$user_id = $_COOKIE['user_id']; // Assuming you have stored user_id in a cookie
+
+// Fetch products from the cart table for the specific user
+$sql = "SELECT cart.*, products.ProductName, images.ImageURL FROM cart 
+        INNER JOIN products ON cart.ProductID = products.ProductID 
+        INNER JOIN images ON products.ProductID = images.ProductID 
+        WHERE cart.UserID = '$user_id' AND images.main = 1";
+$result = mysqli_query($conn, $sql);
+
+if (!$result) {
+    // Query execution failed, print error message
+    echo "Error: " . mysqli_error($conn);
+} else {
+    // Query execution succeeded, check if there are rows in the result set
+    if (mysqli_num_rows($result) > 0) {
+    // Output each product
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="row">';
+         echo '<div class="col-md-12 text-right">';
+        echo '<p><a class="btn" href="remove-from-cart.php?id=' . $row['CartID'] . '"><font color="red"> X </font></a></p>';
+        echo '</div>';
+        echo '<div class="col-md-4">';
+        echo '<img src="assets/images/shop/' . $row['ImageURL'] . '" alt="' . $row['ProductName'] . '">';
+        echo '</div>';
+        echo '<div class="col-md-8">';
+        echo '<p>' . $row['ProductName'] . '</p>';
+        echo '</div>';
+       
+        echo '</div>';
+        echo '<hr>';
+    }
+} else {
+    // No products in the cart
+    echo '<p>No products in the cart</p>';
+}
+}
+
+?>
+
+
+                                         
 
                                     </ul>
                                 </div>
