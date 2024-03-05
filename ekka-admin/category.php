@@ -94,8 +94,8 @@ echo '<td>
 			</button>
 
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Edit</a>
-				<a class="dropdown-item" href="#">Delete</a>
+				<a class="dropdown-item" href="category.php">Edit</a>
+				<a class="dropdown-item" href="deleted_category.php?category_id='.$row['CategoryID'].'" name="Delete" id="CategoryDelete">Delete</a>
 			</div>
 		</div>
 	</td>';
@@ -115,66 +115,36 @@ echo '<td>
 						</div>
 					</div>
 					<!-- Add User Modal  -->
+					<!-- Add Category Modal -->
 					<div class="modal fade modal-add-contact" id="addUser" tabindex="-1" role="dialog"
 						aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 							<div class="modal-content">
-								<form>
+								<form action="save_category.php" method="post">
 									<div class="modal-header px-4">
-										<h5 class="modal-title" id="exampleModalCenterTitle">Add Commission</h5>
+										<h5 class="modal-title" id="exampleModalCenterTitle">Add Category</h5>
 									</div>
 
 									<div class="modal-body px-4">
 										<div class="row mb-2">
 											<div class="col-lg-6">
 												<div class="form-group">
-													<label for="firstName">Choose Seller</label>
-													<input type="text" class="form-control" id="firstName" value="John">
+													<label for="CategoryName">Enter Category Name:</label>
+													<input type="text" class="form-control" id="CategoryName" name="CategoryName" placeholder="Category Name">
 												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group">
-													<label for="lastName">Paid Through</label>
-													<input type="text" class="form-control" id="lastName" value="Deo">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="userName">To</label>
-													<input type="text" class="form-control" id="userName"
-														value="johndoe">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="email">Amount</label>
-													<input type="email" class="form-control" id="email"
-														value="johnexample@gmail.com">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="event">Reference</label>
-													<input type="text" class="form-control" id="event"
-														value="Address here">
-												</div>
-											</div>
+											</div>											
 										</div>
 									</div>
 
 									<div class="modal-footer px-4">
-										<button type="button" class="btn btn-secondary btn-pill"
-											data-bs-dismiss="modal">Cancel</button>
-										<button type="button" class="btn btn-primary btn-pill">Save Contact</button>
+										<button type="button" class="btn btn-secondary btn-pill" data-bs-dismiss="modal">Cancel</button>
+										<button type="submit" class="btn btn-primary btn-pill" name="saveCategory">Save Category</button>
 									</div>
 								</form>
 							</div>
 						</div>
 					</div>
+
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 

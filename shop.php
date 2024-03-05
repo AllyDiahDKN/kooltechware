@@ -321,8 +321,7 @@ echo '<li><a href="add-to-cart.php?ProductID='.$product['ProductID'].'"><i class
         </div>
         <!-- Scroll to top end -->
     </div>
-
-
+    <?php include 'Whatsapp.php';?>
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/popper.min.js"></script>

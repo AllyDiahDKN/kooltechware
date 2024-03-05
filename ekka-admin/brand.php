@@ -9,7 +9,7 @@ require_once '../db.php';?>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Ekka - Admin Dashboard HTML Template.</title>
+	<title>kooltechware Admin Dashboard </title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -46,7 +46,7 @@ require_once '../db.php';?>
 					<div class="breadcrumb-wrapper breadcrumb-contacts">
 						<div>
 							<h1>Brand</h1>
-							<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+							<p class="breadcrumbs"><span><a href="index.php">Home</a></span>
 								<span><i class="mdi mdi-chevron-right"></i></span>Brand
 							</p>
 						</div>
@@ -95,7 +95,7 @@ echo '<td>
 
 			<div class="dropdown-menu">
 				<a class="dropdown-item" href="#">Edit</a>
-				<a class="dropdown-item" href="#">Delete</a>
+				<a class="dropdown-item" href="deleted_brands.php?brand_id='.$row['BrandID'].'" name="Delete" id="BrandDelete">Delete</a>
 			</div>
 		</div>
 	</td>';
@@ -114,67 +114,33 @@ echo '<td>
 							</div>
 						</div>
 					</div>
-					<!-- Add User Modal  -->
-					<div class="modal fade modal-add-contact" id="addUser" tabindex="-1" role="dialog"
-						aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<!-- Add User Modal  -->
+	<div class="modal fade modal-add-contact" id="addUser" tabindex="-1" role="dialog"	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 							<div class="modal-content">
-								<form>
+								<form action="save_brand.php" target="" method="post">
 									<div class="modal-header px-4">
-										<h5 class="modal-title" id="exampleModalCenterTitle">Add Commission</h5>
+										<h5 class="modal-title" id="exampleModalCenterTitle">Add Brand</h5>
 									</div>
-
 									<div class="modal-body px-4">
 										<div class="row mb-2">
 											<div class="col-lg-6">
 												<div class="form-group">
-													<label for="firstName">Choose Seller</label>
-													<input type="text" class="form-control" id="firstName" value="John">
+													<label for="BrandName">Enter Brand Name:</label>
+													<input type="text" class="form-control" id="BrandName" name="BrandName" placeholder="Brand Name">
 												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group">
-													<label for="lastName">Paid Through</label>
-													<input type="text" class="form-control" id="lastName" value="Deo">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="userName">To</label>
-													<input type="text" class="form-control" id="userName"
-														value="johndoe">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="email">Amount</label>
-													<input type="email" class="form-control" id="email"
-														value="johnexample@gmail.com">
-												</div>
-											</div>
-
-											<div class="col-lg-6">
-												<div class="form-group mb-4">
-													<label for="event">Reference</label>
-													<input type="text" class="form-control" id="event"
-														value="Address here">
-												</div>
-											</div>
+											</div>									
 										</div>
 									</div>
-
 									<div class="modal-footer px-4">
 										<button type="button" class="btn btn-secondary btn-pill"
 											data-bs-dismiss="modal">Cancel</button>
-										<button type="button" class="btn btn-primary btn-pill">Save Contact</button>
+										<button type="submit" class="btn btn-primary btn-pill" name="saveBrand">Save Brand</button>
 									</div>
 								</form>
 							</div>
 						</div>
-					</div>
+					</div>					
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 

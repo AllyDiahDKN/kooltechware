@@ -100,8 +100,8 @@ require_once 'db.php';
                     <div class="image-layer p_absolute" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
                     <div class="auto-container">
                         <div class="content-box p_relative d_block z_5">
-                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Platinum Lenovo Partner in</span><br /> <span class="slider-text-anim">East Africa.</span></h2>
-                            <p class="d_block fs_18 mb_45">We proudly serve as a trusted provider of Lenovo products and solutions<br />across East Africa.</p>
+                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Platinum Lenovo Partner in</span><br /> <span class="slider-text-anim">Tanzania.</span></h2>
+                            <p class="d_block fs_18 mb_45">We proudly serve as a trusted provider of Lenovo products and solutions<br />across Tanzania.</p>
                             <div class="btn-box clearfix">
                                 <a href="contact.php" class="theme-btn theme-btn-two"><span data-text="Talk to us">Talk to us</span></a>
                             </div>

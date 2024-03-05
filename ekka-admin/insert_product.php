@@ -1,19 +1,11 @@
 <?php
 require_once '../db.php'; // Adjust the path as needed
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $productName = $_POST['product_name'];
-    $categoryId = $_POST['category_id'];
-    $brandId = $_POST['brand_id'];
-    $availability = $_POST['availability'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $description = $_POST['description'];
-    $code = $_POST['code'];
-    $sizes = $_POST['sizes'];
 
-    // Image upload
+
+    /* Image upload
     $targetDir = "../assets/images/product-image/"; // Directory where uploaded images will be saved
     $targetFile = $targetDir . basename($_FILES["product_image"]["name"]);
     $fileName= basename($_FILES["product_image"]["name"]);
@@ -60,31 +52,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "The file " . htmlspecialchars(basename($_FILES["product_image"]["name"])) . " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
-        }
-    }
+        }*/
+  //  }
 
-    // Insert product details into products table
-    $sql = "INSERT INTO products (product_name, category_id, brand_id, availability, price, stock, description, code, product_image)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    // Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve and sanitize product details from the form
+    $ProductName = mysqli_real_escape_string($conn, $_POST['ProductName']);
+    $CategoryID = intval($_POST['CategoryID']);
+    $BrandID = intval($_POST['BrandID']);
+    $available = intval($_POST['available']);
+   //$price = floatval($_POST['Price']);
+    $Description = mysqli_real_escape_string($conn, $_POST['Description']);
+
+    // Prepare and execute SQL statement to insert product details into the products table
+    $sql = "INSERT INTO products (productName, CategoryID, BrandID, available,Description)
+            VALUES (?, ?, ?, ?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("siiidiiss", $productName, $categoryId, $brandId, $availability, $price, $quantity, $description, $code, $fileName);
+    $stmt->bind_param("siids", $ProductName, $CategoryID, $BrandID, $available,$Description);
     $stmt->execute();
     $productId = $stmt->insert_id;
 
-    // Insert selected sizes into product_sizes table
-    foreach ($sizes as $sizeId) {
-        $sql = "INSERT INTO product_size (product_id, size_id) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ii", $productId, $sizeId);
-        $stmt->execute();
-    }
-
     // Redirect back to the product page or show a success message
-    header("Location: product-edit.php?product_id=$productId");
+    header("Location: product-add.php?product_id=$productId");
+    exit(); // Ensure script execution stops after redirection
 } else {
     // Redirect to the error page or display an error message
     echo "Invalid request method";
 }
 
+// Close the database connection
 $conn->close();
 ?>

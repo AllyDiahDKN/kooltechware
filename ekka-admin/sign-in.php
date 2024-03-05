@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Query to check if the user exists in the admin table and is active
-    $query = "SELECT * FROM admin WHERE email = ?";
+    $query = "SELECT * FROM user_admin WHERE email = ?";
     $stmt = $conn->prepare($query);
 
     if ($stmt) {

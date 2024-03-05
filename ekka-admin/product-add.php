@@ -55,24 +55,24 @@ require_once '../db.php'; // Adjust the path as needed
 										<form class="row g-3" action="insert_product.php" method="post" enctype="multipart/form-data">
     <div class="ec-vendor-upload-detail">
     	  <!-- Add image upload field -->
-    <div class="col-md-6">
+    <!--<div class="col-md-6">
         <label class="form-label">Product Image</label>
         <input type="file" class="form-control" name="product_image">
-    </div>
+    </div>-->
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Product name</label>
-                <input type="text" class="form-control" name="product_name">
+                <input type="text" class="form-control" name="ProductName">
             </div>
             <div class="col-md-6">
                 <label class="form-label">Select Category</label>
-                <select name="category_id" class="form-select">
+                <select name="CategoryID" class="form-select">
 <?php
 $sql = "SELECT categoryID, categoryName FROM categories";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
+        echo "<option value='{$row['categoryID']}'>{$row['categoryName']}</option>";
     }
 } else {
     echo "<option value='' disabled>No categories found</option>";
@@ -82,14 +82,14 @@ if ($result->num_rows > 0) {
             </div>
             <div class="col-md-6">
                 <label class="form-label">Select Brand</label>
-                <select name="brand_id" class="form-select">
+                <select name="BrandID" class="form-select">
 <?php
-$sql = "SELECT brand_id, brand_name FROM brands";
+$sql = "SELECT brandID, brandName FROM brands";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<option value='{$row['brand_id']}'>{$row['brand_name']}</option>";
+        echo "<option value='{$row['brandID']}'>{$row['brandName']}</option>";
     }
 } else {
     echo "<option value='' disabled>No brands found</option>";
@@ -98,47 +98,15 @@ if ($result->num_rows > 0) {
                 </select>
             </div>
             <div class="col-md-6">
-                <label class="form-label">Availability</label>
-                <select name="availability" class="form-select">
+                <label class="form-label">Available</label>
+                <select name="available" class="form-select">
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </select>
-            </div>
-            <div class="col-md-8 mb-25">
-                <label class="form-label">Size</label>
-                <div class="form-checkbox-box">
-<?php
-$sql = "SELECT size_id, size_name FROM size";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class='form-check form-check-inline'>
-            <input type='checkbox' name='sizes[]' value='{$row['size_id']}'>
-            <label>{$row['size_name']}</label>
-        </div>";
-    }
-} else {
-    echo "<p>No sizes found</p>";
-}
-?>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Price (In Tsh)</label>
-                <input type="number" class="form-control" name="price">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Quantity</label>
-                <input type="number" class="form-control" name="quantity">
-            </div>
+            </div>           
             <div class="col-md-12">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" rows="4" name="description"></textarea>
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Code</label>
-                <input type="text" class="form-control" name="code">
+                <textarea class="form-control" rows="4" name="Description"></textarea>
             </div>
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Add Product</button>
