@@ -22,7 +22,7 @@ if (isset($_GET['product_id'])) {
     $productId = mysqli_real_escape_string($conn, $_GET['product_id']);
 
     // Prepare and execute SQL query to fetch product data
-    $sql = "SELECT * FROM products WHERE product_id = '$productId'";
+    $sql = "SELECT * FROM products WHERE ProductID = '$productId'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

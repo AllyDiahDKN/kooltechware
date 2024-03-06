@@ -300,8 +300,7 @@
         </div>
         <!-- Scroll to top end -->
     </div>
-
-
+    <?php include 'Whatsapp.php';?>
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/popper.min.js"></script>
