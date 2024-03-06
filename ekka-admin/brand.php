@@ -94,7 +94,7 @@ echo '<td>
 			</button>
 
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Edit</a>
+				<a class="dropdown-item" href="edit_brand.php?brand_id='.$row['BrandID'].'" name="Edit" id="BrandEdit">Edit</a>
 				<a class="dropdown-item" href="deleted_brands.php?brand_id='.$row['BrandID'].'" name="Delete" id="BrandDelete">Delete</a>
 			</div>
 		</div>

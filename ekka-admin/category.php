@@ -94,7 +94,7 @@ echo '<td>
 			</button>
 
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="category.php">Edit</a>
+				<a class="dropdown-item" href="edit_category.php?category_id='.$row['CategoryID'].'" name="Edit" id="CategoryEdit">Edit</a>
 				<a class="dropdown-item" href="deleted_category.php?category_id='.$row['CategoryID'].'" name="Delete" id="CategoryDelete">Delete</a>
 			</div>
 		</div>
@@ -115,6 +115,8 @@ echo '<td>
 						</div>
 					</div>
 					<!-- Add User Modal  -->
+
+			
 					<!-- Add Category Modal -->
 					<div class="modal fade modal-add-contact" id="addUser" tabindex="-1" role="dialog"
 						aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

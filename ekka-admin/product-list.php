@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) > 0) {
 					</button>
 
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="product-edit.php?ProductID='. $row["ProductID"] .'">Edit</a>
+						<a class="dropdown-item" href="edit_product.php?ProductID='. $row['ProductID'].'"name="Edit" id="ProductEdit">Edit</a>						
 						<a class="dropdown-item delete-product" href="deleted_product.php?ProductID='.$row['ProductID'].'">Delete</a>
 					</div>
 				</div>
