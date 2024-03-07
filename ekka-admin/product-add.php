@@ -52,7 +52,7 @@ require_once '../db.php'; // Adjust the path as needed
 							<div class="card card-default">
 								<div class="card-body">
 									<div class="row ec-vendor-uploads">
-										<form class="row g-3" action="insert_product.php" method="post" enctype="multipart/form-data">
+										<form class="row g-3" action="save_product.php" method="post" enctype="multipart/form-data">
     <div class="ec-vendor-upload-detail">
     	  <!-- Add image upload field -->
     <!--<div class="col-md-6">

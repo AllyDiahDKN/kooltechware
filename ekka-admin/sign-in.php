@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -94,39 +93,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						</div>
 						<div class="card-body p-5">
 							<h4 class="text-dark mb-5">Sign In</h4>
-
-<!-- Your HTML form -->
-<form action="" method="post">
-    <div class="row">
-    	 <!-- Display error message if present -->
-    <?php if (isset($error)): ?>
-        <div class="alert alert-danger" role="alert"><?php echo $error; ?></div>
-    <?php endif; ?>
-        <div class="form-group col-md-12 mb-4">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email " required>
-        </div>
-        <div class="form-group col-md-12">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-        </div>
-        <div class="col-md-12">
-            <!-- Remember me checkbox -->
-            <div class="d-flex my-2 justify-content-between">
-                <div class="d-inline-block mr-3">
-                    <div class="control control-checkbox">
-                        Remember me
-                        <input type="checkbox" name="remember_me">
-                        <div class="control-indicator"></div>
-                    </div>
-                </div>
-                <p><a class="text-blue" href="#">Forgot Password?</a></p>
-            </div>
-            <!-- Sign in button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
-            <!-- Sign up link -->
-            <p class="sign-upp">Don't have an account yet ? <a class="text-blue" href="sign-up.php">Sign Up</a></p>
-        </div>
-    </div>
-</form>
+                            <!-- Your HTML form -->
+                            <form action="" method="post">
+                                <div class="row">
+                                    <!-- Display error message if present -->
+                                <?php if (isset($error)): ?>
+                                    <div class="alert alert-danger" role="alert"><?php echo $error; ?></div>
+                                <?php endif; ?>
+                                    <div class="form-group col-md-12 mb-4">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email " required>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <!-- Remember me checkbox -->
+                                        <div class="d-flex my-2 justify-content-between">
+                                            <div class="d-inline-block mr-3">
+                                                <div class="control control-checkbox">
+                                                    Remember me
+                                                    <input type="checkbox" name="remember_me">
+                                                    <div class="control-indicator"></div>
+                                                </div>
+                                            </div>
+                                            <p><a class="text-blue" href="#">Forgot Password?</a></p>
+                                        </div>
+                                        <!-- Sign in button -->
+                                        <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
+                                        <!-- Sign up link -->
+                                        <p class="sign-upp">Don't have an account yet ? <a class="text-blue" href="sign-up.php">Sign Up</a></p>
+                                    </div>
+                                </div>
+                            </form>
 
 						</div>
 					</div>
