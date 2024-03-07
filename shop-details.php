@@ -11,7 +11,7 @@ require_once 'db.php';
 
 <?php include 'meta_tags.php';?>
 <!-- Fav Icon -->
-<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="assets/images/kooltech/logo1.png" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -93,7 +93,7 @@ require_once 'db.php';
         <!-- main-header end -->
 
 
-        <!-- Mobile Menu  -->
+        <!-- Mobile Menu  --> 
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -135,7 +135,7 @@ require_once 'db.php';
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.html">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20">Shop</li>
-                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Details 1</li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Details</li>
                     </ul>
                 </div>
             </div>
@@ -194,8 +194,7 @@ require_once 'db.php';
                                 <div class="addto-cart-box p_relative d_block mb_35"> 
                                     <ul class="clearfix">
                                       
-                                        <li class="p_relative d_block float_left mr_10"><button type="button" class="theme-btn theme-btn-eight">Add To Cart</button></li>
-                                        <li class="p_relative d_block float_left mr_10"><a href="shop-details.html" class="d_iblock p_relative fs_20 lh_50 w_50 h_50 centred b_radius_5"><i class="icon-154"></i></a></li>
+                                        <li class="p_relative d_block float_left mr_10"><a href="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" class="theme-btn theme-btn-eight">Add To Cart</a></li>
                                    
                                     </ul>
                                 </div>
@@ -237,10 +236,11 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $product_id = mysqli_real_escape_string($conn, $_GET['id']);
     
     // Fetch product details from the database for the specified ID
+
     $query = "SELECT p.*, i.ImageURL
               FROM products p 
-              INNER JOIN images i ON p.ProductID = i.ProductID
-              WHERE p.ProductID != $product_id
+              LEFT JOIN images i ON p.ProductID = i.ProductID
+              WHERE p.show_product = 1 AND i.main = 1 AND p.ProductID != $product_id
               AND p.CategoryID IN (
                   SELECT CategoryID FROM products WHERE ProductID = $product_id
               )
@@ -268,7 +268,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                         <div class="inner-box p_relative d_block tran_5 mb_30">
                             <div class="image-box p_relative d_block">
                                 <!-- Adjust image source -->
-                                <figure class="image p_relative d_block"><img src="<?= $row['ImageURL']; ?>" alt=""></figure>
+                                <figure class="image p_relative d_block"><img src="assets/images/shop/<?= $row['ImageURL']; ?>" alt=""></figure>
                             </div>
                             <div class="lower-content p_relative d_block pt_25 pb_30">
                                 <!-- Display product name -->
@@ -283,6 +283,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 ?>
             </div>
         </div>
+        </div>
+
     </div>
 </section>
 

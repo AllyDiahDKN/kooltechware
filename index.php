@@ -90,6 +90,24 @@ require_once 'db.php';
 <!-- banner-section -->
         <section class="slider-one centred p_relative">
             <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+                 <div class="slide-item p_relative pt_140 pb_170">
+                    <div class="shape-layer">
+                        <div class="shape-1 p_absolute l_0 z_1" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                        <div class="shape-2 p_absolute l_0 t_0 z_1" style="background-image: url(assets/images/shape/shape-3.png);"></div>
+                        <div class="shape-3 p_absolute r_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+                        <div class="shape-4 p_absolute r_0 b_0 z_1" style="background-image: url(assets/images/shape/shape-5.png);"></div>
+                    </div>
+                    <div class="image-layer p_absolute" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim">Workstation Specialist Partner</span><br /> <span class="slider-text-anim">2023 Africa.</span></h2>
+                            <p class="d_block fs_18 mb_45">Awarded Africa's top Workstation Specialist Partner for 2023, we excel in personalized<br />technology solutions.</p>
+                            <div class="btn-box clearfix">
+                                <a href="contact.php" class="theme-btn theme-btn-two"><span data-text="Talk to us">Talk to us</span></a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
                 <div class="slide-item p_relative pt_140 pb_170">
                     <div class="shape-layer">
                         <div class="shape-1 p_absolute l_0 z_1" style="background-image: url(assets/images/shape/shape-2.png);"></div>

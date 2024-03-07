@@ -57,29 +57,6 @@ if(isset($_COOKIE['user_id'])) {
         </div>
         <!-- mouse-pointer end -->
 
-        <!--Search Popup-->
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="index.html"><img src="assets/images/logo-8.png" alt=""></a></figure>
-                    <div class="close-search pull-right"><span class="icon-179"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://html.tonatheme.com/2023/atrix/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- main header -->
         <?php include 'header.php';?>
         <!-- main-header end -->
@@ -125,182 +102,239 @@ if(isset($_COOKIE['user_id'])) {
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.php">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20">Shop</li>
-                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Page 1</li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Page</li>
                     </ul>
                 </div>
             </div>
         </section>
         <!-- End Page Title -->
-
-        <!-- shop-page-section -->
-        <section class="shop-page-section p_relative sec-pad">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-lg-3 col-md-12 cols-sm-12 sidebar-side">
-                        <div class="shop-sidebar">
-                            <div class="search-widget sidebar-widget p_relative d_block pb_40 mb_25">
-                                <form action="" method="post" class="search-form">
-                                    <div class="form-group p_relative m_0">
-                                        <input type="search" name="search-field" placeholder="Search" required>
-                                        <button type="submit"><i class="icon-1"></i></button>
-                                    </div>
-                                </form>
+<!-- shop-page-section -->
+<section class="shop-page-section p_relative sec-pad">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-12 cols-sm-12 sidebar-side">
+                <div class="shop-sidebar">
+                    <!-- Search form -->
+                    <div class="search-widget sidebar-widget p_relative d_block pb_40 mb_25">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" class="search-form">
+                            <div class="form-group p_relative m_0">
+                                <input type="search" name="search" placeholder="Search" required>
+                                <button type="submit"><i class="icon-1"></i></button>
                             </div>
-                            <div class="category-widget sidebar-widget pb_35 mb_35">
-                                <div class="widget-title p_relative d_block mb_30">
-                                    <h4 class="p_relative d_block fs_20 lh_30">Categories</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="category-list clearfix">
+                        </form>
+                    </div>
+                    <!-- Categories widget -->
+                    <div class="category-widget sidebar-widget pb_35 mb_35">
+                        <div class="widget-title p_relative d_block mb_30">
+                            <h4 class="p_relative d_block fs_20 lh_30">Categories</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <?php
+                                // Fetch categories
+                                $query = "SELECT categories.CategoryName, categories.CategoryID, COUNT(products.CategoryID) AS ProductCount 
+                                            FROM categories 
+                                            LEFT JOIN products ON categories.CategoryID = products.CategoryID 
+                                            GROUP BY categories.CategoryID";
 
-                                        <?php
-// SQL query to fetch category names along with the count of products in each category
-$query = "SELECT categories.CategoryName, categories.CategoryID, COUNT(products.CategoryID) AS ProductCount 
-          FROM categories 
-          LEFT JOIN products ON categories.CategoryID = products.CategoryID 
-          GROUP BY categories.CategoryID";
+                                $result = mysqli_query($conn, $query);
 
-$result = mysqli_query($conn, $query);
-
-if ($result) {
-    echo '<li class="p_relative d_block mb_11">';
-        echo '<a href="shop.php" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">All Products</a></li>';
-    while ($row = mysqli_fetch_assoc($result)) {
-        $categoryName = $row['CategoryName'];
-        $categoryID = $row['CategoryID'];
-        $productCount = $row['ProductCount'];
-        echo '<li class="p_relative d_block mb_11">';
-        echo '<a href="shop.php?category_id='.$categoryID.'" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">';
-        echo $categoryName . ' (' . $productCount . ')';
-        echo '</a>';
-        echo '</li>';
-    }
-} else {
-    echo "Error: " . mysqli_error($conn);
-}
-?>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="category-widget sidebar-widget pb_35 mb_35">
-                                <div class="widget-title p_relative d_block mb_30">
-                                    <h4 class="p_relative d_block fs_20 lh_30">Brands</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="category-list clearfix">
-                                                                                <?php
-// SQL query to fetch category names along with the count of products in each category
-$query = "SELECT brands.BrandName, brands.BrandID, COUNT(products.BrandID) AS ProductCountbrand 
-          FROM brands 
-          LEFT JOIN products ON brands.BrandID = products.BrandID 
-          GROUP BY brands.BrandID";
-
-$result = mysqli_query($conn, $query);
-
-if ($result) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $brandName = $row['BrandName'];
-        $brandID = $row['BrandID'];
-        $productCountbrand = $row['ProductCountbrand'];
-        echo '<li class="p_relative d_block mb_11">';
-        echo '<a href="shop.php?brand_id='.$brandID.'" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">';
-        echo $brandName . ' (' . $productCountbrand . ')';
-        echo '</a>';
-        echo '</li>';
-    }
-} else {
-    echo "Error: " . mysqli_error($conn);
-}
-?>
-                                    </ul>
-                                </div>
-                            </div>
+                                if ($result) {
+                                    // Display categories
+                                    echo '<li class="p_relative d_block mb_11">';
+                                    echo '<a href="shop.php" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">All Products</a></li>';
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $categoryName = $row['CategoryName'];
+                                        $categoryID = $row['CategoryID'];
+                                        $productCount = $row['ProductCount'];
+                                        echo '<li class="p_relative d_block mb_11">';
+                                        echo '<a href="shop.php?category_id='.$categoryID.'" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">';
+                                        echo $categoryName . ' (' . $productCount . ')';
+                                        echo '</a>';
+                                        echo '</li>';
+                                    }
+                                } else {
+                                    echo "Error: " . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
-<div class="col-lg-9 col-md-12 cols-sm-12 content-side">
-                        <div class="our-shop">
-                            <div class="wrapper grid">
-                                <div class="shop-grid-content">
-                                    <div class="row clearfix">
-                 <?php
-// Fetch products based on category ID or brand ID from the URL
-$categoryID = isset($_GET['category_id']) ? $_GET['category_id'] : null;
-$brandID = isset($_GET['brand_id']) ? $_GET['brand_id'] : null;
+                    <!-- Brands widget -->
+                    <div class="category-widget sidebar-widget pb_35 mb_35">
+                        <div class="widget-title p_relative d_block mb_30">
+                            <h4 class="p_relative d_block fs_20 lh_30">Brands</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <?php
+                                // Fetch brands
+                                $query = "SELECT brands.BrandName, brands.BrandID, COUNT(products.BrandID) AS ProductCountbrand 
+                                            FROM brands 
+                                            LEFT JOIN products ON brands.BrandID = products.BrandID 
+                                            GROUP BY brands.BrandID";
 
-// Construct the SQL query based on the presence of category ID or brand ID
-if ($categoryID !== null) {
-    $productQuery = "SELECT p.*, i.ImageURL 
-                     FROM products p
-                     LEFT JOIN images i ON p.ProductID = i.ProductID
-                     WHERE p.show_product = 1 AND p.CategoryID = $categoryID AND i.main = 1";
-} elseif ($brandID !== null) {
-    $productQuery = "SELECT p.*, i.ImageURL 
-                     FROM products p
-                     LEFT JOIN images i ON p.ProductID = i.ProductID
-                     WHERE p.show_product = 1 AND p.BrandID = $brandID AND i.main = 1";
-} else {
-    $productQuery = "SELECT p.*, i.ImageURL 
-                     FROM products p
-                     LEFT JOIN images i ON p.ProductID = i.ProductID
-                     WHERE p.show_product = 1 AND i.main = 1";
-}
+                                $result = mysqli_query($conn, $query);
 
-$productResult = mysqli_query($conn, $productQuery);
-
-if ($productResult) {
-    while ($product = mysqli_fetch_assoc($productResult)) {
-        $isOutOfStock = $product['available'] == 0;
-        $isNew = strtotime($product['date_added']) > strtotime('-1 month');
-
-        echo '<div class="col-lg-4 col-md-6 col-sm-12 shop-block">';
-        echo '<div class="shop-block-one">';
-        echo '<div class="inner-box p_relative d_block tran_5 mb_30">';
-        echo '<div class="image-box p_relative d_block">';
-        
-        if ($isOutOfStock) {
-            echo '<span class="category hot p_absolute l_10 t_10 fs_13 fw_medium font_family_poppins z_1">Out of Stock</span>';
-        } elseif ($isNew) {
-            echo '<span class="category sale p_absolute l_10 t_10 fs_13 fw_medium font_family_poppins z_1">New</span>';
-        }
-
-        echo '<figure class="image p_relative d_block"><img src="assets/images/shop/' . $product['ImageURL'] . '" alt=""></figure>';
-        echo '<ul class="option-list clearfix">';
-        echo '<li><a href="shop-details.php?id='.$product['ProductID'].'" class="lightbox-image"><i class="icon-183"></i></a></li>';
-echo '<li><a href="add-to-cart.php?ProductID='.$product['ProductID'].'"><i class="icon-150"></i></a></li>';
-        echo '</ul>';
-        echo '</div>';
-        echo '<div class="lower-content p_relative d_block pt_3 pr_20 pb_20 pl_20">';
-        echo '<h6 class="d_block fs_15 lh_20 mb_4"><a href="shop-details.php?id='.$product['ProductID'].'" class="d_iblock color_black">' . $product['ProductName'] . '</a></h6>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-    }
-} else {
-    echo "Error: " . mysqli_error($conn);
-}
-
-?>
-           </div>
-                                </div>
-                            </div>
-                            <div class="pagination-wrapper centred mt_40">
-                                <ul class="pagination clearfix">
-                                    <li><a href="shop.html" class="current">1</a></li>
-                                    <li><a href="shop.html">2</a></li>
-                                    <li><a href="shop.html">3</a></li>
-                                    <li class="dot">...</li>
-                                    <li><a href="shop.html">9</a></li>
-                                    <li><a href="shop.html"><i class="icon-4"></i></a></li>
-                                </ul>
-                            </div>
+                                if ($result) {
+                                    // Display brands
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $brandName = $row['BrandName'];
+                                        $brandID = $row['BrandID'];
+                                        $productCountbrand = $row['ProductCountbrand'];
+                                        echo '<li class="p_relative d_block mb_11">';
+                                        echo '<a href="shop.php?brand_id='.$brandID.'" class="p_relative d_iblock fs_15 font_family_inter color_black pl_20">';
+                                        echo $brandName . ' (' . $productCountbrand . ')';
+                                        echo '</a>';
+                                        echo '</li>';
+                                    }
+                                } else {
+                                    echo "Error: " . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- shop-page-section end -->
+            <div class="col-lg-9 col-md-12 cols-sm-12 content-side">
+                <div class="our-shop">
+                    <div class="wrapper grid">
+                        <div class="shop-grid-content">
+                            <div class="row clearfix">
+                                <?php
+                                // Define pagination variables
+                                $limit = 12; // Number of products per page
+                                $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Current page number
+
+                                // Calculate offset for the query
+                                $offset = ($currentPage - 1) * $limit;
+
+                                // Construct the main product query
+                                $productQuery = "SELECT p.*, i.ImageURL 
+                                                 FROM products p
+                                                 LEFT JOIN images i ON p.ProductID = i.ProductID
+                                                 WHERE p.show_product = 1 AND i.main = 1";
+
+                                // Add search keyword condition if present
+                                if (isset($_GET['search'])) {
+                                    $searchKeyword = $_GET['search'];
+                                    $productQuery .= " AND p.ProductName LIKE '%$searchKeyword%'";
+                                }
+
+                                // Add category or brand condition if present
+                                if (isset($_GET['category_id'])) {
+                                    $categoryID = $_GET['category_id'];
+                                    $productQuery .= " AND p.CategoryID = $categoryID";
+                                } elseif (isset($_GET['brand_id'])) {
+                                    $brandID = $_GET['brand_id'];
+                                    $productQuery .= " AND p.BrandID = $brandID";
+                                }
+
+                                // Add pagination limits
+                                $productQuery .= " LIMIT $limit OFFSET $offset";
+
+                                // Execute the product query
+                                $productResult = mysqli_query($conn, $productQuery);
+
+                                if ($productResult) {
+                                    // Display products
+                                    while ($product = mysqli_fetch_assoc($productResult)) {
+                                        $isOutOfStock = $product['available'] == 0;
+                                        $isNew = strtotime($product['date_added']) > strtotime('-1 month');
+
+                                        echo '<div class="col-lg-4 col-md-6 col-sm-12 shop-block">';
+                                        echo '<div class="shop-block-one">';
+                                        echo '<div class="inner-box p_relative d_block tran_5 mb_30">';
+                                        echo '<div class="image-box p_relative d_block">';
+
+                                        if ($isOutOfStock) {
+                                            echo '<span class="category hot p_absolute l_10 t_10 fs_13 fw_medium font_family_poppins z_1">Out of Stock</span>';
+                                        } elseif ($isNew) {
+                                            echo '<span class="category sale p_absolute l_10 t_10 fs_13 fw_medium font_family_poppins z_1">New</span>';
+                                        }
+
+                                        echo '<figure class="image p_relative d_block"><img src="assets/images/shop/' . $product['ImageURL'] . '" alt=""></figure>';
+                                        echo '<ul class="option-list clearfix">';
+                                        echo '<li><a href="shop-details.php?id='.$product['ProductID'].'"><i class="icon-183"></i></a></li>';
+                                        echo '<li><a href="add-to-cart.php?ProductID='.$product['ProductID'].'"><i class="icon-150"></i></a></li>';
+                                        echo '</ul>';
+                                        echo '</div>';
+                                        echo '<div class="lower-content p_relative d_block pt_3 pr_20 pb_20 pl_20">';
+                                        echo '<h6 class="d_block fs_15 lh_20 mb_4"><a href="shop-details.php?id='.$product['ProductID'].'" class="d_iblock color_black">' . $product['ProductName'] . '</a></h6>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    }
+
+                                    // Free the result variable
+                                    mysqli_free_result($productResult);
+                                } else {
+                                    echo "Error: " . mysqli_error($conn);
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- Pagination -->
+<?php
+// Calculate total number of pages based on filtered or searched results
+$totalPagesQuery = "SELECT COUNT(*) AS total FROM (SELECT p.ProductID 
+                    FROM products p
+                    LEFT JOIN images i ON p.ProductID = i.ProductID
+                    WHERE p.show_product = 1 AND i.main = 1";
+
+// Add search keyword condition if present
+if (isset($_GET['search'])) {
+    $searchKeyword = $_GET['search'];
+    $totalPagesQuery .= " AND p.ProductName LIKE '%$searchKeyword%'";
+}
+
+// Add category or brand condition if present
+if (isset($_GET['category_id'])) {
+    $categoryID = $_GET['category_id'];
+    $totalPagesQuery .= " AND p.CategoryID = $categoryID";
+} elseif (isset($_GET['brand_id'])) {
+    $brandID = $_GET['brand_id'];
+    $totalPagesQuery .= " AND p.BrandID = $brandID";
+}
+
+$totalPagesQuery .= ") AS temp";
+
+$totalPagesResult = mysqli_query($conn, $totalPagesQuery);
+$totalProducts = mysqli_fetch_assoc($totalPagesResult)['total'];
+$totalPages = ceil($totalProducts / $limit);
+
+// Pagination links
+echo '<div class="pagination-wrapper centred mt_40">';
+echo '<ul class="pagination clearfix">';
+for ($i = 1; $i <= $totalPages; $i++) {
+    $isActive = $i == $currentPage ? 'current' : '';
+    // Include the search query, category ID, and brand ID in pagination links
+    $paginationLink = "shop.php?page=$i";
+    if (isset($_GET['search'])) {
+        $paginationLink .= "&search=" . urlencode($_GET['search']);
+    }
+    if (isset($_GET['category_id'])) {
+        $paginationLink .= "&category_id=$categoryID";
+    }
+    if (isset($_GET['brand_id'])) {
+        $paginationLink .= "&brand_id=$brandID";
+    }
+    echo '<li><a href="'.$paginationLink.'" class="'.$isActive.'">'.$i.'</a></li>';
+}
+echo '</ul>';
+echo '</div>';
+?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- shop-page-section end -->
+
 
 
         <!-- footer-three -->
