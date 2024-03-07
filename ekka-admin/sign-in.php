@@ -1,59 +1,47 @@
 <?php
 session_start();
 
-// Check if the user is already logged in
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    // User is already logged in, redirect to the dashboard or home page
-    header("Location: index.php"); // Adjust this to the appropriate page
-    exit();
-}
-
-// This is the connection file 
+// Connection to database
 require_once '../db.php';
 
-$error = ''; // Initialize error variable
+// Initialize $error variable
+$error = '';
 
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, $_POST['email']) : '';
+    $password = isset($_POST['password']) ? mysqli_real_escape_string($conn, $_POST['password']) : '';
 
-    // Query to check if the user exists in the admin table and is active
-    $query = "SELECT * FROM user_admin WHERE email = ?";
-    $stmt = $conn->prepare($query);
+    // Query to fetch user data based on email
+    $sql = "SELECT * FROM user_admin WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-    if ($stmt) {
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows == 1) {
-            // User found, verify password
-            $row = $result->fetch_assoc();
-            $hashedPassword = $row['password'];
-
-            // Verify the password using password_verify
-            if (password_verify($password, $hashedPassword)) {
-                // Authentication successful, set session variables
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $row['email']; // Store email as username
-
-                // Redirect to the dashboard or home page
-                header("Location: index.php");
-                exit();
-            } else {
-                // Invalid password
-                $error = "Invalid email or password.";
-            }
+    // Check if user exists
+    if ($row = mysqli_fetch_assoc($result)) {
+        // Verify password
+        if (password_verify($password, $row['password'])) {
+            // Password is correct, set session variables
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['email'] = $row['email'];
+            // Redirect to dashboard or any other page
+            header("Location: index.php");
+            exit();
         } else {
-            // User not found
-            $error = "Invalid email or password.";
+            // Password is incorrect
+            $error = "Incorrect email or password.";
         }
     } else {
-        // Error preparing statement
-        $error = "Error preparing statement: " . $conn->error;
+        // No user found with the given email
+        $error = "User not found.";
     }
+
+    mysqli_stmt_close($stmt);
 }
+
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
