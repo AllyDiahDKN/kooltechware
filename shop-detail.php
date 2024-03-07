@@ -4,14 +4,16 @@ require_once 'db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<?php include 'meta_tags.php';?>
+<title>Atrix - HTML 5 Template Preview</title>
+
 <!-- Fav Icon -->
-<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+<link rel="icon" href="assets/images/favicon-11.ico" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -43,6 +45,30 @@ require_once 'db.php';
             <div class="icon"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>
         </div>
         <!-- mouse-pointer end -->
+
+        <!--Search Popup-->
+        <div id="search-popup" class="search-popup">
+            <div class="popup-inner">
+                <div class="upper-box clearfix">
+                    <figure class="logo-box pull-left"><a href="index.html"><img src="assets/images/logo-8.png" alt=""></a></figure>
+                    <div class="close-search pull-right"><span class="icon-179"></span></div>
+                </div>
+                <div class="overlay-layer"></div>
+                <div class="auto-container">
+                    <div class="search-form">
+                        <form method="post" action="https://html.tonatheme.com/2023/atrix/index.html">
+                            <div class="form-group">
+                                <fieldset>
+                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
+                                    <button type="submit"><i class="icon-1"></i></button>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- sidebar cart item -->
         <div class="xs-sidebar-group info-group info-sidebar">
@@ -87,11 +113,9 @@ require_once 'db.php';
         </div>
         <!-- END sidebar widget item -->
 
-
         <!-- main header -->
         <?php include 'header.php';?>
-        <!-- main-header end -->
-
+        <!-- main-header end -->       
 
         <!-- Mobile Menu  -->
         <div class="mobile-menu">
@@ -135,7 +159,7 @@ require_once 'db.php';
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.html">Home</a></li>
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20">Shop</li>
-                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Details 1</li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Shop Details 2</li>
                     </ul>
                 </div>
             </div>
@@ -172,11 +196,35 @@ require_once 'db.php';
         exit; // Stop further execution
     }
 ?>
+
         <!-- shop-details -->
-        <section class="shop-details p_relative pt_140 pb_80">
+        <section class="shop-details shop-details-2 p_relative pt_140 pb_80">
             <div class="auto-container">
                 <div class="product-details-content p_relative d_block mb_100">
                     <div class="row clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                            <div class="bxslider">
+                                <div class="slider-content p_relative d_block">
+                                    <div class="slider-pager p_absolute l_0 t_0 z_1">
+                                        <ul class="thumb-box">
+                                            <li>
+                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/single-thumb-1.jpg" alt=""></figure></a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/single-thumb-2.jpg" alt=""></figure></a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/single-thumb-3.jpg" alt=""></figure></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                     <div class="product-image p_relative pl_100">
+                                        <div class="image-box">
+                                            <figure class="image"><img src="assets/images/shop/shop-single-1.jpg" alt=""></figure>
+                                            <div class="preview-link p_absolute t_20 r_20"><a href="assets/images/shop/shop-single-1.jpg" class="lightbox-image p_relative d_iblock fs_20 centred z_1 w_50 h_50 color_black lh_50" data-fancybox="gallery"><i class="far fa-search-plus"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="slider-content p_relative d_block">
                                     <div class="slider-pager p_absolute l_0 t_0 z_1">
                                         <ul class="thumb-box">
@@ -198,6 +246,29 @@ require_once 'db.php';
                                         </div>
                                     </div>
                                 </div>
+                                <div class="slider-content p_relative d_block">
+                                    <div class="slider-pager p_absolute l_0 t_0 z_1">
+                                        <ul class="thumb-box">
+                                            <li>
+                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/single-thumb-1.jpg" alt=""></figure></a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/single-thumb-2.jpg" alt=""></figure></a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/single-thumb-3.jpg" alt=""></figure></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-image p_relative pl_100">
+                                        <div class="image-box">
+                                            <figure class="image"><img src="assets/images/shop/shop-single-3.jpg" alt=""></figure>
+                                            <div class="preview-link p_absolute t_20 r_20"><a href="assets/images/shop/shop-single-3.jpg" class="lightbox-image p_relative d_iblock fs_20 centred z_1 w_50 h_50 color_black lh_50" data-fancybox="gallery"><i class="far fa-search-plus"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="product-details p_relative d_block ml_20">
                                 <h2 class="d_block fs_30 lh_40 fw_sbold font_family_inter mb_5"><?= $row['ProductName']; ?></h2>                              
@@ -224,9 +295,6 @@ require_once 'db.php';
                             </div>
                         </div>
                     </div>
-                    <?php        
-    
-?>
                 </div>
                 <div class="product-discription p_relative d_block mb_80">
                     <div class="tabs-box">
@@ -245,6 +313,7 @@ require_once 'db.php';
                         </div>
                     </div>
                 </div>
+                
                 <?php
 // Ensure that the 'id' parameter is set in the URL
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -266,8 +335,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     // Check if query execution was successful
     if ($result && mysqli_num_rows($result) > 0) {
 ?>
-
-<section class="shop-details shop-details-2 p_relative pt_140 pb_80">
+     <section class="shop-details shop-details-2 p_relative pt_140 pb_80">
     <div class="auto-container">
         <div class="related-product shop-page-2 shop-page-section">
             <div class="title-text mb_25 centred">
@@ -312,13 +380,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 }
 ?>
 
-
-         <!-- shop-details end -->
-
+        <!-- shop-details end -->
 
         <!-- footer-three -->
         <?php include 'footer.php';?>
         <!-- footer-three end -->
+
+
 
 
         <!--Scroll to top-->
@@ -334,7 +402,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         </div>
         <!-- Scroll to top end -->
     </div>
-<?php include 'whatsapp.php';?>
+
 
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
@@ -365,5 +433,5 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 </body><!-- End of .page_wrapper -->
 
-
+<!-- Mirrored from html.tonatheme.com/2023/atrix/shop-details-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Feb 2024 19:40:20 GMT -->
 </html>

@@ -28,7 +28,7 @@ require_once 'db.php';
 <link href="assets/css/woocommerce.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
-</head>
+</head>A
 
 
 <!-- page wrapper -->
