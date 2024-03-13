@@ -54,15 +54,12 @@ if (!$result) {
 
 ?>
 
-
-                                         
-
                                     </ul>
                                 </div>
                             </div>
                              <div class="addto-cart-box p_relative d_block mb_35"> 
                                     <ul class="clearfix">
-                                        <li class="p_relative d_block float_left mr_10"><button type="button" class="theme-btn theme-btn-eight">Request for Quote</button></li>
+                                        <li class="p_relative d_block float_left mr_10"><a href="checkout.php" class="theme-btn theme-btn-eight">Request for Quote</a></li>
                                     </ul>
                                 </div>
                         </div>
@@ -92,9 +89,10 @@ if (!$result) {
                 <ul class="info clearfix hidden-mobile">
                     <li class="search-box-outer p_relative d_iblock float_left mr_60 lh_55">
                                 <div class="search-inner">
-                                    <form action="" method="post" class="search-form">
+
+                                    <form action="shop.php" method="get" class="search-form">
                                         <div class="form-group p_relative m_0">
-                                            <input type="search" name="search-field" placeholder="Search" required>
+                                            <input type="search" name="search" placeholder="Search" required>
                                             <button type="submit"><i class="icon-156"></i></button>
                                         </div>
                                     </form>
