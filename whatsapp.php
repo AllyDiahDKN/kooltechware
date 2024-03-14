@@ -23,7 +23,7 @@
                                 <!-- Display Name & Last Seen -->
                                 <div class="ec-user-info">
                                     <span>Sales</span>
-                                    <p>Sahar left 7 mins ago</p>
+                                    <p>Need help?</p>
                                 </div>
                                 <!-- Chat iCon -->
                                 <div class="ec-chat-icon">
@@ -46,7 +46,7 @@
                                 <!-- Display Name & Last Seen -->
                                 <div class="ec-user-info">
                                     <span>Technical Support</span>
-                                    <p>Yolduz is online</p>
+                                    <p>Get help with your Lenovo Device</p>
                                 </div>
                                 <!-- Chat iCon -->
                                 <div class="ec-chat-icon">

@@ -149,7 +149,7 @@ require_once 'db.php';
         $product_id = mysqli_real_escape_string($conn, $_GET['id']);
         
         // Fetch product details from the database for the specified ID
-        $query = "SELECT p.*, c.CategoryName, b.BrandName 
+        $query = "SELECT p.*, c.CategoryName, b.BrandName
                   FROM products p 
                   INNER JOIN categories c ON p.CategoryID = c.CategoryID 
                   INNER JOIN brands b ON p.BrandID = b.BrandID
@@ -173,14 +173,59 @@ require_once 'db.php';
     }
 ?>
         <!-- shop-details -->
-        <section class="shop-details p_relative pt_140 pb_80">
+        <section class="shop-details shop-details-2 p_relative pt_140 pb_80">
             <div class="auto-container">
                 <div class="product-details-content p_relative d_block mb_100">
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                            <div class="image-box p_relative d_block">
-                                <figure class="image"><img src="assets/images/shop/shop-13.jpg" alt=""></figure>
-                                <div class="preview-link p_absolute t_20 r_20"><a href="assets/images/shop/shop-13.jpg" class="lightbox-image p_relative d_iblock fs_20 centred z_1 w_50 h_50 color_black lh_50" data-fancybox="gallery"><i class="far fa-search-plus"></i></a></div>
+                            <div class="bxslider">
+<?php
+// Replace this query with your database query to fetch image URLs for a specific product
+$productID = $row['ProductID']; 
+$imageQuery = "SELECT ImageURL FROM images WHERE ProductID = '$productID'";
+$imageResult = mysqli_query($conn, $imageQuery);
+
+// Loop through each image URL and generate HTML for slider-content
+while ($rowimage = mysqli_fetch_assoc($imageResult)) {
+    $imageURL = $rowimage['ImageURL'];
+?>
+<div class="slider-content p_relative d_block">
+    <div class="slider-pager p_absolute l_0 t_0 z_1">
+        <ul class="thumb-box">
+            <?php
+            // Reset count for thumbnail indexes
+            $count = 0;
+            // Rewind the internal pointer of $imageResult back to the beginning of the result set
+            mysqli_data_seek($imageResult, 0);
+            // Loop through each image URL and generate HTML for thumbnails
+            while ($rowimage2 = mysqli_fetch_assoc($imageResult)) {
+                $thumbURL = $rowimage2['ImageURL'];
+                // Determine if the thumbnail is active or not based on the count
+                $activeClass = ($count === 0) ? 'active' : '';
+                echo '<li>';
+                echo '<a class="' . $activeClass . '" data-slide-index="' . $count . '" href="#"><figure><img src="assets/images/shop/' . $thumbURL . '" alt=""></figure></a>';
+                echo '</li>';
+                $count++;
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="product-image p_relative pl_100">
+        <div class="image-box">
+            <figure class="image"><img src="assets/images/shop/<?php echo $imageURL; ?>" alt=""></figure>
+            <div class="preview-link p_absolute t_20 r_20">
+                <a href="assets/images/shop/<?php echo $imageURL; ?>" class="lightbox-image p_relative d_iblock fs_20 centred z_1 w_50 h_50 color_black lh_50" data-fancybox="gallery">
+                    <i class="far fa-search-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+}
+?>
+
+                                
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -195,7 +240,30 @@ require_once 'db.php';
                                     <ul class="clearfix">
                                       
                                         <li class="p_relative d_block float_left mr_10"><a href="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" class="theme-btn theme-btn-eight">Add To Cart</a></li>
-                                   
+<li class="p_relative d_block float_left mr_10">
+    <a href="#" class="share-btn d_iblock p_relative fs_20 lh_50 w_50 h_50 centred b_radius_5" onclick="shareProduct()">
+        <i class="icon-81"></i>
+    </a>
+</li>
+<script type="text/javascript">
+function shareProduct() {
+    // Get product details
+    var productName = "<?= $row['ProductName']; ?>";
+    var productDescription = "<?= $row['Description']; ?>";
+    var productURL = window.location.href; // URL of the current page
+
+    // Construct the share message
+    var shareMessage = "Check out this product: " + productName + "\nDescription: " + productDescription + "\nLink: " + productURL;
+
+    // Construct the WhatsApp share URL
+    var whatsappURL = "https://wa.me/?text=" + encodeURIComponent(shareMessage);
+
+    // Open WhatsApp share dialog
+    window.open(whatsappURL);
+}
+</script>
+
+
                                     </ul>
                                 </div>
                                 <div class="other-option">
@@ -344,8 +412,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/product-filter.js"></script>
     <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+        <script src="assets/js/bxslider.js"></script>
     <script src="assets/js/parallax-scroll.js"></script>
-
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
