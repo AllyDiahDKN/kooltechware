@@ -12,8 +12,8 @@
                 <ul>
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="255785252525"
+                            data-message="Am interested with Your products.">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">
@@ -35,8 +35,8 @@
                     <!--/ End Single Contact List -->
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
+                        <a class="ec-list" data-number="255655939497"
+                            data-message="I need help with one of your product.">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
                                 <div class="ec-img-cont">

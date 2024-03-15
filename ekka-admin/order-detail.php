@@ -190,10 +190,7 @@ $stmt->close();
                                                     <td><strong>#</strong></td>
                                                     <td class="text-center"><strong>IMAGE</strong></td>
                                                     <td class="text-center"><strong>PRODUCT</strong></td>
-                                                    <td class="text-center"><strong>PRICE/UNIT</strong></td>
-                                                    <td class="text-right"><strong>QUANTITY</strong></td>
-                                                    <td class="text-right"><strong>SUBTOTAL</strong></td>
-                                                </tr>
+                                                  
                                             </thead>
                                             <tbody>
                                                 <?php
@@ -204,16 +201,13 @@ $stmt->close();
                                                         $size = $row['size_name'];
                                                         $price = $row['price'];
                                                         $image = $row['product_image'];
-                                                        $quantity = $row['quantity'];
-                                                        $totalPrice = $price * $quantity;
+                                                    
                                                 ?>
                                                         <tr>
                                                             <td><?php echo $productId; ?></td>
                                                             <td><img class="product-img" src="../assets/images/product-image/<?php echo $image; ?>" alt="" /></td>
                                                             <td><strong><?php echo $productName; ?></strong><br>Size: <?php echo $size; ?></td>
-                                                            <td class="text-center"><?php echo $price; ?></td>
-                                                            <td class="text-center"><?php echo $quantity; ?></td>
-                                                            <td class="text-right"><?php echo $totalPrice; ?></td>
+                                                            
                                                         </tr>
                                                 <?php
                                                     }
@@ -222,21 +216,7 @@ $stmt->close();
                                                     echo "<tr><td colspan='6'>No products found in the cart for this order</td></tr>";
                                                 }
                                                 ?>
-                                                <tr>
-                                                    <td colspan="4"></td>
-                                                    <td class="text-right"><strong>Sub-Total</strong></td>
-                                                    <td class="text-right"><strong>$2,400.00</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4"></td>
-                                                    <td class="text-right"><strong>Discount</strong></td>
-                                                    <td class="text-right"><strong>$2,400.00</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="4"></td>
-                                                    <td class="text-right"><strong>Total</strong></td>
-                                                    <td class="text-right"><strong>$2,400.00</strong></td>
-                                                </tr>
+                                            
                                             </tbody>
                                         </table>
                                     </div>
