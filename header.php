@@ -18,10 +18,13 @@
 $user_id = $_COOKIE['user_id']; // Assuming you have stored user_id in a cookie
 
 // Fetch products from the cart table for the specific user
-$sql = "SELECT cart.*, products.ProductName, images.ImageURL FROM cart 
-        INNER JOIN products ON cart.ProductID = products.ProductID 
-        INNER JOIN images ON products.ProductID = images.ProductID 
-        WHERE cart.UserID = '$user_id' AND images.main = 1";
+$sql = "SELECT cart.UserID, cart.ProductID, products.ProductName, images.ImageURL, ram.ram_name, storage.storage_name
+FROM cart
+INNER JOIN products ON cart.ProductID = products.ProductID
+INNER JOIN images ON products.ProductID = images.ProductID AND images.main = 1
+LEFT JOIN ram ON ram.ram_id = cart.ram_id
+LEFT JOIN storage ON storage.storage_id = cart.storage_id
+WHERE cart.UserID = '$user_id'";
 $result = mysqli_query($conn, $sql);
 
 if (!$result) {
@@ -41,6 +44,12 @@ if (!$result) {
         echo '</div>';
         echo '<div class="col-md-8">';
         echo '<p>' . $row['ProductName'] . '</p>';
+        if ($row['ram_id'] != '0') {
+            echo "Ram: " . $row['ram_name'] . "";
+        }
+        if ($row['storage_id'] != '0') {
+            echo "Storage: " . $row['storage_name'] . "";
+        }
         echo '</div>';
        
         echo '</div>';

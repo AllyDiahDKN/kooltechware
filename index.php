@@ -1,9 +1,23 @@
-<?php
+<?php 
 require_once 'db.php';
+
+// Step 1: Check if a cookie exists
+if(isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+} else {
+    // Step 2: Generate a unique ID
+    $user_id = uniqid('user_'); // You can use any method to generate a unique ID
+    
+    // Step 3: Save the ID in a cookie
+    setcookie('user_id', $user_id, time() + (86400 * 7), "/"); // Cookie valid for 7 days
+    
+    // Prepare and execute SQL statement to insert the user ID into the database
+    $sql = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

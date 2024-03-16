@@ -1,5 +1,19 @@
-<?php
+<?php 
 require_once 'db.php';
+
+// Step 1: Check if a cookie exists
+if(isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+} else {
+    // Step 2: Generate a unique ID
+    $user_id = uniqid('user_'); // You can use any method to generate a unique ID
+    
+    // Step 3: Save the ID in a cookie
+    setcookie('user_id', $user_id, time() + (86400 * 7), "/"); // Cookie valid for 7 days
+    
+    // Prepare and execute SQL statement to insert the user ID into the database
+    $sql = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
+}
 
 ?>
 <!DOCTYPE html>
@@ -239,12 +253,12 @@ while ($rowimage = mysqli_fetch_assoc($imageResult)) {
                                 if ($row['CategoryID'] === "3" || $row['CategoryID'] === "2") {
 ?>
                                     <div class="billing-info">
-                                        <form action="process_quote_request.php" method="post" class="billing-form">
+                                        <form action="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" method="post" class="billing-form">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                                     <label class="p_relative d_block fs_16 font_family_poppins color_black mb_2">Ram</label>
                                                     <div class="select-column select-box">
-                                                        <select class="selectmenu" id="ui-id-2">
+<select name="ram" class="selectmenu" id="ram">
                                                             <option selected="selected">All</option>
 <?php
                                                                 if(isset($_GET['id']) && !empty($_GET['id'])) {
@@ -252,7 +266,7 @@ while ($rowimage = mysqli_fetch_assoc($imageResult)) {
                                                                     $productID = mysqli_real_escape_string($conn, $_GET['id']);
 
                                                                     // Query to fetch RAM options for the product with the specified ID
-                                                                    $ramQuery = "SELECT r.ram_name
+                                                                    $ramQuery = "SELECT r.ram_name, r.ram_id
                                                                                  FROM ram r
                                                                                  INNER JOIN product_ram pr ON r.ram_id = pr.ram_id
                                                                                  WHERE pr.product_id = '$productID'";
@@ -262,7 +276,7 @@ while ($rowimage = mysqli_fetch_assoc($imageResult)) {
                                                                     if($ramResult) {
                                                                         // Loop through the results and display RAM options
                                                                         while($ramrow = mysqli_fetch_assoc($ramResult)) {
-                                                                            echo '<option>' . $ramrow['ram_name'] . '</option>';
+                                                                            echo '<option value="'. $ramrow['ram_id'] .'">' . $ramrow['ram_name'] .'</option>';
                                                                         }
                                                                     } else {
                                                                         // Query execution failed
@@ -280,7 +294,7 @@ while ($rowimage = mysqli_fetch_assoc($imageResult)) {
                                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                                             <label class="p_relative d_block fs_16 font_family_poppins color_black mb_2">Storage</label>
                                                             <div class="select-column select-box">
-                                                                <select class="selectmenu" id="ui-id-2">
+<select name="storage" class="selectmenu" id="storage">
                                                                     <option selected="selected">All</option>
 <?php
                                                                     // Check if the 'id' parameter is set in the URL
