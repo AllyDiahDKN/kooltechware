@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once '../db.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -9,7 +11,7 @@ require_once '../db.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Ekka - Admin Dashboard HTML Template.</title>
+	<title>Quote Page.</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -51,32 +53,31 @@ require_once '../db.php';
 									<div class="table-responsive">
 										<table id="responsive-data-table" class="table" style="width:100%">
 											<thead>
-												<tr>
-										
+												<tr>										
                                         <th>QuoteID</th>
-                                        <th>UserData</th>
-									
+                                        <th>UserData</th>									
                                         <th>Notes</th>
                                        <!-- <th>RequestDate</th>-->
 										<th>status</th>
-                          <th> </th>
+                          				<th> </th>
 												</tr>
 											</thead>
 
 											<tbody>
 											<?php
-                                    $sql = "SELECT quoterequests.QuoteID, quoterequests.UserID, quoterequests.notes, quoterequests.RequestDate, quoterequests.status, 
-                                            users.UserID, users.first_name, users.last_name 
-                                            FROM quoterequests 
-                                            INNER JOIN users ON  users.uniqueID = quoterequests.UserID 
-                                       
-                                            GROUP BY quoterequests.QuoteID 
-                                            ORDER BY quoterequests.QuoteID DESC";
-                                    $result = $conn->query($sql);
+$sql = "SELECT quoterequests.QuoteID, quoterequests.UserID, quoterequests.notes, quoterequests.RequestDate, quoterequests.status, 
+        users.UserID, users.first_name, users.last_name 
+        FROM quoterequests 
+        INNER JOIN users ON users.uniqueID = quoterequests.UserID 
+        GROUP BY quoterequests.QuoteID 
+        ORDER BY quoterequests.QuoteID DESC";
+$result = $conn->query($sql);
 
-                                    if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) {
-                                    ?>
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        // Assign QuoteID to a variable
+        $QuoteID = $row['QuoteID'];
+?>
 <tr>
                           <td><?php echo $row['QuoteID'];?></td>
                           <td>
@@ -100,9 +101,9 @@ require_once '../db.php';
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item" href="">Detail</a>
-    <a class="dropdown-item" href="" target="_blank" >Print</a>
-																<a class="dropdown-item" href="#">Cancel</a>
+															     <a class="dropdown-item" href="order-detail.php?QuoteID=<?php echo $QuoteID; ?>">Detail</a>
+																 <a class="dropdown-item" href="createQuote.php?QuoteID=<?php echo $QuoteID; ?>" target="_blank" >Create Quote</a>
+																 <a class="dropdown-item" href="#">Cancel</a>
 															</div>
 														</div>
 													</td>

@@ -93,7 +93,7 @@
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="order-detail.html">
+										<a class="sidenav-item-link" href="quotesent.php">
 											<span class="nav-text">Quotes Sent</span>
 										</a>
 									</li>

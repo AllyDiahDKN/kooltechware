@@ -1,19 +1,6 @@
 <?php
 session_start();
 require_once '../db.php';
-// Check if the order ID is provided in the URL
-if(isset($_GET['order_id'])) {
-    // Retrieve the order ID from the URL
-    $orderId = $_GET['order_id'];
-
-    // Now you can use the $orderId variable to fetch and display details of the specific order
-    // For example, you can query your database to get order details based on this ID
-    // Then display the order details on the page
-    echo "Order ID: " . $orderId;
-} else {
-    // If order ID is not provided in the URL, display an error message or handle the situation accordingly
-    echo "Order ID not found in the URL.";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -48,178 +35,290 @@ if(isset($_GET['order_id'])) {
 	<?php include 'header.php';?>
 
 			<!-- CONTENT WRAPPER -->
-			<?php
-// Function to fetch customer details based on order number
-function getCustomerDetails($conn, $orderNumber) {
-    $sql = "SELECT c.first_name, c.last_name, c.mobile, c.email, c.city, c.country
-            FROM customers c
-            INNER JOIN orders o ON c.id = o.customer_id
-            WHERE o.order_number = ?";
+            
+                                
+<?php
+//1. fetch user base on qoute id 
+function getUserDetails($conn, $quoteID) {
+    $sql = "SELECT u.first_name, u.last_name, u.mobile, u.Email, u.company, qr.notes, qr.status
+                FROM users u
+            INNER JOIN quoterequests qr ON u.uniqueID = qr.UserID 
+            WHERE qr.QuoteID = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $orderNumber);
+    $stmt->bind_param("s", $quoteID);
     $stmt->execute();
     $result = $stmt->get_result();
     return $result->fetch_assoc();
 }
+//2.fetch Qoute information base  on Qoute Id
+function getQuoteDetails($conn, $quoteID) {
+    // Prepare the SQL query
+    $sql = "SELECT qr.UserID, qr.notes, qr.requestDate,qr.status, COUNT(ci.ProductID) AS num_products
+            FROM quoterequests qr
+            INNER JOIN quoteitems ci ON ci.QuoterequestsID = qr.QuoteID
+            WHERE qr.QuoteID = ?
+            GROUP BY qr.UserID, qr.notes, qr.requestDate";
 
-// Function to fetch seller details based on order number
-function getSellerDetails($conn, $orderNumber) {
-    $sql = "SELECT u.first_name, u.last_name, u.mobile, u.username
-            FROM user u
-            INNER JOIN orders o ON o.user_id = u.user_id
-            WHERE o.order_number = ?";
+    // Prepare and execute the statement
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $orderNumber);
+    $stmt->bind_param("i", $quoteID);
     $stmt->execute();
+
+    // Get the result
     $result = $stmt->get_result();
-    return $result->fetch_assoc();
+
+    // Fetch the associative array
+    $quoteDetails = $result->fetch_assoc();
+
+    // Close the statement
+    $stmt->close();
+
+    // Return the quote details if found, otherwise return NULL
+    return $quoteDetails ? $quoteDetails : ["error" => "No quote found for the given quote ID"];
 }
 
-// Function to fetch product details based on order number
-function getProductDetails($conn, $orderNumber) {
-    $sql = "SELECT p.product_id, p.product_name, s.size_name, p.price, c.quantity, p.product_image
-            FROM cart c
-            INNER JOIN products p ON c.product_id = p.product_id
-            INNER JOIN size s ON p.size_id = s.size_id
-            WHERE c.order_id = ? AND c.status = 'ordered'";
+
+// Function to fetch product details based on QuoteID
+function getProductDetails($conn, $quoteID) {
+    $sql = "SELECT p.ProductID, p.ProductName, p.Ram, p.Storage, i.ImageURL
+            FROM products p
+            INNER JOIN quoteitems qi ON p.ProductID = qi.ProductID
+            LEFT JOIN images i ON p.ProductID = i.ProductID AND i.main = 1
+            WHERE qi.QuoterequestsID = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $orderNumber);
+    $stmt->bind_param("i", $quoteID);
     $stmt->execute();
     return $stmt->get_result();
 }
 
-// Retrieve the order ID from the URL parameter
-$orderID = $_GET['order_id'];
+// Function to fetch images with main flag set to 1 based on QuoteID
+function getImagesByQuoteID($conn, $quoteID) {
+    // Prepare the SQL query
+    $sql = "SELECT i.ImageID, i.ProductID, i.ImageURL
+            FROM images i
+            INNER JOIN quoteitems qi ON i.ProductID = qi.ProductID
+            WHERE qi.QuoterequestsID = ? AND i.main = 1";
 
-// Fetch customer details
-$customerDetails = getCustomerDetails($conn, $orderID);
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $quoteID);
+    
+    // Execute the statement
+    $stmt->execute();
 
-// Fetch seller details
-$sellerDetails = getSellerDetails($conn, $orderID);
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Fetch the rows as an associative array
+    $images = $result->fetch_all(MYSQLI_ASSOC);
+
+    // Close the statement
+    $stmt->close();
+
+    // Return the fetched images
+    return $images;
+}
+
+// Retrieve the QuoteID from the URL parameter
+$quoteID = $_GET['QuoteID'];
+ $quoteDetails=getQuoteDetails($conn,$quoteID);
+// Fetch user details
+$userDetails = getUserDetails($conn, $quoteID);
 
 // Fetch product details
-$productDetails = getProductDetails($conn, $orderID);
+$productDetails = getProductDetails($conn, $quoteID);
 
-// Fetch approval status
-$stmt = $conn->prepare("SELECT approval, payment, delivery FROM orders WHERE order_number = ?");
-$stmt->bind_param("i", $orderID);
-$stmt->execute();
-$stmt->bind_result($approval, $payment, $delivery);
-$stmt->fetch();
-$stmt->close();
+//fetch images information and product base on Quote
+$imageDetails = getImagesByQuoteID($conn, $quoteID);
+
 ?>
-    <div class="ec-content-wrapper">
-        <div class="content">
-            <div class="breadcrumb-wrapper breadcrumb-wrapper-2">
-                <h1>Order Detail</h1>
-                <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
-                    <span><i class="mdi mdi-chevron-right"></i></span>Orders
-                </p>
-            </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="ec-odr-dtl card card-default">
-                        <div class="card-header card-header-border-bottom d-flex justify-content-between">
-                            <h2 class="ec-odr">Order Detail<br>
-                                <span class="small">Order ID: <?php echo $orderID; ?></span>
-                            </h2>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- Customer Details -->
-                                <div class="col-xl-3 col-lg-6">
-                                    <address class="info-grid">
-                                        <div class="info-title"><strong>Customer:</strong></div><br>
-                                        <div class="info-content">
-                                            <?php if ($customerDetails) : ?>
-                                                <strong><?php echo $customerDetails['first_name'] . ' ' . $customerDetails['last_name']; ?></strong><br>
-                                                <?php echo $customerDetails['mobile']; ?><br>
-                                                <?php echo $customerDetails['email']; ?><br>
-                                                <?php echo $customerDetails['city'] . ', ' . $customerDetails['country']; ?><br>
-                                            <?php else : ?>
-                                                No customer found for the given order number.
-                                            <?php endif; ?>
-                                        </div>
-                                    </address>
-                                </div>
+<div class="ec-content-wrapper">
+    <div class="content">
+        <div class="breadcrumb-wrapper breadcrumb-wrapper-2">
+            <h1>Qoute Detail</h1>
+            <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+                <span><i class="mdi mdi-chevron-right"></i></span>Orders
+            </p>
+        </div>
 
-                                <!-- Seller Details -->
-                                <div class="col-xl-3 col-lg-6">
-                                    <address class="info-grid">
-                                        <div class="info-title"><strong>Seller:</strong></div><br>
-                                        <div class="info-content">
-                                            <?php if ($sellerDetails) : ?>
-                                                <strong><?php echo $sellerDetails['first_name'] . ' ' . $sellerDetails['last_name']; ?></strong><br>
-                                                <?php echo $sellerDetails['mobile']; ?><br>
-                                                <?php echo $sellerDetails['username']; ?><br>
-                                            <?php else : ?>
-                                                No seller found for the given order number.
-                                            <?php endif; ?>
-                                        </div>
-                                    </address>
-                                </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="ec-odr-dtl card card-default">
+                    <div class="card-header card-header-border-bottom d-flex justify-content-between">
+                        <h2 class="ec-odr">Quote Detail<br>
+                            <span class="small">Quote ID: <?php echo $quoteID; ?></span>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Users Details -->
+                            <div class="col-xl-3 col-lg-6">
+                                <address class="info-grid">
+                                    <div class="info-title"><strong>User:</strong></div><br>
+                                    <div class="info-content">
+                                        <?php if ($userDetails) : ?>
+                                            <strong><?php echo $userDetails['first_name'] . ' ' . $userDetails['last_name']; ?></strong><br>
+                                            <?php echo $userDetails['mobile']; ?><br>
+                                            <?php echo $userDetails['Email']; ?><br>
+                                            <?php echo $userDetails['company']; ?><br>
+                                        <?php else : ?>
+                                            No User found for the given order number.
+                                        <?php endif; ?>
+                                    </div>
+                                </address>
+                            </div>
+                           
 
-                                <!-- Approval Status and Buttons -->
-                                <div class="col-xl-6 col-lg-6">
+                            <!-- Quote Details -->
+                            <div class="col-xl-3 col-lg-6">
+                                <address class="info-grid">
+                                    <div class="info-title"><strong>Quote:</strong></div><br>
+                                    <div class="info-content">
+                                        <?php if ( $quoteDetails) : ?>                                           
+                                            <?php echo $quoteDetails['notes']; ?><br><br>
+                                           <strong ><?php echo $quoteDetails['requestDate']; ?></strong><br>
+                                        <?php else : ?>
+                                            No quote found for the given quote ID.
+                                        <?php endif; ?>
+                                    </div>
+                                </address>
+                            </div>
+                            <!--  Status and Buttons -->
+                             <div class="col-xl-6 col-lg-6">
                                     <address class="info-grid">
                                         <div class="info-title"><strong>Status:</strong></div><br>
                                         <div class="info-content">
-                                            <button type="button" class="<?php echo $approval === 'Not Approved' ? 'btn btn-primary' : 'btn'; ?>" id="not-approved-btn" data-order-id="<?php echo $orderID; ?>">Not Approved</button> |
-                                            <button type="button" class="<?php echo $approval === 'Pending' ? 'btn btn-primary' : 'btn'; ?>" id="pending-btn" data-order-id="<?php echo $orderID; ?>">Pending</button> |
-                                            <button type="button" class="<?php echo $approval === 'Approved' ? 'btn btn-primary' : 'btn'; ?>" id="approved-btn" data-order-id="<?php echo $orderID; ?>">Approved</button>
-
-                                            <br>
-                                            <button type="button" class="<?php echo $payment === 'Not Paid' ? 'btn btn-primary' : 'btn'; ?>" id="not-paid-btn" data-order-id="<?php echo $orderID; ?>">Not Paid</button> |
-                                            <button type="button" class="<?php echo $payment === 'Paid' ? 'btn btn-primary' : 'btn'; ?>" id="paid-btn" data-order-id="<?php echo $orderID; ?>">Paid</button>
-                                            <br>
-
-                                            <button type="button" class="btn btn-primary">Delivery Pending</button> |
-                                            <button type="button" class="btn">Delivered</button>
+                                        <?php if ( $quoteDetails) : ?>                            
+                                       <button type="button" class=""> <strong ><?php echo $quoteDetails['status']; ?></strong></button><br>
+                                        <?php else : ?>
+                                            No quote found for the given quote ID.
+                                        <?php endif; ?>
                                         </div>
                                     </address>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h3 class="tbl-title">PRODUCT SUMMARY</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped o-tbl">
-                                            <thead>
-                                                <tr class="line">
-                                                    <td><strong>#</strong></td>
-                                                    <td class="text-center"><strong>IMAGE</strong></td>
-                                                    <td class="text-center"><strong>PRODUCT</strong></td>
-                                                  
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                if ($productDetails->num_rows > 0) {
-                                                    while ($row = $productDetails->fetch_assoc()) {
-                                                        $productId = $row['product_id'];
-                                                        $productName = $row['product_name'];
-                                                        $size = $row['size_name'];
-                                                        $price = $row['price'];
-                                                        $image = $row['product_image'];
-                                                    
-                                                ?>
-                                                        <tr>
-                                                            <td><?php echo $productId; ?></td>
-                                                            <td><img class="product-img" src="../assets/images/product-image/<?php echo $image; ?>" alt="" /></td>
-                                                            <td><strong><?php echo $productName; ?></strong><br>Size: <?php echo $size; ?></td>
-                                                            
-                                                        </tr>
-                                                <?php
-                                                    }
-                                                } else {
-                                                    // If no products are found in the cart for the given order number
-                                                    echo "<tr><td colspan='6'>No products found in the cart for this order</td></tr>";
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="tbl-title">PRODUCT SUMMARY QUOTE</h3
+
+>
+                                <div class="table-responsive">
+                                    <table class="table table-striped o-tbl">
+                                        <thead>
+                                            <tr class="line">
+                                                <td><strong>#</strong></td>
+                                                <td class="text-center"><strong>IMAGE</strong></td>
+                                                <td class="text-center"><strong>PRODUCT</strong></td>
+                                                <td class="text-center"><strong>RAM</strong></td>
+                                                <td class="text-center"><strong>STORAGE</strong></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <?php
+                                            /*if ($productDetails->num_rows > 0) {
+                                                while ($row = $productDetails->fetch_assoc()) {
+                                                    $productID = $row['ProductID'];
+                                                    $productName = $row['ProductName'];
+                                                    $ram = $row['Ram'];
+                                                    $storage = $row['Storage'];
+                                                    $imageURL = $row['ImageURL'];
+                                            ?>
+                                                    <tr>
+                                                        <td><?php echo $productID; ?></td>
+                                                        <td><img class="product-img" src="assets/images/shop/<?php echo $imageURL; ?>" alt="image not showing" /></td>     <td><strong><?php echo $productName; ?></strong></td>
+                                                        <td><?php echo $ram; ?></td>
+                                                        <td><?php echo $storage; ?></td>
+                                                    </tr>
+                                            <?php
                                                 }
-                                                ?>
-                                            
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            } else {
+                                                // If no products are found in the quote
+                                                echo "<tr><td colspan='5'>No products found in the quote</td></tr>";
+                                            }*/
+                                            ?>
+<?php
+if ($productDetails->num_rows > 0) {
+    while ($row = $productDetails->fetch_assoc()) {
+        $productID = $row['ProductID'];
+        $productName = $row['ProductName'];
+
+        // Fetch main image URL from the Images table
+        $sqlImage = "SELECT ImageURL FROM images WHERE ProductID = ? AND main = 1";
+        $stmtImage = $conn->prepare($sqlImage);
+        $stmtImage->bind_param("i", $productID);
+        $stmtImage->execute();
+        $stmtImage->bind_result($imageURL);
+        $stmtImage->fetch();
+        $stmtImage->close();
+
+        // Fetch RAM for the product
+        $sqlRam = "SELECT r.ram_name
+                   FROM product_ram pr
+                   INNER JOIN ram r ON pr.ram_id = r.ram_id
+                   WHERE pr.product_id = ?";
+        $stmtRam = $conn->prepare($sqlRam);
+        $stmtRam->bind_param("i", $productID);
+        $stmtRam->execute();
+        $stmtRam->bind_result($ram);
+        $stmtRam->fetch();
+        $stmtRam->close();
+
+        // Fetch storage for the product
+        $sqlStorage = "SELECT s.storage_name
+                       FROM product_storage ps
+                       INNER JOIN storage s ON ps.storage_id = s.storage_id
+                       WHERE ps.product_id = ?";
+        $stmtStorage = $conn->prepare($sqlStorage);
+        $stmtStorage->bind_param("i", $productID);
+        $stmtStorage->execute();
+        $stmtStorage->bind_result($storage);
+        $stmtStorage->fetch();
+        $stmtStorage->close();
+
+        // Output the table row with the product details, RAM, storage, and image
+?>
+        <tr>
+            <td><?php echo $productID; ?></td>
+            <td><img class="product-img" src="assets/shop/<?php echo $imageURL; ?>" alt="Image not found" /></td>
+            <td><strong><?php echo $productName; ?></strong></td>
+            <td><?php echo $ram ? $ram : 0; ?></td>
+            <td><?php echo $storage ? $storage : 0; ?></td>
+        </tr>
+       
+<?php
+    }
+} else {
+    // If no products are found in the quote
+    echo "<tr><td colspan='5'>No products found in the quote</td></tr>";
+}
+?>
+
+
+                                        </tbody>
+                                    </table>
+                                    <?php
+$sql = "SELECT quoterequests.QuoteID, quoterequests.UserID, quoterequests.notes, quoterequests.RequestDate, quoterequests.status, 
+        users.UserID, users.first_name, users.last_name 
+        FROM quoterequests 
+        INNER JOIN users ON users.uniqueID = quoterequests.UserID 
+        GROUP BY quoterequests.QuoteID 
+        ORDER BY quoterequests.QuoteID DESC";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        // Assign QuoteID to a variable
+        $QuoteID = $row['QuoteID'];
+    }
+}
+?>
+                                    <div class="row">
+        <div class="col-md-6">
+             <a  href="createQuote.php?QuoteID=<?php echo $QuoteID; ?>" class="btn btn-primary" name="priceQuote">Create price Quote</a>
+        </div>   
+        
+    </div>
                                 </div>
                             </div>
                         </div>
@@ -228,6 +327,7 @@ $stmt->close();
             </div>
         </div>
     </div>
+</div>
 
 			<!-- Footer -->
 			<footer class="footer mt-auto">
