@@ -5,7 +5,7 @@ $currentPage = basename($_SERVER['PHP_SELF']); // Get the current page file name
 switch ($currentPage) {
     case "index.php":
         $title = "Kool Techware | Home";
-        $description = "Description for the home page.";
+        $description = "A Platinum Lenovo Partner in Tanzania.";
         $keywords = "keyword1, keyword2, keyword3";
         break;
     case "shop.php":
@@ -16,7 +16,7 @@ switch ($currentPage) {
 
     case "shop.php?brand_id=1":
         $title = "Lenovo";
-        $description = "Description for the About Us page.";
+        $description = "Get the best Lenovo Products with us.";
         $keywords = "about, company, information";
         break;
 
