@@ -29,7 +29,8 @@ require_once '../db.php'; // Include your database connection file here
                             $brandId = $_GET['brand_id'];
 
                             // Retrieve category data for editing
-                            $sql = "SELECT * FROM brands WHERE brand_id = '$brandId'";
+                            $sql = "SELECT * FROM brands WHERE BrandID = '$brandId'";
+
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -41,7 +42,8 @@ require_once '../db.php'; // Include your database connection file here
                                     $newBrandName = $_POST['brand_name'];
 
                                     // Update Brand name in the Brands table
-                                    $updateQuery = "UPDATE brands SET brand_name = '$newBrandName' WHERE brand_id = '$brandId'";
+                                    $updateQuery = "UPDATE brands SET BrandName = '$newBrandName' WHERE BrandID = '$brandId'";
+
                                     if ($conn->query($updateQuery) === TRUE) {
                                         // Redirect back to brand.php
                                         header("Location: brand.php");
@@ -60,7 +62,7 @@ require_once '../db.php'; // Include your database connection file here
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="brand_name">Brand Name</label>
-                                                    <input type="text" class="form-control" id="brand_name" name="brand_name" value="<?php echo isset($brandData['brand_name']) ? $brandData['brand_name'] : ''; ?>" required>
+                                                    <input type="text" class="form-control" id="brand_name" name="brand_name" value="<?php echo isset($brandData['BrandName']) ? $brandData['BrandName'] : ''; ?>" required>
                                                 </div>
                                             </div>
                                         </div>

@@ -79,7 +79,7 @@ require_once '../db.php';?>
 <?php
 
 // Step 2: Query the database
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM admin";
 $result = mysqli_query($conn, $sql);
 
 // Step 3: Loop through the result set

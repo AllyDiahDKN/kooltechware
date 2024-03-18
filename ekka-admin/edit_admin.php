@@ -26,27 +26,26 @@ require_once '../db.php'; // Include your database connection file here
                     <?php
 if (isset($_GET['id'])) {
     $adminId = $_GET['id'];
-    
+
     // Retrieve admin data for editing
     $sql = "SELECT * FROM admin WHERE id = '$adminId'";
     $result = $conn->query($sql);
-    
+
     if ($result->num_rows > 0) {
         // Fetch admin data
         $adminData = $result->fetch_assoc();
-        
+
         // Check if the form is submitted for updating admin
-        if(isset($_POST['update_admin'])) {
-            $newUsername = $_POST['username'];
+        if(isset($_POST['update_admin'])) {       
             $newEmail = $_POST['email'];
             $newPassword = $_POST['password'];
             $newFirstName = $_POST['firstname'];
             $newLastName = $_POST['lastname'];
             $newMobile = $_POST['mobile'];
             $newPermissionType = $_POST['permission_type'];
-    
+
             // Update admin data in the admin table
-            $updateQuery = "UPDATE admin SET username = '$newUsername', email = '$newEmail', password = '$newPassword', first_name = '$newFirstName', last_name = '$newLastName', mobile = '$newMobile', permission_type = '$newPermissionType' WHERE id = '$adminId'";
+            $updateQuery = "UPDATE admin SET  email = '$newEmail', password = '$newPassword', first_name = '$newFirstName', last_name = '$newLastName', mobile = '$newMobile', permission_type = '$newPermissionType' WHERE id = '$adminId'";
             if ($conn->query($updateQuery) === TRUE) {
                 // Redirect back to admin-list.php or wherever you want
                 header("Location: admin-list.php");
@@ -55,7 +54,10 @@ if (isset($_GET['id'])) {
                 echo "Error updating admin: " . $conn->error;
             }
         }
+    
+    
 ?>
+
 
 <form action="" method="post">
     <div class="modal-header px-4">
@@ -64,12 +66,7 @@ if (isset($_GET['id'])) {
 
     <div class="modal-body px-4">
         <div class="row mb-2">
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" value="<?php echo $adminData['username']; ?>" placeholder="Username">
-                </div>
-            </div>
+           
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="firstname">First Name</label>

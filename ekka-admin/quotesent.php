@@ -89,6 +89,7 @@ if ($result->num_rows > 0) {
                             <br />
                           </td>
                           </td>
+                          <!-- status sent-->
                           <td><?php echo $row['status'] ? 'sent' : ''; ?></td>
 
                           <td>
