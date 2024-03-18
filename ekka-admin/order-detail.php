@@ -315,7 +315,7 @@ if ($result->num_rows > 0) {
 ?>
                                     <div class="row">
         <div class="col-md-6">
-             <a  href="createQuote.php?QuoteID=<?php echo $QuoteID; ?>" class="btn btn-primary" name="priceQuote">Create price Quote</a>
+             <a  href="?QuoteID=<?php echo $QuoteID; ?>" class="btn btn-primary" name="priceQuote">Resend</a>
         </div>   
         
     </div>
