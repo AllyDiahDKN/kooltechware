@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = isset($_POST['password']) ? mysqli_real_escape_string($conn, $_POST['password']) : '';
 
     // Query to fetch user data based on email
-    $sql = "SELECT * FROM user_admin WHERE email = ?";
+    $sql = "SELECT * FROM admin WHERE email = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
@@ -100,7 +100,7 @@ mysqli_close($conn);
                                             <div class="d-inline-block mr-3">
                                                 <div class="control control-checkbox">
                                                     Remember me
-                                                    <input type="checkbox" name="remember_me">
+                                                    <input type="checkbox" name="remember_me"/>
                                                     <div class="control-indicator"></div>
                                                 </div>
                                             </div>
