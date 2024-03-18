@@ -18,7 +18,7 @@
 $user_id = $_COOKIE['user_id']; // Assuming you have stored user_id in a cookie
 
 // Fetch products from the cart table for the specific user
-$sql = "SELECT cart.UserID, cart.ProductID, products.ProductName, images.ImageURL, ram.ram_name, storage.storage_name
+$sql = "SELECT cart.*, products.ProductName, images.ImageURL, ram.ram_name, storage.storage_name
 FROM cart
 INNER JOIN products ON cart.ProductID = products.ProductID
 INNER JOIN images ON products.ProductID = images.ProductID AND images.main = 1
