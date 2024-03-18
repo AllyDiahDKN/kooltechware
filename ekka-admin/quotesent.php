@@ -11,7 +11,7 @@ require_once '../db.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Quote Page.</title>
+	<title>Quote Sent Page.</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -89,7 +89,9 @@ if ($result->num_rows > 0) {
                             <br />
                           </td>
                           </td>
-                          <td><?php echo $row['status'];?></td>
+                          <!-- status sent-->
+                          <td><?php echo $row['status'] ? 'sent' : ''; ?></td>
+
                           <td>
 														<div class="btn-group mb-1">
 															
