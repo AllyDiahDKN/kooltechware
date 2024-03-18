@@ -31,9 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $cartItemsTransferred = true;
             while ($row = mysqli_fetch_assoc($cartItemsResult)) {
                 $productID = $row['ProductID'];
+                $ram_id = $row['ram_id'];
+                $storage_id = $row['storage_id'];
                 // Insert cart item into quoteitems table
-                $quoteItemInsertQuery = "INSERT INTO quoteitems (QuoterequestsID, ProductID, UserID) 
-                                         VALUES ('$quoteID', '$productID', '$uniqueID')";
+                $quoteItemInsertQuery = "INSERT INTO quoteitems (QuoterequestsID, ProductID, UserID, ram_id, storage_id) 
+                                         VALUES ('$quoteID', '$productID', '$uniqueID', '$ram_id', '$storage_id')";
                 if (!mysqli_query($conn, $quoteItemInsertQuery)) {
                     $cartItemsTransferred = false;
                     break;

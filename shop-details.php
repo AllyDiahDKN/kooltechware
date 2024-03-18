@@ -1,5 +1,19 @@
-<?php
+<?php 
 require_once 'db.php';
+
+// Step 1: Check if a cookie exists
+if(isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+} else {
+    // Step 2: Generate a unique ID
+    $user_id = uniqid('user_'); // You can use any method to generate a unique ID
+    
+    // Step 3: Save the ID in a cookie
+    setcookie('user_id', $user_id, time() + (86400 * 7), "/"); // Cookie valid for 7 days
+    
+    // Prepare and execute SQL statement to insert the user ID into the database
+    $sql = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
+}
 
 ?>
 <!DOCTYPE html>
@@ -149,7 +163,7 @@ require_once 'db.php';
         $product_id = mysqli_real_escape_string($conn, $_GET['id']);
         
         // Fetch product details from the database for the specified ID
-        $query = "SELECT p.*, c.CategoryName, b.BrandName 
+        $query = "SELECT p.*, c.CategoryName, b.BrandName
                   FROM products p 
                   INNER JOIN categories c ON p.CategoryID = c.CategoryID 
                   INNER JOIN brands b ON p.BrandID = b.BrandID
@@ -173,46 +187,163 @@ require_once 'db.php';
     }
 ?>
         <!-- shop-details -->
-        <section class="shop-details p_relative pt_140 pb_80">
+        <section class="shop-details shop-details-2 p_relative pt_140 pb_80">
             <div class="auto-container">
                 <div class="product-details-content p_relative d_block mb_100">
                     <div class="row clearfix">
-                                <div class="slider-content p_relative d_block">
-                                    <div class="slider-pager p_absolute l_0 t_0 z_1">
-                                        <ul class="thumb-box">
-                                            <li>
-                                                <a class="active" data-slide-index="0" href="#"><figure><img src="assets/images/shop/single-thumb-1.jpg" alt=""></figure></a>
-                                            </li>
-                                            <li>
-                                                <a data-slide-index="1" href="#"><figure><img src="assets/images/shop/single-thumb-2.jpg" alt=""></figure></a>
-                                            </li>
-                                            <li>
-                                                <a data-slide-index="2" href="#"><figure><img src="assets/images/shop/single-thumb-3.jpg" alt=""></figure></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-image p_relative pl_100">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="assets/images/shop/shop-single-2.jpg" alt=""></figure>
-                                            <div class="preview-link p_absolute t_20 r_20"><a href="assets/images/shop/shop-single-2.jpg" class="lightbox-image p_relative d_iblock fs_20 centred z_1 w_50 h_50 color_black lh_50" data-fancybox="gallery"><i class="far fa-search-plus"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
+
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="product-details p_relative d_block ml_20">
                                 <h2 class="d_block fs_30 lh_40 fw_sbold font_family_inter mb_5"><?= $row['ProductName']; ?></h2>                              
                             
                                 <div class="text p_relative d_block mb_30">
                                     <p class="font_family_poppins mb_25"><?= $row['Description']; ?></p>
+                                </div>
+<?php 
+                                if ($row['CategoryID'] === "3" || $row['CategoryID'] === "2") {
+?>
+                                    <div class="billing-info">
+                                        <form action="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" method="post" class="billing-form">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                    <label class="p_relative d_block fs_16 font_family_poppins color_black mb_2">Ram</label>
+                                                    <div class="select-column select-box">
+<select name="ram" class="selectmenu" id="ram">
+                                                            <option selected="selected">All</option>
+<?php
+                                                                if(isset($_GET['id']) && !empty($_GET['id'])) {
+                                                                    // Sanitize the input to prevent SQL injection
+                                                                    $productID = mysqli_real_escape_string($conn, $_GET['id']);
 
-                                </div>
-                                <div class="addto-cart-box p_relative d_block mb_35"> 
-                                    <ul class="clearfix">
-                                      
-                                        <li class="p_relative d_block float_left mr_10"><a href="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" class="theme-btn theme-btn-eight">Add To Cart</a></li>
-                                   
-                                    </ul>
-                                </div>
+                                                                    // Query to fetch RAM options for the product with the specified ID
+                                                                    $ramQuery = "SELECT r.ram_name, r.ram_id
+                                                                                 FROM ram r
+                                                                                 INNER JOIN product_ram pr ON r.ram_id = pr.ram_id
+                                                                                 WHERE pr.product_id = '$productID'";
+                                                                    $ramResult = mysqli_query($conn, $ramQuery);
+
+                                                                    // Check if the query execution was successful
+                                                                    if($ramResult) {
+                                                                        // Loop through the results and display RAM options
+                                                                        while($ramrow = mysqli_fetch_assoc($ramResult)) {
+                                                                            echo '<option value="'. $ramrow['ram_id'] .'">' . $ramrow['ram_name'] .'</option>';
+                                                                        }
+                                                                    } else {
+                                                                        // Query execution failed
+                                                                        echo 'Error: Unable to fetch RAM options.';
+                                                                    }
+                                                                } else {
+                                                                    // 'id' parameter is not set in the URL
+                                                                    echo 'Error: Product ID is missing.';
+                                                                }
+?>
+                    
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                            <label class="p_relative d_block fs_16 font_family_poppins color_black mb_2">Storage</label>
+                                                            <div class="select-column select-box">
+<select name="storage" class="selectmenu" id="storage">
+                                                                    <option selected="selected">All</option>
+<?php
+                                                                    // Check if the 'id' parameter is set in the URL
+                                                                    if(isset($_GET['id']) && !empty($_GET['id'])) {
+                                                                        // Sanitize the input to prevent SQL injection
+                                                                        $productID = mysqli_real_escape_string($conn, $_GET['id']);
+
+                                                                        // Query to fetch RAM options for the product with the specified ID
+                                                                        $storageQuery = "SELECT s.storage_name
+                                                                                     FROM storage s
+                                                                                     INNER JOIN product_storage st ON s.storage_id = st.storage_id
+                                                                                     WHERE st.product_id = '$productID'";
+                                                                        $storageResult = mysqli_query($conn, $storageQuery);
+
+                                                                        // Check if the query execution was successful
+                                                                        if($storageResult) {
+                                                                            // Loop through the results and display RAM options
+                                                                            while($storagerow = mysqli_fetch_assoc($storageResult)) {
+                                                                                echo '<option>' . $storagerow['storage_name'] . '</option>';
+                                                                            }
+                                                                        } else {
+                                                                            // Query execution failed
+                                                                            echo 'Error: Unable to fetch Storage options.';
+                                                                        }
+                                                                    } else {
+                                                                        // 'id' parameter is not set in the URL
+                                                                        echo 'Error: Product ID is missing.';
+                                                                    }
+?>                    
+                                                                    </select>
+                                                                </div>
+                                                            </div>                                               
+                                                        </div>
+                                                    </div>
+                                                    <div class="addto-cart-box p_relative d_block mb_35"> 
+                                                        <ul class="clearfix">                                          
+                                                            <li class="p_relative d_block float_left mr_10">
+                                                                <button type="submit" class="theme-btn theme-btn-eight">Add to Quote</button>
+                                                            </li>
+                                                            <li class="p_relative d_block float_left mr_10">
+                                                                <a href="#" class="share-btn d_iblock p_relative fs_20 lh_50 w_50 h_50 centred b_radius_5" onclick="shareProduct()">
+                                                                    <i class="icon-81"></i>
+                                                                </a>
+                                                            </li>
+                                                            <script type="text/javascript">
+                                                            function shareProduct() {
+                                                                // Get product details
+                                                                var productName = "<?= $row['ProductName']; ?>";
+                                                                var productDescription = "<?= $row['Description']; ?>";
+                                                                var productURL = window.location.href; // URL of the current page
+
+                                                                // Construct the share message
+                                                                var shareMessage = "Check out this product: " + productName + "\nDescription: " + productDescription + "\nLink: " + productURL;
+
+                                                                // Construct the WhatsApp share URL
+                                                                var whatsappURL = "https://wa.me/?text=" + encodeURIComponent(shareMessage);
+
+                                                                // Open WhatsApp share dialog
+                                                                window.open(whatsappURL);
+                                                            }
+                                                            </script>
+                                                        </ul>
+                                                    </div>
+                                                </form>
+<?php
+                                                } else {
+    ?>
+                                                <div class="addto-cart-box p_relative d_block mb_35"> 
+                                                    <ul class="clearfix">      
+                                                        <li class="p_relative d_block float_left mr_10">
+                                                            <a href="add-to-cart.php?ProductID=<?php echo $row['ProductID'];?>" class="theme-btn theme-btn-eight">Add To Cart</a>
+                                                        </li>
+                                                        <li class="p_relative d_block float_left mr_10">
+                                                            <a href="#" class="share-btn d_iblock p_relative fs_20 lh_50 w_50 h_50 centred b_radius_5" onclick="shareProduct()">
+                                                                <i class="icon-81"></i>
+                                                            </a>
+                                                        </li>
+                                                        <script type="text/javascript">
+                                                        function shareProduct() {
+                                                            // Get product details
+                                                            var productName = "<?= $row['ProductName']; ?>";
+                                                            var productDescription = "<?= $row['Description']; ?>";
+                                                            var productURL = window.location.href; // URL of the current page
+
+                                                            // Construct the share message
+                                                            var shareMessage = "Check out this product: " + productName + "\nDescription: " + productDescription + "\nLink: " + productURL;
+
+                                                            // Construct the WhatsApp share URL
+                                                            var whatsappURL = "https://wa.me/?text=" + encodeURIComponent(shareMessage);
+
+                                                            // Open WhatsApp share dialog
+                                                            window.open(whatsappURL);
+                                                        }
+                                                        </script>
+                                                    </ul>
+                                                </div>
+<?php
+                                                }
+?>
                                 <div class="other-option">
                                     <ul class="list">
                                         <li class="p_relative d_block fs_16 font_family_poppins mb_5"><span class="fw_medium color_black">Product ID:</span> KTW-10<?= $row['ProductID']; ?></li>
@@ -359,7 +490,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/product-filter.js"></script>
     <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/bxslider.js"></script>
+
+
     <script src="assets/js/parallax-scroll.js"></script>
 
     <!-- main-js -->

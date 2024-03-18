@@ -21,17 +21,24 @@ if(isset($_GET['ProductID'])) {
     exit("Product ID not found.");
 }
 
-// Check if the product is already in the cart for the user
-$sql_check = "SELECT * FROM cart WHERE UserID='$user_id' AND ProductID='$productID'";
+// Retrieve selected RAM value from the form
+$selected_ram = isset($_POST['ram']) ? $_POST['ram'] : '0';
+
+// Retrieve selected Storage value from the form
+$selected_storage = isset($_POST['storage']) ? $_POST['storage'] : '0';
+
+// Check if the product with the same RAM and Storage options is already in the cart for the user
+$sql_check = "SELECT * FROM cart WHERE UserID='$user_id' AND ProductID='$productID' AND ram_id='$selected_ram' AND storage_id='$selected_storage'";
 $result_check = $conn->query($sql_check);
 
 if ($result_check->num_rows > 0) {
-    // Product is already in the cart
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
-    exit();}
+    // Product with the same RAM and Storage options is already in the cart
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
+}
 
-// Insert product into cart table
-$sql_insert = "INSERT INTO cart (UserID, ProductID) VALUES ('$user_id', '$productID')";
+// Insert product into cart table with selected RAM and Storage values
+$sql_insert = "INSERT INTO cart (UserID, ProductID, ram_id, storage_id) VALUES ('$user_id', '$productID', '$selected_ram', '$selected_storage')";
 
 if ($conn->query($sql_insert) === TRUE) {
     // Redirect to previous page
