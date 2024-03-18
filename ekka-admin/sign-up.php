@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Connection string
+//connection string ok
 require_once '../db.php';
 
 if (!$conn) {
@@ -11,21 +11,20 @@ if (!$conn) {
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize user input to prevent SQL injection
-    $first_name = isset($_POST['first_name']) ? mysqli_real_escape_string($conn, $_POST['first_name']) : '';
-    $last_name = isset($_POST['last_name']) ? mysqli_real_escape_string($conn, $_POST['last_name']) : '';
+    $first_name = isset($_POST['fname']) ? mysqli_real_escape_string($conn, $_POST['fname']) : '';
+    $last_name = isset($_POST['lname']) ? mysqli_real_escape_string($conn, $_POST['lname']) : '';
     $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, $_POST['email']) : '';
     $password = isset($_POST['password']) ? mysqli_real_escape_string($conn, $_POST['password']) : '';
 
+    $table_name = "user_admin"; 
     // Hash the password before storing it in the database
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : '';
 
-    $table_name = "admin"; 
-
-    $sql = "INSERT INTO $table_name (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO $table_name (fname, lname, email, password) VALUES (?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $first_name, $last_name, $email, $hashed_password); 
+    mysqli_stmt_bind_param($stmt, "ssss", $first_name, $last_name, $email, $password); 
 
     if (mysqli_stmt_execute($stmt)) {
         echo "New record created successfully";
@@ -77,43 +76,43 @@ mysqli_close($conn);
           </div>
           <div class="card-body p-5">
             <h4 class="text-dark mb-5">Sign Up</h4>
-            <form action="" method="post">
-              <div class="row">
+                    <form action="" method="post">
+            <div class="row">
                 <div class="form-group col-md-12 mb-4">
-                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
                 </div>
 
                 <div class="form-group col-md-12 mb-4">
-                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" required>
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
                 </div>
 
                 <div class="form-group col-md-12 mb-4">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
 
-                <div class="form-group col-md-12 mb-4">
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <div class="form-group col-md-12 ">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
 
-                <div class="form-group col-md-12 mb-4">
-                  <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
+                <div class="form-group col-md-12 ">
+                    <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
                 </div>
 
                 <div class="col-md-12">
-                  <div class="d-inline-block mr-3">
-                    <!--<div class="control control-checkbox">
-                      <input type="checkbox" />
-                      <div class="control-indicator"></div>
-                      I Agree to the terms and conditions
-                    </div>--> 
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
-                  <p class="sign-upp">Already have an account?
-                    <a class="text-blue" href="sign-in.php">Sign in</a>
-                  </p>    
+                    <div class="d-inline-block mr-3">
+                        <div class="control control-checkbox">
+                            <input type="checkbox" />
+                            <div class="control-indicator"></div>
+                            I Agree to the terms and conditions
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
+                    <p class="sign-upp">Already have an account?
+                        <a class="text-blue" href="sign-in.php">Sign in</a>
+                    </p>    
                 </div>
-              </div>
-            </form>
+            </div>
+        </form>
 
           </div>
         </div>

@@ -42,7 +42,7 @@ if(isset($_COOKIE['user_id'])) {
 <link href="assets/css/woocommerce.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
-</head>A
+</head>
 
 
 <!-- page wrapper -->

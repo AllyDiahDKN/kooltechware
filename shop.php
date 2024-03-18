@@ -4,34 +4,18 @@ require_once 'db.php';
 // Step 1: Check if a cookie exists
 if(isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
-    echo $user_id;
-
-    // Step 2: Check if user already exists in the database
-    $sql_select = "SELECT * FROM users WHERE uniqueID = '$user_id'";
-    $result = $conn->query($sql_select);
-    
-    if ($result->num_rows == 0) {
-        // Step 3: If user doesn't exist, insert into the database
-        $sql_insert = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
-        if ($conn->query($sql_insert) === TRUE) {
-            echo "New record inserted successfully";
-        } else {
-            echo "Error: " . $sql_insert . "<br>" . $conn->error;
-        }
-    } else {
-        echo "User already exists in the database";
-    }
 } else {
-    // Step 4: Generate a unique ID
+    // Step 2: Generate a unique ID
     $user_id = uniqid('user_'); // You can use any method to generate a unique ID
     
-    // Step 5: Save the ID in a cookie
+    // Step 3: Save the ID in a cookie
     setcookie('user_id', $user_id, time() + (86400 * 7), "/"); // Cookie valid for 7 days
     
-    echo "New user created with ID: " . $user_id;
+    // Prepare and execute SQL statement to insert the user ID into the database
+    $sql = "INSERT INTO users (uniqueID) VALUES ('$user_id')";
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
