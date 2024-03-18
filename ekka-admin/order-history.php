@@ -1,7 +1,5 @@
 <?php
-session_start();
 require_once '../db.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -11,7 +9,7 @@ require_once '../db.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Quote Page.</title>
+	<title>Ekka - Admin Dashboard HTML Template.</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -42,9 +40,10 @@ require_once '../db.php';
 			<div class="ec-content-wrapper">
 				<div class="content">
 					<div class="breadcrumb-wrapper breadcrumb-wrapper-2">
-						<h1>Quotes</h1>
+						<h1>Orders</h1>
 						<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
-							<span><i class="mdi mdi-chevron-right"></i></span>Quotes
+							<span><i class="mdi mdi-chevron-right"></i></span>Orders
+						</p>
 					</div>
 					<div class="row">
 						<div class="col-12">
@@ -53,43 +52,47 @@ require_once '../db.php';
 									<div class="table-responsive">
 										<table id="responsive-data-table" class="table" style="width:100%">
 											<thead>
-												<tr>										
-                                        <th>QuoteID</th>
-                                        <th>UserData</th>									
-                                        <th>Notes</th>
-                                       <!-- <th>RequestDate</th>-->
-										<th>status</th>
-                          				<th> </th>
+												<tr>
+                          <th >ID</th>
+                          <th>Seller Name</th>
+                           <th>Sale Type</th>
+                          <th>Total</th>
+                          <th>Delivery</th>
+                          <th>Payment</th>
+                          <th>Approval</th>
+                          <th> </th>
 												</tr>
 											</thead>
 
 											<tbody>
-											<?php
-$sql = "SELECT quoterequests.QuoteID, quoterequests.UserID, quoterequests.notes, quoterequests.RequestDate, quoterequests.status, 
-        users.UserID, users.first_name, users.last_name 
-        FROM quoterequests 
-        INNER JOIN users ON users.uniqueID = quoterequests.UserID 
-        GROUP BY quoterequests.QuoteID 
-        ORDER BY quoterequests.QuoteID DESC";
-$result = $conn->query($sql);
+												<?php
+$sql="SELECT DISTINCT cart.order_id, cart.sale_type, orders.Total, orders.Payment, orders.discount, orders.approval, orders.delivery, orders.time_created, orders.date_created, user.first_name, user.last_name, user.user_id FROM cart INNER JOIN products ON cart.product_id=products.product_id INNER JOIN user ON cart.user_id=user.user_id INNER JOIN orders ON cart.order_id=orders.order_number WHERE status = 'ordered' GROUP BY cart.order_id ORDER BY orders.order_number DESC";
+$result=$conn->query($sql);
 
-if ($result->num_rows > 0) {
+if($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        // Assign QuoteID to a variable
-        $QuoteID = $row['QuoteID'];
 ?>
 <tr>
-                          <td><?php echo $row['QuoteID'];?></td>
+                          <td><?php echo $row['order_id'];?></td>
                           <td>
-                            <a><?php echo $row['first_name'];?> <?php echo $row['last_name'];?> (<?php echo $row['UserID'];?>)</a>
+                            <a><?php echo $row['first_name'];?> <?php echo $row['last_name'];?> (<?php echo $row['user_id'];?>)</a>
                             <br />
-                          </td>                
-						  <td>
-                            <a><?php echo $row['notes'];?>(<?php echo $row['UserID'];?>)</a>
-                            <br />
+                            <small><?php echo $row['time_created'];?> - <?php echo $row['date_created'];?></small>
                           </td>
+                          <td><?php echo $row['sale_type'];?></td>
+                          <td ><?php echo number_format($row['Total']-$row['discount'],0);?></td>
+                                                    <td><?php echo $row['delivery'];?></td>
+
+                          <td><?php if ($row['Payment']=="not paid") {
+                            ?>
+                            <span class="mb-2 mr-2 badge badge-warning"><?php echo $row['Payment'];?></span>
+						<?php
+                          }else {
+                          ?>
+                            <span class="mb-2 mr-2 badge badge-success"><?php echo $row['Payment'];?></span>
+                          <?php } ?>
                           </td>
-                          <td><?php echo $row['status'];?></td>
+                          <td><?php echo $row['approval'];?></td>
                           <td>
 														<div class="btn-group mb-1">
 															
@@ -101,9 +104,9 @@ if ($result->num_rows > 0) {
 															</button>
 
 															<div class="dropdown-menu">
-															     <a class="dropdown-item" href="order-detail.php?QuoteID=<?php echo $QuoteID; ?>">Detail</a>
-																 <a class="dropdown-item" href="createQuote.php?QuoteID=<?php echo $QuoteID; ?>" target="_blank" >Create Quote</a>
-																 <a class="dropdown-item" href="#">Cancel</a>
+																<a class="dropdown-item" href="order-detail.php?order_id=<?php echo $row['order_id'];?>">Detail</a>
+    <a class="dropdown-item" href="generate_receipt.php?order_id=<?php echo $row['order_id']; ?>" target="_blank" >Print</a>
+																<a class="dropdown-item" href="#">Cancel</a>
 															</div>
 														</div>
 													</td>

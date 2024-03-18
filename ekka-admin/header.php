@@ -93,7 +93,7 @@
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="quotesent.php">
+										<a class="sidenav-item-link" href="order-detail.html">
 											<span class="nav-text">Quotes Sent</span>
 										</a>
 									</li>
@@ -168,7 +168,7 @@
 										<a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Setting </a>
 									</li>
 									<li class="dropdown-footer">
-										<a href="sign-in.php"> <i class="mdi mdi-logout"></i> Log Out </a>
+										<a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
 									</li>
 								</ul>
 							</li>

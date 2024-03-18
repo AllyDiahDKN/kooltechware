@@ -14,30 +14,22 @@ if (isset($_GET['brand_id'])) {
         // Fetch brand data
         $brandData = $result->fetch_assoc();
 
-        // Check if the brand has already been deleted
-        $checkQuery = "SELECT * FROM deleted_brands WHERE BrandID = '$brandId'";
-        $checkResult = $conn->query($checkQuery);
+        // Insert brand data into deleted_brands table
+        $insertQuery = "INSERT INTO deleted_brands (BrandID, BrandName)
+                        VALUES ('{$brandData['BrandID']}', '{$brandData['BrandName']}')";
 
-        if ($checkResult->num_rows == 0) {
-            // Insert brand data into deleted_brands table
-            $insertQuery = "INSERT INTO deleted_brands (BrandID, BrandName)
-                            VALUES ('{$brandData['BrandID']}', '{$brandData['BrandName']}')";
-
-            if ($conn->query($insertQuery) === TRUE) {
-                // Delete the brand from the brands table
-                $deleteQuery = "DELETE FROM brands WHERE BrandID = '$brandId'";
-                if ($conn->query($deleteQuery) === TRUE) {
-                    // If successful, redirect back to the previous page
-                    header("Location: {$_SERVER['HTTP_REFERER']}");
-                    exit();
-                } else {
-                    echo "Error deleting brand: " . $conn->error;
-                }
+        if ($conn->query($insertQuery) === TRUE) {
+            // Delete the brand from the brands table
+            $deleteQuery = "DELETE FROM brands WHERE BrandID = '$brandId'";
+            if ($conn->query($deleteQuery) === TRUE) {
+                // If successful, redirect back to the previous page
+                header("Location: {$_SERVER['HTTP_REFERER']}");
+                exit();
             } else {
-                echo "Error inserting into deleted_brands table: " . $conn->error;
+                echo "Error deleting brand: " . $conn->error;
             }
         } else {
-            echo "Brand already deleted.";
+            echo "Error inserting into deleted_brands table: " . $conn->error;
         }
     } else {
         echo "Brand not found.";
