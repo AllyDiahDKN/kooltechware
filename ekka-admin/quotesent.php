@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                 <th>Notes</th>
                 <th>Status</th>
                 <th>Products</th>
-                <th>Price</th>
+                <th>Total</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -87,7 +87,15 @@ if ($result->num_rows > 0) {
                     <td>
                         <a><?php echo $row['notes']; ?></a>
                     </td>
-					<td><?php echo $row['status'] ? 'sent' : ''; ?></td>
+                    <?php
+// Assuming you have already fetched the row from the database
+
+// Check if 'status' column is set and equal to 'sent'
+$status = isset($row['status']) && $row['status'] == 'sent' ? 'sent' : 'not sent';
+?>
+
+<td><?php echo $status; ?></td>
+
 
                     <td>
                         <?php
@@ -127,7 +135,7 @@ if ($result->num_rows > 0) {
                                 <span class="sr-only">Info</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="order-detail.php?QuoteID=<?php echo $quoteID; ?>">Detail</a>
+                                <a class="dropdown-item" href="quotesentdetail.php?QuoteID=<?php echo $quoteID; ?>">More Detail</a>
                                 <!--<a class="dropdown-item" href="createQuote.php?QuoteID=<?php echo $quoteID; ?>">Create Quote</a>-->
                                 <a class="dropdown-item" href="#">Cancel</a>
                             </div>

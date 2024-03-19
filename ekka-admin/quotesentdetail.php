@@ -189,18 +189,43 @@ $imageDetails = getImagesByQuoteID($conn, $quoteID);
                                     <address class="info-grid">
                                         <div class="info-title"><strong>Status:</strong></div><br>
                                         <div class="info-content">
-                                        <?php if ( $quoteDetails) : ?>                            
-                                       <button type="button" class=""> <strong ><?php echo $quoteDetails['status']; ?></strong></button><br>
-                                        <?php else : ?>
-                                            No quote found for the given quote ID.
-                                        <?php endif; ?>
+                                    <?php
+                                    // Assuming you have already fetched the QuoteID from the URL
+                                    if(isset($_GET['QuoteID'])) {
+                                        $quoteID = $_GET['QuoteID'];
+
+                                        // Query to fetch the status from the database based on QuoteID
+                                        $sql = "SELECT status FROM quoterequests WHERE QuoteID = $quoteID";
+                                        $result = $conn->query($sql);
+
+                                        if ($result->num_rows > 0) {
+                                            // Fetch the status
+                                            $row = $result->fetch_assoc();
+                                            $status = $row['status'];
+
+                                            // Display "sent" if status is "sent", Display "not sent" otherwise
+                                            $statusText = ($status == 'sent') ? 'sent' : 'not sent';
+                                        } else {
+                                            // If no status found for the provided QuoteID
+                                            $statusText = "No status found for this QuoteID.";
+                                        }
+                                    } else {
+                                        $statusText = "QuoteID not provided in the URL.";
+                                    }
+                                    ?>
+                                    <button type="button" class="">
+                                        <strong>
+                                            <?php echo $statusText; ?>
+                                        </strong>
+                                    </button>
+                                            <br> 
                                         </div>
-                                    </address>
+                                    </address>  
                                 </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="tbl-title">PRODUCT SUMMARY QUOTE</h3
+                                <h3 class="tbl-title">QUOTE-PRODUCT PRICE SUMMARY </h3
 
 >
                                 <div class="table-responsive">
@@ -212,31 +237,12 @@ $imageDetails = getImagesByQuoteID($conn, $quoteID);
                                                 <td class="text-center"><strong>PRODUCT</strong></td>
                                                 <td class="text-center"><strong>RAM</strong></td>
                                                 <td class="text-center"><strong>STORAGE</strong></td>
+                                                <td class="text-center"><strong>PRICE</strong></td>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           <?php
-                                            /*if ($productDetails->num_rows > 0) {
-                                                while ($row = $productDetails->fetch_assoc()) {
-                                                    $productID = $row['ProductID'];
-                                                    $productName = $row['ProductName'];
-                                                    $ram = $row['Ram'];
-                                                    $storage = $row['Storage'];
-                                                    $imageURL = $row['ImageURL'];
-                                            ?>
-                                                    <tr>
-                                                        <td><?php echo $productID; ?></td>
-                                                        <td><img class="product-img" src="assets/images/shop/<?php echo $imageURL; ?>" alt="image not showing" /></td>     <td><strong><?php echo $productName; ?></strong></td>
-                                                        <td><?php echo $ram; ?></td>
-                                                        <td><?php echo $storage; ?></td>
-                                                    </tr>
-                                            <?php
-                                                }
-                                            } else {
-                                                // If no products are found in the quote
-                                                echo "<tr><td colspan='5'>No products found in the quote</td></tr>";
-                                            }*/
-                                            ?>
+                                      
 <?php
 if ($productDetails->num_rows > 0) {
     while ($row = $productDetails->fetch_assoc()) {
@@ -276,6 +282,17 @@ if ($productDetails->num_rows > 0) {
         $stmtStorage->fetch();
         $stmtStorage->close();
 
+
+         // Fetch price for the product
+         $stmtPrice = $conn->prepare("SELECT price
+         FROM quoteitems
+         WHERE ProductID = ?");
+$stmtPrice->bind_param("i", $productID);
+$stmtPrice->execute();
+$stmtPrice->bind_result($price);
+$stmtPrice->fetch();
+$stmtPrice->close();
+
         // Output the table row with the product details, RAM, storage, and image
 ?>
         <tr>
@@ -284,6 +301,7 @@ if ($productDetails->num_rows > 0) {
             <td><strong><?php echo $productName; ?></strong></td>
             <td><?php echo $ram ? $ram : 0; ?></td>
             <td><?php echo $storage ? $storage : 0; ?></td>
+            <td><?php echo $price ? $price : 0; ?></td>
         </tr>
        
 <?php
@@ -313,10 +331,21 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
-                         </div>
+              
+                                </div>
                             </div>
                         </div>
+      
                     </div>
+                    
+                </div><br/>
+                <div class="row">
+                <div class="col-md-12">
+        <div class="col-md-6">
+             <a  href="?QuoteID=<?php echo $QuoteID; ?>" class="btn btn-primary" name="priceQuote">Resend</a>
+        </div>   
+        
+    </div>
                 </div>
             </div>
         </div>

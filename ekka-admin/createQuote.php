@@ -244,8 +244,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_quote'])) {
         return mail($to, $subject, $emailBody, $headers);
     }
 
+    
+
     // Validate and sanitize email address
-    $to = 'your-email@example.com'; // Replace with the recipient's email address
+    $to = 'ikram@siasquare.com'; // Replace with the recipient's email address
 
     $subject = "Price Quote for Products";
 
@@ -253,15 +255,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_quote'])) {
     $emailBody = buildEmailBody($products, $total);
 
     // Optional: Set a custom from email address
-    $from = 'your-email@example.com';
+    $from = 'it@siasquare.com';
 
+   // Update status column in quoterequests table
+   if (isset($_GET['QuoteID'])) {
+    $quoteID = $_GET['QuoteID'];
+    //
+   $sql = "UPDATE quoterequests SET status = 'sent' WHERE QuoteID = $quoteID";
+   if ($conn->query($sql) === TRUE) {
+       echo "Status updated successfully. ";
+   } else {
+       echo "Error updating status: " . $conn->error;
+   }
+}
+       // Send email
     if (sendQuoteEmail($to, $subject, $emailBody, $from)) {
         echo "Quote sent successfully.";
     } else {
         echo "Error sending email.";
     }
 }
+   
+
 ?>
+
 
 
                         
