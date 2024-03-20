@@ -193,93 +193,121 @@ if(isset($_POST['total'])) {
         //header("Location: createQoute.php?QuoteID=$quoteID");
         //exit();
 ?>
-
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_quote'])) {
-    // Assuming $products and $total are defined elsewhere in your code
-    $products = []; // Fetch product data
-    $total = 0; // Calculate total price
+// Function to build email body
+function buildEmailBody($products, $total) {
+    $tableHeader = "<tr>
+                    <th>ID</th>
+                    <th>PRODUCT</th>
+                    <th>RAM</th>
+                    <th>STORAGE</th>
+                    <th>PRICE</th>
+                    </tr>";
 
-    function buildEmailBody($products, $total) {
-        $tableHeader = "<tr>
-                          <th>ID</th>
-                          <th>PRODUCT</th>
-                          <th>RAM</th>
-                          <th>STORAGE</th>
-                          <th>PRICE</th>
+    $tableBody = "";
+    foreach ($products as $product) {
+        $tableBody .= "<tr>
+                        <td>" . $product['product_id'] . "</td>
+                        <td>" . $product['product_name'] . "</td>
+                        <td>" . $product['ram'] . "</td>
+                        <td>" . $product['storage'] . "</td>
+                        <td>" . $product['price'] . "</td>
                         </tr>";
-
-        $tableBody = "";
-        foreach ($products as $product) {
-            $tableBody .= "<tr>
-                              <td>" . $product['product_id'] . "</td>
-                              <td>" . $product['product_name'] . "</td>
-                              <td>" . $product['ram'] . "</td>
-                              <td>" . $product['storage'] . "</td>
-                              <td>" . $product['price'] . "</td>
-                            </tr>";
-        }
-
-        $totalRow = "<tr>
-                        <td colspan='4'>Total</td>
-                        <td>" . $total . "</td>
-                      </tr>";
-
-        $emailBody = "<table style='border-collapse: collapse; width: 100%;' border='1'>
-                        <thead>" . $tableHeader . "</thead>
-                        <tbody>" . $tableBody . $totalRow . "</tbody>
-                      </table>";
-        return $emailBody;
     }
 
-    function sendQuoteEmail($to, $subject, $emailBody, $from = null) {
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $totalRow = "<tr>
+                    <td colspan='4'>Total</td>
+                    <td>" . $total ."</td>
+                </tr>";
 
-        if ($from) {
-            $headers .= 'From: ' . $from . "\r\n";
-        }
-
-        // Send email and return true if successful, false otherwise
-        return mail($to, $subject, $emailBody, $headers);
-    }
-
-    
-
-    // Validate and sanitize email address
-    $to = 'ikram@siasquare.com'; // Replace with the recipient's email address
-
-    $subject = "Price Quote for Products";
-
-    // Assuming $products and $total are defined elsewhere in your code
-    $emailBody = buildEmailBody($products, $total);
-
-    // Optional: Set a custom from email address
-    $from = 'it@siasquare.com';
-
-   // Update status column in quoterequests table
-   if (isset($_GET['QuoteID'])) {
-    $quoteID = $_GET['QuoteID'];
-    //
-   $sql = "UPDATE quoterequests SET status = 'sent' WHERE QuoteID = $quoteID";
-   if ($conn->query($sql) === TRUE) {
-       echo "Status updated successfully. ";
-   } else {
-       echo "Error updating status: " . $conn->error;
-   }
+    $emailBody = "<table style='border-collapse: collapse; width: 100%;' border='1'>
+                    <thead>" . $tableHeader . "</thead>
+                    <tbody>" . $tableBody . $totalRow . "</tbody>
+                </table>";
+    return $emailBody;
 }
-       // Send email
-    if (sendQuoteEmail($to, $subject, $emailBody, $from)) {
-        echo "Quote sent successfully.";
+
+// Function to send email
+function sendQuoteEmail($to, $subject, $emailBody, $from = null) {
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    if ($from) {
+        $headers .= 'From: ' . $from . "\r\n";
+    }
+
+    // Send email and return true if successful, false otherwise
+    return mail($to, $subject, $emailBody, $headers);
+}
+
+// Check if the form is submitted and 'create_quote' button is clicked
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_quote'])) {
+    // Retrieve QuoteID from the URL or from wherever it's stored
+    $quoteID = $_GET['QuoteID']; // Assuming QuoteID is passed as part of the URL
+
+    // Fetch product items for the given QuoteID
+    $sql = "SELECT qi.ProductID, p.ProductName, p.RAM, p.Storage, qi.price 
+            FROM quoteitems qi
+            INNER JOIN products p ON qi.ProductID = p.ProductID
+            WHERE qi.QuoterequestsID = $quoteID";
+    $result = $conn->query($sql);
+
+    $products = [];
+    $totalPrice = 0;
+
+    if ($result->num_rows > 0) {
+        // Fetching products and calculating total price
+        while ($row = $result->fetch_assoc()) {
+            $products[] = [
+                'product_id' => $row['ProductID'],
+                'product_name' => $row['ProductName'],
+                'ram' => $row['RAM'],
+                'storage' => $row['Storage'],
+                'price' => $row['price']
+            ];
+            $totalPrice += $row['price'];
+        }
+    }
+
+    // Fetch UserID and email based on QuoteID
+    $sql = "SELECT u.uniqueID, u.Email 
+            FROM users u
+            INNER JOIN quoterequests qr ON u.uniqueID = qr.UserID
+            WHERE qr.QuoteID = $quoteID";
+
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $userID = $row['uniqueID'];
+        $to = $row['Email']; // Replace with the recipient's email address
+
+        $subject = "Price Quote for Products";
+
+        // Build email body
+        $emailBody = buildEmailBody($products, $totalPrice);
+
+        // Set a custom from email address
+        $from = 'kb@kooltechware.co.tz';
+
+        // Update status column in quoterequests table
+        $sql = "UPDATE quoterequests SET status = 'sent' WHERE QuoteID = $quoteID";
+        if ($conn->query($sql) === TRUE) {
+            echo "Status updated successfully. ";
+        } else {
+            echo "Error updating status: " . $conn->error;
+        }
+
+        // Send email
+        if (sendQuoteEmail($to, $subject, $emailBody, $from)) {
+            echo "Quote sent successfully.";
+        } else {
+            echo "Error sending email.";
+        }
     } else {
-        echo "Error sending email.";
+        echo "No user found for the given QuoteID.";
     }
 }
-   
-
 ?>
-
-
 
                         
                         <form action="" method="post">
